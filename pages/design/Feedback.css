@@ -58,6 +58,7 @@ body {
   resize: none;     
 }
 
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
   .nav {
