@@ -46,6 +46,21 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   width: 600px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  cursor: pointer;
 }
 
 .textBox {
@@ -58,6 +73,44 @@ body {
   resize: none;     
 }
 
+/* Feedback dropdown */
+.FeedDropdown{
+  display: inline-block;
+}
+
+.FeedDropdown button {
+  background-color: #ccc;
+  color: #333;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.FeedDropdown a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.FeedDropdown .selection {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 100px;
+  box-shadow: 2px 2px 5px black;
+}
+
+.FeedDropdown:hover .selection {
+  display: block;
+}
+
+.FeedDropdown:hover button{
+  background-color: blanchedalmond;
+}
+
+.FeedDropdown a:hover{
+  background-color: darkgrey;
+}
 
 /* MOBILE RESPONSIVE */
 @media (max-width: 600px) {
