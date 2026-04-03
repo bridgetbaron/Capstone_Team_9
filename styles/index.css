@@ -1,15 +1,11 @@
-/* =====================
-   BASIC RESET
-===================== */
+/* reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====================
-   BASE STYLES
-===================== */
+/* base styling for the entire site*/
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #f5f7fa;
@@ -20,9 +16,7 @@ body {
   min-width: 320px;
 }
 
-/* =====================
-   DARK MODE
-===================== */
+/* dark mode styling*/
 body.dark {
   background: #1a1a1a;
   color: #eee;
@@ -72,9 +66,7 @@ body.dark .header-btn:hover {
   background: #2a2a2a;
 }
 
-/* =====================
-   HEADER
-===================== */
+/* header styling */
 .header {
   display: flex;
   justify-content: space-between;
@@ -114,9 +106,7 @@ body.dark .header-btn:hover {
   padding: 6px 10px;
 }
 
-/* =====================
-   SEARCH BAR
-===================== */
+/* search bar styling */
 .search-bar {
   display: flex;
   align-items: center;
@@ -143,9 +133,7 @@ body.dark .header-btn:hover {
   font-size: 15px;
 }
 
-/* =====================
-   SEARCH DROPDOWN
-===================== */
+/* search dropdown styling */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -202,9 +190,7 @@ body.dark .header-btn:hover {
   color: #fff;
 }
 
-/* =====================
-   HEADER RIGHT BUTTONS
-===================== */
+/* header right buttons styling */
 .header-right {
   display: flex;
   align-items: center;
@@ -241,9 +227,7 @@ body.dark .header-btn:hover {
   background: #e0e0e0;
 }
 
-/* =====================
-   NAV BAR
-===================== */
+/* nav bar styling */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -267,9 +251,7 @@ body.dark .header-btn:hover {
   color: #e2001a;
 }
 
-/* =====================
-   PRODUCT NAV SECTION
-===================== */
+/* product navigation section styling */
 #product-nav {
   display: flex;
   gap: 24px;
@@ -303,9 +285,7 @@ body.dark .header-btn:hover {
   transition: color 0.2s;
 }
 
-/* =====================
-   PRODUCT SECTION
-===================== */
+/* product section styling */
 #product-section {
   display: grid;
   grid-template-columns: 5fr 1fr;
@@ -368,7 +348,7 @@ body.dark .header-btn:hover {
   height: auto;
 }
 
-/* Desktop: show vertical, hide horizontal */
+/* desktop banner: this is what makes the vertical banner show on the desktop instead of the horizontal banner */
 .banner-horizontal {
   display: none;
 }
@@ -376,18 +356,14 @@ body.dark .header-btn:hover {
   display: block;
 }
 
-/* =====================
-   TABLET — 900px
-===================== */
+/* tablet responsive styling */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
     display: none;
   }
 }
 
-/* =====================
-   MOBILE — 650px
-===================== */
+/* mobile responsive styling */
 @media (max-width: 650px) {
   /* Hide desktop-only chrome */
   .nav {
@@ -397,7 +373,7 @@ body.dark .header-btn:hover {
     display: none;
   }
 
-  /* Show horizontal banner above products, hide vertical */
+  /* mobile banner: this is what makes the horizontal banner show on mobile instead of the vertical banner */
   .banner-vertical {
     display: none;
   }
@@ -415,7 +391,7 @@ body.dark .header-btn:hover {
     margin: 0;
   }
 
-  /* Collapse header: back + search + theme toggle in one bar */
+  /* mobile header: this is what makes the header adapt to mobile screens */
   .header {
     padding: 12px 14px;
     min-height: unset;
@@ -424,7 +400,7 @@ body.dark .header-btn:hover {
     align-items: center;
   }
 
-  /* Hide logo (not shown in mobile mockup) */
+  /* this makes the logo disappear on mobile screens */
   .logo {
     display: none;
   }
@@ -436,7 +412,7 @@ body.dark .header-btn:hover {
     min-width: 0;
   }
 
-  /* Search bar fills remaining space */
+  /* this makes the search bar take up the extra space when in mobile view */
   .search-bar {
     flex: 1;
     min-width: 0;
@@ -447,23 +423,23 @@ body.dark .header-btn:hover {
     min-width: 0;
   }
 
-  /* Show header-right (theme toggle only) */
+  /* this shows the right part of the header in mobile view, but only the dark mode toggle */
   .header-right {
     display: flex;
     flex-wrap: nowrap;
   }
-  /* Hide all buttons except theme toggle */
+  /* this hides all of the buttons on header-right except for the dark mode toggle  */
   .header-right .header-btn {
     display: none;
   }
 
-  /* Product section stacks vertically; flex so order:-1 on banner works */
+  /* makes sure that -1 works on banner because mobile is vertical */
   #product-section {
     display: flex;
     flex-direction: column;
   }
 
-  /* Products column takes full width */
+  /* has the top products take full width */
   .products-column {
     width: 100%;
   }
@@ -473,7 +449,7 @@ body.dark .header-btn:hover {
     margin: 1rem 0 0 0.75rem;
   }
 
-  /* 2-column product grid matching the photo */
+  /* a 2 column top product grid for mobile view */
   .top-product-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -496,7 +472,7 @@ body.dark .header-btn:hover {
     font-size: 0.8rem;
   }
 
-  /* Stack info vertically, More... button bottom-right */
+  /* this stacks the info vertically and has the more button at the bottom right */
   .top-product--info-wrapper {
     flex-direction: column;
     gap: 8px;
@@ -509,9 +485,7 @@ body.dark .header-btn:hover {
   }
 }
 
-/* =====================
-   VERY SMALL — 400px
-===================== */
+/* very small screens — 400px */
 @media (max-width: 400px) {
   .back-btn {
     display: none;
@@ -520,4 +494,33 @@ body.dark .header-btn:hover {
   .top-product-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* FOOTEr */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.footer-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: clamp(12px, 20vw, 200px);
+  margin-bottom: 20px;
+}
+
+footer a {
+  text-align: left;
+  margin: 0 auto 0 0;
+
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: color 0.2s;
 }
