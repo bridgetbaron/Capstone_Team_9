@@ -3,25 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Project</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Lenovo || Home</title>
+    <link rel="stylesheet" href="../styles/index.css" />
   </head>
-
   <body>
     <header class="header">
-      <div class="logo">My Website</div>
+      <div class="header-left">
+        <div class="logo">Lenovo</div>
+        <button class="back-btn">&#8592;</button>
 
+        <!-- Search bar with custom dropdown -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+
+          <!-- Search dropdown (same style as FeedDropdown) -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-btn">&#128100; Sign-in / Create Account</button>
+        <button class="header-btn">&#128722; My Cart</button>
+        <button class="header-btn">&#9881; Settings</button>
+        <button class="theme-toggle" id="themeToggle">🌙☀️</button>
+      </div>
+      <!-- NAV -->
       <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Explore</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#">Laptop</a>
+        <a href="#">Desktop</a>
+        <a href="#">Software</a>
+        <a href="#">Tablet</a>
+        <a href="#">Accessories</a>
       </nav>
     </header>
 
-    <main class="content">
-      <h1>Welcome</h1>
-      <p>This is a simple responsive layout.</p>
+    <main>
+      <section id="product-nav">
+        <div class="product-item-wrapper">
+          <img src="" alt="" />
+          <a href="">ThinkPad</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="" alt="" />
+          <a href="">Yoga</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="" alt="" />
+          <a href="">IdeaPad</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="" alt="" />
+          <a href="">Legion</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="" alt="" />
+          <a href="">ThinkBook</a>
+        </div>
+      </section>
+      <section id="product-section">
+        <div class="top-product-container">
+          <h2>Products</h2>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>ThinkPad X1</h3>
+                <p>$1,935.46</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>Yoga Pro 9i</h3>
+                <p>$1,699.99</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>ThinkPad X9</h3>
+                <p>$1,539.00</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>ThinkPad T16</h3>
+                <p>$1,379.00</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>ThinkPad P16</h3>
+                <p>$2,539.00</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="top-product--item">
+            <img src="" alt="" />
+            <div class="top-product--info-wrapper">
+              <div class="top-product--info">
+                <h3>ThinkPad 2-in-1</h3>
+                <p>$1,519.00</p>
+              </div>
+              <div>
+                <a href="">More...</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lenovo-banner">
+          <img src="" alt="" />
+        </div>
+      </section>
     </main>
+    <footer></footer>
   </body>
 </html>
