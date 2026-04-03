@@ -1,0 +1,526 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* base styling for the entire site*/
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #111;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  min-width: 320px;
+}
+
+/* dark mode styling*/
+body.dark {
+  background: #1a1a1a;
+  color: #eee;
+}
+body.dark .header {
+  background: #111;
+  border-bottom-color: #333;
+}
+body.dark .nav {
+  background: #1f1f1f;
+  border-bottom-color: #333;
+}
+body.dark .nav a {
+  color: #ccc;
+}
+body.dark .search-bar {
+  border-color: #555;
+  background: #2a2a2a;
+}
+body.dark .search-bar input {
+  background: #2a2a2a;
+  color: #eee;
+}
+body.dark .searchDropBtn {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #555;
+}
+body.dark .searchSelection {
+  background: #2a2a2a;
+  border-color: #555;
+}
+body.dark .searchSelection a {
+  color: #eee;
+}
+body.dark .searchSelection a:hover {
+  background-color: #1e3a5f;
+}
+body.dark .back-btn {
+  color: #ccc;
+}
+body.dark .header-btn {
+  color: #ccc;
+  border-color: #555;
+}
+body.dark .header-btn:hover {
+  background: #2a2a2a;
+}
+
+/* header styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  min-height: 80px;
+  background: #fff;
+  border-bottom: 2px solid #d0d8e4;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  background-color: #e2001a;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  padding: 6px 10px;
+}
+
+/* search bar styling */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  overflow: visible;
+  background: #fff;
+  height: 42px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: clamp(120px, 35vw, 300px);
+  font-family: inherit;
+  background: transparent;
+}
+
+.search-icon {
+  padding-left: 12px;
+  color: #888;
+  font-size: 15px;
+}
+
+/* search dropdown styling */
+.SearchDropdown {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.searchDropBtn {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0 14px;
+  height: 100%;
+  border: none;
+  border-left: 1.5px solid #bbb;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  border-radius: 0 4px 4px 0;
+}
+
+.searchDropBtn:hover {
+  background-color: blanchedalmond;
+}
+
+.searchSelection {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  min-width: 130px;
+  border: 1.5px solid #bbb;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 200;
+}
+
+.searchSelection.open {
+  display: block;
+}
+
+.searchSelection a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.searchSelection a:hover {
+  background-color: darkgrey;
+  color: #fff;
+}
+
+/* header right buttons styling */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header-btn {
+  background: none;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.header-btn:hover {
+  background: #f0f0f0;
+}
+
+.theme-toggle {
+  background: #f0f0f0;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #e0e0e0;
+}
+
+/* nav bar styling */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 10px 28px;
+  background: #fff;
+  border-bottom: 1.5px solid #d0d8e4;
+}
+
+.nav a {
+  color: #222;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-right: 28px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: #e2001a;
+}
+
+/* product navigation section styling */
+#product-nav {
+  display: flex;
+  gap: 24px;
+  padding: 12px 28px;
+  background-color: #dcefff;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item-wrapper img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.product-item-wrapper a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+/* product section styling */
+#product-section {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+#product-section h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.top-product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.top-product--item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  outline: 1px solid #000;
+  background-color: #eeeeee;
+  border-radius: 8px;
+}
+
+.top-product--item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  outline: 1px solid #000;
+}
+
+.top-product--info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top-product--info-wrapper a {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.lenovo-banner {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lenovo-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* desktop banner: this is what makes the vertical banner show on the desktop instead of the horizontal banner */
+.banner-horizontal {
+  display: none;
+}
+.banner-vertical {
+  display: block;
+}
+
+/* tablet responsive styling */
+@media (max-width: 900px) {
+  .header-right .header-btn:not(:last-child) {
+    display: none;
+  }
+}
+
+/* mobile responsive styling */
+@media (max-width: 650px) {
+  /* Hide desktop-only chrome */
+  .nav {
+    display: none;
+  }
+  #product-nav {
+    display: none;
+  }
+
+  /* mobile banner: this is what makes the horizontal banner show on mobile instead of the vertical banner */
+  .banner-vertical {
+    display: none;
+  }
+  .banner-horizontal {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .lenovo-banner {
+    display: flex;
+    order: -1;
+    padding: 12px 12px 0;
+    margin: 0;
+  }
+
+  /* mobile header: this is what makes the header adapt to mobile screens */
+  .header {
+    padding: 12px 14px;
+    min-height: unset;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  /* this makes the logo disappear on mobile screens */
+  .logo {
+    display: none;
+  }
+
+  .header-left {
+    flex: 1;
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  /* this makes the search bar take up the extra space when in mobile view */
+  .search-bar {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .search-bar input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* this shows the right part of the header in mobile view, but only the dark mode toggle */
+  .header-right {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  /* this hides all of the buttons on header-right except for the dark mode toggle  */
+  .header-right .header-btn {
+    display: none;
+  }
+
+  /* makes sure that -1 works on banner because mobile is vertical */
+  #product-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* has the top products take full width */
+  .products-column {
+    width: 100%;
+  }
+
+  #product-section h2 {
+    font-size: 1.6rem;
+    margin: 1rem 0 0 0.75rem;
+  }
+
+  /* a 2 column top product grid for mobile view */
+  .top-product-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .top-product--item {
+    padding: 10px;
+  }
+
+  .top-product--item img {
+    margin-bottom: 10px;
+  }
+
+  .top-product--info h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .top-product--info p {
+    font-size: 0.8rem;
+  }
+
+  /* this stacks the info vertically and has the more button at the bottom right */
+  .top-product--info-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-product--info-wrapper a {
+    align-self: flex-end;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* very small screens — 400px */
+@media (max-width: 400px) {
+  .back-btn {
+    display: none;
+  }
+
+  .top-product-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTEr */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.footer-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: clamp(12px, 20vw, 200px);
+  margin-bottom: 20px;
+}
+
+footer a {
+  text-align: left;
+  margin: 0 auto 0 0;
+
+  padding: 0.5rem 1rem;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: color 0.2s;
+}
