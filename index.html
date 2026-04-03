@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lenovo || Home</title>
-    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <header class="header">
@@ -12,11 +12,11 @@
         <div class="logo">Lenovo</div>
         <button class="back-btn">&#8592;</button>
 
-        <!-- Search bar with custom dropdown -->
+        <!-- search bar-->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
 
-          <!-- Search dropdown (same style as FeedDropdown) -->
+          <!-- the dropdown that appears in the search bar and helps to narrow down search options -->
           <div class="SearchDropdown">
             <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
             <div class="searchSelection" id="searchDropMenu">
@@ -27,7 +27,7 @@
           </div>
         </div>
       </div>
-
+      <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
         <button class="header-btn">&#128100; Sign-in / Create Account</button>
         <button class="header-btn">&#128722; My Cart</button>
@@ -36,7 +36,7 @@
       </div>
     </header>
 
-    <!-- NAV -->
+    <!-- nav: this is the main nav for specific types of Lenovo products to narrow down your options -->
     <nav class="nav">
       <a href="#">Laptop</a>
       <a href="#">Desktop</a>
@@ -45,6 +45,7 @@
       <a href="#">Accessories</a>
     </nav>
     <main>
+      <!-- this is the product navigation section where you can choose from 5 different versions of lenovo products -->
       <section id="product-nav">
         <div class="product-item-wrapper">
           <img src="../images/thinkpad.png" alt="" />
@@ -70,6 +71,7 @@
       <section id="product-section">
         <div>
           <h2>Top Products</h2>
+          <!-- this is the thinkpad x1 bubble with a price and a button to explore more -->
           <div class="top-product-container">
             <div class="top-product--item">
               <img src="../images/thinkpadx1.png" alt="" />
@@ -83,7 +85,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- this is the yoga pro 9i bubble with a price and a button to explore more -->
             <div class="top-product--item">
               <img src="../images/yogapro.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -96,7 +98,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- this is the thinkpad X9 bubble with a price and a button to explore more -->
             <div class="top-product--item">
               <img src="../images/thinkpadx9.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -109,7 +111,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- this is the thinkpad T16 bubble with a price and a button to explore more -->
             <div class="top-product--item">
               <img src="../images/thinkpadt16.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -122,7 +124,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- this is the thinkpad P16 bubble with a price and a button to explore more -->
             <div class="top-product--item">
               <img src="../images/thinkpadp16.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -135,7 +137,7 @@
                 </div>
               </div>
             </div>
-
+            <!-- this is the thinkpad 2-in-1 bubble with a price and a button to explore more -->
             <div class="top-product--item">
               <img src="../images/thinkpad21.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -149,9 +151,20 @@
               </div>
             </div>
           </div>
+
+          <!-- these are the two Lenovo banners... one vertical for desktop and one horizontal for mobile -->
         </div>
         <div class="lenovo-banner">
-          <img src="../images/lenovo-banner.png" alt="" />
+          <img
+            class="banner-vertical"
+            src="../images/lenovo-banner.png"
+            alt=""
+          />
+          <img
+            class="banner-horizontal"
+            src="../images/lenovo-banner-horizontal.png"
+            alt=""
+          />
         </div>
       </section>
     </main>

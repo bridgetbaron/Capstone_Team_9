@@ -17,7 +17,7 @@ body {
   transition:
     background 0.3s,
     color 0.3s;
-  min-width: 320px; /* prevents layout breaking on very small windows */
+  min-width: 320px;
 }
 
 /* =====================
@@ -27,96 +27,60 @@ body.dark {
   background: #1a1a1a;
   color: #eee;
 }
-
 body.dark .header {
   background: #111;
   border-bottom-color: #333;
 }
-
 body.dark .nav {
   background: #1f1f1f;
   border-bottom-color: #333;
 }
-
 body.dark .nav a {
   color: #ccc;
 }
-
-body.dark .feedbackContainer {
-  background-color: #1e3a5f;
-  border-color: #2d5a8e;
-  color: #eee;
+body.dark .search-bar {
+  border-color: #555;
+  background: #2a2a2a;
 }
-
-body.dark .feedbackContainer h1 {
-  color: #eee;
-}
-
-body.dark .label {
-  color: #ddd;
-}
-
-body.dark .textBox {
+body.dark .search-bar input {
   background: #2a2a2a;
   color: #eee;
-  border-color: #555;
 }
-
-body.dark .dropBtn,
 body.dark .searchDropBtn {
   background: #2a2a2a;
   color: #eee;
   border-color: #555;
 }
-
-body.dark .selection,
 body.dark .searchSelection {
   background: #2a2a2a;
   border-color: #555;
 }
-
-body.dark .selection a,
 body.dark .searchSelection a {
   color: #eee;
 }
-
-body.dark .selection a:hover,
 body.dark .searchSelection a:hover {
   background-color: #1e3a5f;
 }
-
-body.dark .search-bar {
-  border-color: #555;
-  background: #2a2a2a;
-}
-
-body.dark .search-bar input {
-  background: #2a2a2a;
-  color: #eee;
-}
-
 body.dark .back-btn {
   color: #ccc;
 }
-
 body.dark .header-btn {
   color: #ccc;
   border-color: #555;
 }
-
 body.dark .header-btn:hover {
   background: #2a2a2a;
 }
 
 /* =====================
-   HEADER — taller with more padding
+   HEADER
 ===================== */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 28px; /* increased from 10px */
-  min-height: 80px; /* explicit taller height */
+  padding: 20px 28px;
+  min-height: 80px;
   background: #fff;
   border-bottom: 2px solid #d0d8e4;
   flex-wrap: wrap;
@@ -130,7 +94,6 @@ body.dark .header-btn:hover {
   flex-wrap: wrap;
 }
 
-/* Lenovo logo red box */
 .logo {
   background-color: #e2001a;
   color: white;
@@ -159,7 +122,7 @@ body.dark .header-btn:hover {
   align-items: center;
   border: 1.5px solid #bbb;
   border-radius: 6px;
-  overflow: visible; /* allow dropdown to overflow */
+  overflow: visible;
   background: #fff;
   height: 42px;
 }
@@ -169,7 +132,7 @@ body.dark .header-btn:hover {
   outline: none;
   padding: 8px 12px;
   font-size: 14px;
-  width: clamp(120px, 35vw, 300px); /* fluid width */
+  width: clamp(120px, 35vw, 300px);
   font-family: inherit;
   background: transparent;
 }
@@ -182,7 +145,6 @@ body.dark .header-btn:hover {
 
 /* =====================
    SEARCH DROPDOWN
-   (same style as FeedDropdown)
 ===================== */
 .SearchDropdown {
   position: relative;
@@ -305,21 +267,16 @@ body.dark .header-btn:hover {
   color: #e2001a;
 }
 
-/* 
-
-PRODUCT NAV SETION
-
-
-*/
-
+/* =====================
+   PRODUCT NAV SECTION
+===================== */
 #product-nav {
   display: flex;
   gap: 24px;
   padding: 12px 28px;
-  background: #fff;
-  border-bottom: 1px solid #000000;
-  border-top: 1px solid #000000;
   background-color: #dcefff;
+  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
   justify-content: center;
   align-items: center;
 }
@@ -347,14 +304,8 @@ PRODUCT NAV SETION
 }
 
 /* =====================
-   MAIN CONTENT
+   PRODUCT SECTION
 ===================== */
-.content {
-  padding: 40px 24px;
-}
-
-/* PORDUCT SECTIOON */
-
 #product-section {
   display: grid;
   grid-template-columns: 5fr 1fr;
@@ -362,7 +313,6 @@ PRODUCT NAV SETION
 
 #product-section h2 {
   font-size: 2rem;
-
   margin-top: 2rem;
   margin-left: 2rem;
 }
@@ -378,7 +328,7 @@ PRODUCT NAV SETION
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
-  outline: 1px solid #000000;
+  outline: 1px solid #000;
   background-color: #eeeeee;
   border-radius: 8px;
 }
@@ -388,7 +338,7 @@ PRODUCT NAV SETION
   height: auto;
   border-radius: 8px;
   margin-bottom: 1.5rem;
-  outline: 1px solid #000000;
+  outline: 1px solid #000;
 }
 
 .top-product--info-wrapper {
@@ -400,7 +350,7 @@ PRODUCT NAV SETION
 .top-product--info-wrapper a {
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  background-color: #000000;
+  background-color: #000;
   color: #fff;
   text-decoration: none;
 }
@@ -418,40 +368,156 @@ PRODUCT NAV SETION
   height: auto;
 }
 
+/* Desktop: show vertical, hide horizontal */
+.banner-horizontal {
+  display: none;
+}
+.banner-vertical {
+  display: block;
+}
+
 /* =====================
-   FULLY RESIZABLE — fluid breakpoints
+   TABLET — 900px
 ===================== */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
-    display: none; /* hide text buttons, keep theme toggle */
+    display: none;
   }
 }
 
+/* =====================
+   MOBILE — 650px
+===================== */
 @media (max-width: 650px) {
-  .header-right {
+  /* Hide desktop-only chrome */
+  .nav {
+    display: none;
+  }
+  #product-nav {
     display: none;
   }
 
-  .feedbackContainer {
-    padding: 32px 22px 38px;
+  /* Show horizontal banner above products, hide vertical */
+  .banner-vertical {
+    display: none;
+  }
+  .banner-horizontal {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
   }
 
-  .nav a {
-    margin-right: 16px;
+  .lenovo-banner {
+    display: flex;
+    order: -1;
+    padding: 12px 12px 0;
+    margin: 0;
+  }
+
+  /* Collapse header: back + search + theme toggle in one bar */
+  .header {
+    padding: 12px 14px;
+    min-height: unset;
+    gap: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  /* Hide logo (not shown in mobile mockup) */
+  .logo {
+    display: none;
+  }
+
+  .header-left {
+    flex: 1;
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  /* Search bar fills remaining space */
+  .search-bar {
+    flex: 1;
+    min-width: 0;
   }
 
   .search-bar input {
-    width: 100px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Show header-right (theme toggle only) */
+  .header-right {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  /* Hide all buttons except theme toggle */
+  .header-right .header-btn {
+    display: none;
+  }
+
+  /* Product section stacks vertically; flex so order:-1 on banner works */
+  #product-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Products column takes full width */
+  .products-column {
+    width: 100%;
+  }
+
+  #product-section h2 {
+    font-size: 1.6rem;
+    margin: 1rem 0 0 0.75rem;
+  }
+
+  /* 2-column product grid matching the photo */
+  .top-product-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .top-product--item {
+    padding: 10px;
+  }
+
+  .top-product--item img {
+    margin-bottom: 10px;
+  }
+
+  .top-product--info h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .top-product--info p {
+    font-size: 0.8rem;
+  }
+
+  /* Stack info vertically, More... button bottom-right */
+  .top-product--info-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .top-product--info-wrapper a {
+    align-self: flex-end;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
   }
 }
 
+/* =====================
+   VERY SMALL — 400px
+===================== */
 @media (max-width: 400px) {
-  .logo {
-    font-size: 16px;
-    padding: 8px 12px;
-  }
-
   .back-btn {
     display: none;
+  }
+
+  .top-product-container {
+    grid-template-columns: 1fr;
   }
 }
