@@ -21,94 +21,6 @@ body {
 }
 
 /* =====================
-   DARK MODE
-===================== */
-body.dark {
-  background: #1a1a1a;
-  color: #eee;
-}
-
-body.dark .header {
-  background: #111;
-  border-bottom-color: #333;
-}
-
-body.dark .nav {
-  background: #1f1f1f;
-  border-bottom-color: #333;
-}
-
-body.dark .nav a {
-  color: #ccc;
-}
-
-body.dark .feedbackContainer {
-  background-color: #1e3a5f;
-  border-color: #2d5a8e;
-  color: #eee;
-}
-
-body.dark .feedbackContainer h1 {
-  color: #eee;
-}
-
-body.dark .label {
-  color: #ddd;
-}
-
-body.dark .textBox {
-  background: #2a2a2a;
-  color: #eee;
-  border-color: #555;
-}
-
-body.dark .dropBtn,
-body.dark .searchDropBtn {
-  background: #2a2a2a;
-  color: #eee;
-  border-color: #555;
-}
-
-body.dark .selection,
-body.dark .searchSelection {
-  background: #2a2a2a;
-  border-color: #555;
-}
-
-body.dark .selection a,
-body.dark .searchSelection a {
-  color: #eee;
-}
-
-body.dark .selection a:hover,
-body.dark .searchSelection a:hover {
-  background-color: #1e3a5f;
-}
-
-body.dark .search-bar {
-  border-color: #555;
-  background: #2a2a2a;
-}
-
-body.dark .search-bar input {
-  background: #2a2a2a;
-  color: #eee;
-}
-
-body.dark .back-btn {
-  color: #ccc;
-}
-
-body.dark .header-btn {
-  color: #ccc;
-  border-color: #555;
-}
-
-body.dark .header-btn:hover {
-  background: #2a2a2a;
-}
-
-/* =====================
    HEADER — taller with more padding
 ===================== */
 .header {
@@ -151,15 +63,13 @@ body.dark .header-btn:hover {
   padding: 6px 10px;
 }
 
-/* =====================
-   SEARCH BAR
-===================== */
+/* SEARCH BAR */
 .search-bar {
   display: flex;
   align-items: center;
   border: 1.5px solid #bbb;
   border-radius: 6px;
-  overflow: visible; /* allow dropdown to overflow */
+  overflow: visible; /* will allow dropdown to overflow */
   background: #fff;
   height: 42px;
 }
@@ -180,10 +90,7 @@ body.dark .header-btn:hover {
   font-size: 15px;
 }
 
-/* =====================
-   SEARCH DROPDOWN
-   (same style as FeedDropdown)
-===================== */
+/* SEARCH DROPDOWN (same style as FeedDropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -240,9 +147,7 @@ body.dark .header-btn:hover {
   color: #fff;
 }
 
-/* =====================
-   HEADER RIGHT BUTTONS
-===================== */
+/* HEADER RIGHT BUTTONS */
 .header-right {
   display: flex;
   align-items: center;
@@ -279,9 +184,7 @@ body.dark .header-btn:hover {
   background: #e0e0e0;
 }
 
-/* =====================
-   NAV BAR
-===================== */
+/* NAV BAR */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -305,16 +208,12 @@ body.dark .header-btn:hover {
   color: #e2001a;
 }
 
-/* =====================
-   MAIN CONTENT
-===================== */
+/*  MAIN CONTENT */
 .content {
   padding: 40px 24px;
 }
 
-/* =====================
-   FEEDBACK BOX — bigger, fluid
-===================== */
+/* FEEDBACK BOX: bigger and fluid */
 .feedbackBox {
   display: flex;
   justify-content: center;
@@ -389,9 +288,7 @@ body.dark .header-btn:hover {
   border-color: #5a9fd4;
 }
 
-/* =====================
-   FEEDBACK DROPDOWN
-===================== */
+/* Feedback dropwdown */
 .FeedDropdown {
   position: relative;
   display: inline-block;
@@ -447,9 +344,7 @@ body.dark .header-btn:hover {
   color: #fff;
 }
 
-/* =====================
-   SUBMIT BUTTON
-===================== */
+/*  SUBMIT BUTTON */
 .submitWrapper {
   display: flex;
   justify-content: center;
@@ -476,9 +371,7 @@ body.dark .header-btn:hover {
   color: #fff;
 }
 
-/* =====================
-   FULLY RESIZABLE — fluid breakpoints
-===================== */
+/* making it fully resizable — fluid breakpoints */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
     display: none; /* hide text buttons, keep theme toggle */
