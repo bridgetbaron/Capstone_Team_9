@@ -8,17 +8,17 @@
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- Header -->
     <header class="header">
       <div class="header-left">
         <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
         <button class="back-btn">&#8592;</button>
 
-        <!-- Search bar with custom dropdown -->
+        <!-- Search bar with dropdown -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
 
-          <!-- Search dropdown (same style as FeedDropdown) -->
+          <!-- Search dropdown: same style as FeedDropdown -->
           <div class="SearchDropdown">
             <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
             <div class="searchSelection" id="searchDropMenu">
@@ -38,7 +38,7 @@
       </div>
     </header>
 
-    <!-- NAV -->
+    <!-- header nav -->
     <nav class="nav">
       <a href="#">Laptop</a>
       <a href="#">Desktop</a>
@@ -47,11 +47,11 @@
       <a href="#">Accessories</a>
     </nav>
 
-    <!-- MAIN -->
+    <!-- main box for feedback -->
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
-          <!-- Close Button -->
+          <!-- Close Button X -->
           <button class="closeBtn" id="closeBtn" onclick="window.location.href='../index.html'">&times;</button>
 
           <h1>Feedback Form</h1>
@@ -61,7 +61,7 @@
 
           <p class="label">What was your experience using our website?</p>
 
-          <!-- Custom Feedback Dropdown -->
+          <!-- The Feedback Dropdown -->
           <div class="FeedDropdown">
             <button class="dropBtn" id="dropBtn">Select ▼</button>
             <div class="selection" id="dropMenu">
@@ -72,21 +72,17 @@
             </div>
           </div>
 
-          <!-- Submit -->
+          <!-- Submit button -->
           <div class="submitWrapper">
-            <button
-              class="submitBtn"
-              onclick="window.location.href = 'FeedbackSubmission.html'"
-            >
-              Submit
-            </button>
+            <button class="submitBtn" onclick="window.location.href = 'FeedbackSubmission.html'"> Submit </button>
           </div>
         </div>
       </section>
     </main>
 
     <script>
-      // --- Feedback dropdown ---
+      // JS for the dropdowns and X button
+      //  Feedback dropdown 
       const dropBtn = document.getElementById("dropBtn");
       const dropMenu = document.getElementById("dropMenu");
 
@@ -102,7 +98,7 @@
         dropMenu.classList.remove("open");
       }
 
-      // --- Search dropdown ---
+      // Search dropdown 
       const searchDropBtn = document.getElementById("searchDropBtn");
       const searchDropMenu = document.getElementById("searchDropMenu");
 
@@ -118,7 +114,7 @@
         searchDropMenu.classList.remove("open");
       }
 
-      // --- Close all dropdowns when clicking outside ---
+      // Close all dropdowns when clicking outside 
       function closeAll() {
         dropMenu.classList.remove("open");
         searchDropMenu.classList.remove("open");
@@ -126,18 +122,11 @@
 
       document.addEventListener("click", closeAll);
 
-      // --- Close button ---
+      // Close button 
       document
         .getElementById("closeBtn")
         .addEventListener("click", function () {
           document.querySelector(".feedbackBox").style.display = "none";
-        });
-
-      // --- Dark/light theme toggle ---
-      document
-        .getElementById("themeToggle")
-        .addEventListener("click", function () {
-          document.body.classList.toggle("dark");
         });
     </script>
   </body>

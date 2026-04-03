@@ -1,15 +1,11 @@
-/* =====================
-   BASIC RESET
-===================== */
+/* basic reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====================
-   BASE STYLES
-===================== */
+/* basic styling */
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #f5f7fa;
@@ -17,18 +13,16 @@ body {
   transition:
     background 0.3s,
     color 0.3s;
-  min-width: 320px; /* prevents layout breaking on very small windows */
+  min-width: 320px; /* will prevents layout breaking on very small windows */
 }
 
-/* =====================
-   HEADER — taller with more padding
-===================== */
+/* Header*/
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 28px; /* increased from 10px */
-  min-height: 80px; /* explicit taller height */
+  padding: 20px 28px; 
+  min-height: 80px; 
   background: #fff;
   border-bottom: 2px solid #d0d8e4;
   flex-wrap: wrap;
@@ -223,7 +217,7 @@ body {
 
 .feedbackContainer {
   background-color: #d6eaf8;
-  padding: 48px 56px 52px; /* bigger padding than before */
+  padding: 48px 56px 52px; 
   border-radius: 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   width: clamp(340px, 75vw, 900px); /* fluid: grows and shrinks with window */

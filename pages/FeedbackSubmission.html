@@ -19,7 +19,7 @@
         <div class="search-bar">
           <input type="text" placeholder="Search" />
 
-          <!-- Search dropdown (same style as FeedDropdown) -->
+          <!-- Search dropdown: same style as FeedDropdown -->
           <div class="SearchDropdown">
             <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
             <div class="searchSelection" id="searchDropMenu">
@@ -49,7 +49,7 @@
       <a href="#">Accessories</a>
     </nav>
 
-    <!-- MAIN -->
+    <!-- feedback box -->
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
@@ -61,9 +61,10 @@
         </div>
       </section>
 
-
       <script>
-        // --- Search dropdown ---
+        // Js for search and X button
+        
+        // Search dropdown 
         const searchDropBtn = document.getElementById("searchDropBtn");
         const searchDropMenu = document.getElementById("searchDropMenu");
 
@@ -79,7 +80,7 @@
           searchDropMenu.classList.remove("open");
         }
 
-        // --- Close button ---
+        // Close button 
         document
           .getElementById("closeBtn")
           .addEventListener("click", function () {

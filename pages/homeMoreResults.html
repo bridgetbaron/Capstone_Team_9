@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenovo || Home</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">Lenovo</div>
+        <button class="back-btn">&#8592;</button>
+
+        <!-- search bar-->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+
+          <!-- the dropdown that appears in the search bar and helps to narrow down search options -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- this is the right side of the header that holds buttons for user actions -->
+      <div class="header-right">
+        <button class="header-btn">&#128100; Sign-in / Create Account</button>
+        <button class="header-btn">&#128722; My Cart</button>
+        <button class="header-btn">&#9881; Settings</button>
+        <button class="theme-toggle" id="themeToggle">🌙☀️</button>
+      </div>
+    </header>
+
+    <!-- nav: this is the main nav for specific types of Lenovo products to narrow down your options -->
+    <nav class="nav">
+      <a href="#">Laptop</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
+
+    <!-- this is the product navigation section where you can choose from 5 different versions of lenovo products -->
+    <main>
+      <section id="product-nav">
+        <div class="product-item-wrapper">
+          <img src="../images/thinkpad.png" alt="" />
+          <a href="">ThinkPad</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="../images/yoga.png" alt="" />
+          <a href="">Yoga</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="../images/ideapad.png" alt="" />
+          <a href="">IdeaPad</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="../images/legion.png" alt="" />
+          <a href="">Legion</a>
+        </div>
+        <div class="product-item-wrapper">
+          <img src="../images/thinkbook.png" alt="" />
+          <a href="">ThinkBook</a>
+        </div>
+      </section>
+
+      <section id="product-section">
+        <div>
+          <h2>Top Products</h2>
+          <!-- this is the thinkpad x1 bubble with a price and a button to explore more -->
+          <div class="top-product-container">
+
+            <!-- Option 1 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadx1.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad X1</h3>
+                  <p>$1,935.46</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- option 2 -->
+            <div class="top-product--item">
+              <img src="../images/yogapro.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>Yoga Pro 9i</h3>
+                  <p>$1,699.99</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- option 3 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadx9.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad X9</h3>
+                  <p>$1,539.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- option 4 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadt16.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad T16</h3>
+                  <p>$1,379.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- option 5 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadp16.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad P16</h3>
+                  <p>$2,539.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- option 6 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpad21.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad 2-in-1</h3>
+                  <p>$1,519.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 7 -->
+            <div class="top-product--item">
+              <img src="../images/yogapro.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad E16</h3>
+                  <p>$1,299.99</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 8 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadx1.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad P16v</h3>
+                  <p>$1,579.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 9 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadp16.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad T14s</h3>
+                  <p>$2,139.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 10 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpad21.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad T16g</h3>
+                  <p>$1,379.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 11 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpadx9.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad X7</h3>
+                  <p>$1,050.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+            <!-- added new option 12 -->
+            <div class="top-product--item">
+              <img src="../images/thinkpad21.png" alt="" />
+              <div class="top-product--info-wrapper">
+                <div class="top-product--info">
+                  <h3>ThinkPad 14</h3>
+                  <p>$1,219.00</p>
+                </div>
+                <div><a href="">More...</a></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="lenovo-banner">
+          <img class="banner-vertical" src="../images/lenovo-banner.png" alt="" />
+          <img class="banner-horizontal" src="../images/lenovo-banner-horizontal.png" alt="" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-info-wrapper">
+        <div><h3>Resources</h3></div>
+        <div><h3>Customer Support</h3></div>
+        <div><h3>Products and Services</h3></div>
+      </div>
+      <a href="/pages/feedBack.html">Give Feedback</a>
+    </footer>
+  </body>
+</html>
