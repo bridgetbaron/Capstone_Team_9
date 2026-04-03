@@ -370,7 +370,7 @@ PRODUCT NAV SETION
 .top-product-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; /* Optional: space between items */
+  gap: 2rem;
   padding: 2rem;
 }
 
