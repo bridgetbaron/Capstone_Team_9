@@ -1,244 +1,360 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lenovo Search Results</title>
-  <link rel="stylesheet" href="design/styles.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="header-left">
-      <div class="logo">Lenovo</div>
-      <a href="../home.html" class="back" aria-label="Go back">←</a>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenovo Search Results</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">Lenovo</div>
+        <button class="back-btn">&#8592;</button>
 
-    <div class="search-container">
-      <input id="searchInput" type="text" placeholder="Search" aria-label="Search products" />
-      <select id="searchCategory" aria-label="Select category">
-        <option value="all">Select</option>
-        <option value="ThinkPad">ThinkPad</option>
-        <option value="Yoga">Yoga</option>
-        <option value="IdeaPad">IdeaPad</option>
-        <option value="Legion">Legion</option>
-        <option value="ThinkBook">ThinkBook</option>
-      </select>
+        <!-- Search bar with custom dropdown -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
 
-      <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation">☰</button>
-      <button class="theme-toggle mobile-theme-toggle" id="themeToggleMobile" aria-label="Toggle theme">☾</button>
-    </div>
-
-    <div class="header-right">
-      <button class="header-btn" type="button">&#128100; Sign-in / Create Account</button>
-      <button class="header-btn" type="button">&#128722; My Cart</button>
-      <button class="header-btn" type="button">&#9881; Settings</button>
-      <button class="theme-toggle" id="themeToggleDesktop" type="button" aria-label="Toggle theme">🌙☀️</button>
-    </div>
-
-    
-  </header>
-
-  <section class="category-strip">
-    <button class="category-pill active" data-category="all" type="button">All</button>
-    <button class="category-pill" data-category="ThinkPad" type="button">ThinkPad</button>
-    <button class="category-pill" data-category="Yoga" type="button">Yoga</button>
-    <button class="category-pill" data-category="IdeaPad" type="button">IdeaPad</button>
-    <button class="category-pill" data-category="Legion" type="button">Legion</button>
-    <button class="category-pill" data-category="ThinkBook" type="button">ThinkBook</button>
-  </section>
-
-  <section class="mobile-controls">
-    <button type="button" id="mobileFilterToggle">Filter</button>
-    <button type="button" id="mobileSortToggle">Sort</button>
-  </section>
-
-  <section class="mobile-panel" id="mobileFilterPanel">
-    <div class="mobile-panel-inner">
-      <h3>Filter</h3>
-      <label><input type="radio" name="mobileFilter" value="all" checked /> All</label>
-      <label><input type="radio" name="mobileFilter" value="ThinkPad" /> ThinkPad</label>
-      <label><input type="radio" name="mobileFilter" value="Yoga" /> Yoga</label>
-      <label><input type="radio" name="mobileFilter" value="IdeaPad" /> IdeaPad</label>
-      <label><input type="radio" name="mobileFilter" value="Legion" /> Legion</label>
-      <label><input type="radio" name="mobileFilter" value="ThinkBook" /> ThinkBook</label>
-    </div>
-  </section>
-
-  <section class="mobile-panel" id="mobileSortPanel">
-    <div class="mobile-panel-inner">
-      <h3>Sort</h3>
-      <label><input type="radio" name="mobileSort" value="default" checked /> Default</label>
-      <label><input type="radio" name="mobileSort" value="price-low" /> Price: Low to High</label>
-      <label><input type="radio" name="mobileSort" value="price-high" /> Price: High to Low</label>
-      <label><input type="radio" name="mobileSort" value="name-az" /> Name: A to Z</label>
-    </div>
-  </section>
-
-  <main class="search-page">
-    <aside class="search-sidebar">
-      <h2 class="sidebar-section-title">Filters</h2>
-
-      <details class="filter-group" open>
-        <summary>Product type</summary>
-        <div class="filter-options">
-          <label><input type="radio" name="desktopFilter" value="all" checked /> All</label>
-          <label><input type="radio" name="desktopFilter" value="ThinkPad" /> ThinkPad</label>
-          <label><input type="radio" name="desktopFilter" value="Yoga" /> Yoga</label>
-          <label><input type="radio" name="desktopFilter" value="IdeaPad" /> IdeaPad</label>
-          <label><input type="radio" name="desktopFilter" value="Legion" /> Legion</label>
-          <label><input type="radio" name="desktopFilter" value="ThinkBook" /> ThinkBook</label>
+          <!-- Search dropdown (same style as FeedDropdown) -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
         </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Processor</summary>
-        <div class="filter-options muted-options">
-          <span>Intel Core Ultra</span>
-          <span>Windows 11</span>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Memory</summary>
-        <div class="filter-options muted-options">
-          <span>16GB</span>
-          <span>32GB</span>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Screen Size</summary>
-        <div class="filter-options muted-options">
-          <span>14"</span>
-          <span>16"</span>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Graphics</summary>
-        <div class="filter-options muted-options">
-          <span>Integrated</span>
-          <span>Discrete</span>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Storage</summary>
-        <div class="filter-options muted-options">
-          <span>512GB</span>
-          <span>1TB</span>
-        </div>
-      </details>
-
-      <h2 class="sidebar-section-title sidebar-sort-title">Sort</h2>
-
-      <details class="filter-group" open>
-        <summary>Price</summary>
-        <div class="filter-options">
-          <label><input type="radio" name="desktopSort" value="default" checked /> Default</label>
-          <label><input type="radio" name="desktopSort" value="price-low" /> Low to High</label>
-          <label><input type="radio" name="desktopSort" value="price-high" /> High to Low</label>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Color</summary>
-        <div class="filter-options muted-options">
-          <span>Black</span>
-          <span>Gray</span>
-        </div>
-      </details>
-
-      <details class="filter-group">
-        <summary>Rating</summary>
-        <div class="filter-options">
-          <label><input type="radio" name="desktopSort" value="name-az" /> Name A-Z</label>
-        </div>
-      </details>
-    </aside>
-
-    <section class="results-section">
-      <div class="results-head">
-        <p class="results-text" id="resultsText">Showing results for......</p>
       </div>
 
-      <div class="skeleton-grid" id="skeletonGrid">
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
-        <div class="skeleton-card"></div>
+      <div class="header-right">
+        <button class="header-btn">&#128100; Sign-in / Create Account</button>
+        <button class="header-btn">&#128722; My Cart</button>
+        <button class="header-btn">&#9881; Settings</button>
+        <button class="theme-toggle" id="themeToggle">🌙☀️</button>
       </div>
+    </header>
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="#">Laptop</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
 
-      <div class="results-grid hidden" id="resultsGrid">
-        <article class="result-card" data-category="ThinkPad" data-price="1935.46" data-name="ThinkPad X1">
-            <img src="images/thinkpadx1.avif" alt="ThinkPad X1" class="result-image" />
-          <div class="result-card-header">
-            <h3>ThinkPad X1</h3>
-            <span class="result-price">$1,935.46</span>
-          </div>
-          <div class="result-desc">14&quot; premium PC with AI productivity-based features</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+    <section class="mobile-controls">
+      <button type="button" id="mobileFilterToggle">Filter</button>
+      <button type="button" id="mobileSortToggle">Sort</button>
+    </section>
 
-        <article class="result-card" data-category="Yoga" data-price="1699.99" data-name="Yoga Pro 9i">
-          <img src="images/thinkpadx9.webp" alt="Yoga Pro 9i" class="result-image" />
-          <div class="result-card-header">
-            <h3>Yoga Pro 9i</h3>
-            <span class="result-price">$1,699.99</span>
-          </div>
-          <div class="result-desc">Windows 11 Home 64</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-
-        <article class="result-card" data-category="ThinkPad" data-price="1539.00" data-name="ThinkPad X9">
-          <img src="images/thinkpadx9.webp" alt="ThinkPad X9" class="result-image" />
-          <div class="result-card-header">
-            <h3>ThinkPad X9</h3>
-            <span class="result-price">$1,539.00</span>
-          </div>
-          <div class="result-desc">Windows 11 Home. Lenovo recommends Windows 11 Pro.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-
-        <article class="result-card" data-category="ThinkPad" data-price="1379.00" data-name="ThinkPad T16">
-          <img src="images/thinkpadt16.webp" alt="ThinkPad T16" class="result-image" />
-          <div class="result-card-header">
-            <h3>ThinkPad T16</h3>
-            <span class="result-price">$1,379.00</span>
-          </div>
-          <div class="result-desc">14&quot; WUXGA, anti-glare display.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-
-        <article class="result-card" data-category="ThinkPad" data-price="2396.00" data-name="ThinkPad P16">
-          <img src="images/thinkpadp16.webp" alt="ThinkPad P16" class="result-image" />
-          <div class="result-card-header">
-            <h3>ThinkPad P16</h3>
-            <span class="result-price">$2,396.00</span>
-          </div>
-          <div class="result-desc">Built for performance.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-
-        <article class="result-card" data-category="ThinkPad" data-price="1519.00" data-name="ThinkPad 2-in-1">
-          <img src="images/thinkpad21.webp" alt="ThinkPad 2-in-1" class="result-image" />
-          <div class="result-card-header">
-            <h3>ThinkPad 2-in-1</h3>
-            <span class="result-price">$1,519.00</span>
-          </div>
-          <div class="result-desc">Intel Core Ultra processor.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-      </div>
-
-      <div class="load-more-wrap">
-        <button class="load-more-btn" id="loadMoreBtn" type="button">Load more results</button>
+    <section class="mobile-panel" id="mobileFilterPanel">
+      <div class="mobile-panel-inner">
+        <h3>Filter</h3>
+        <label
+          ><input type="radio" name="mobileFilter" value="all" checked />
+          All</label
+        >
+        <label
+          ><input type="radio" name="mobileFilter" value="ThinkPad" />
+          ThinkPad</label
+        >
+        <label
+          ><input type="radio" name="mobileFilter" value="Yoga" /> Yoga</label
+        >
+        <label
+          ><input type="radio" name="mobileFilter" value="IdeaPad" />
+          IdeaPad</label
+        >
+        <label
+          ><input type="radio" name="mobileFilter" value="Legion" />
+          Legion</label
+        >
+        <label
+          ><input type="radio" name="mobileFilter" value="ThinkBook" />
+          ThinkBook</label
+        >
       </div>
     </section>
-  </main>
 
-  <script src="../script.js"></script>
-</body>
+    <section class="mobile-panel" id="mobileSortPanel">
+      <div class="mobile-panel-inner">
+        <h3>Sort</h3>
+        <label
+          ><input type="radio" name="mobileSort" value="default" checked />
+          Default</label
+        >
+        <label
+          ><input type="radio" name="mobileSort" value="price-low" /> Price: Low
+          to High</label
+        >
+        <label
+          ><input type="radio" name="mobileSort" value="price-high" /> Price:
+          High to Low</label
+        >
+        <label
+          ><input type="radio" name="mobileSort" value="name-az" /> Name: A to
+          Z</label
+        >
+      </div>
+    </section>
+
+    <main class="search-page">
+      <aside class="search-sidebar">
+        <h2 class="sidebar-section-title">Filters</h2>
+
+        <details class="filter-group" open>
+          <summary>Product type</summary>
+          <div class="filter-options">
+            <label
+              ><input type="radio" name="desktopFilter" value="all" checked />
+              All</label
+            >
+            <label
+              ><input type="radio" name="desktopFilter" value="ThinkPad" />
+              ThinkPad</label
+            >
+            <label
+              ><input type="radio" name="desktopFilter" value="Yoga" />
+              Yoga</label
+            >
+            <label
+              ><input type="radio" name="desktopFilter" value="IdeaPad" />
+              IdeaPad</label
+            >
+            <label
+              ><input type="radio" name="desktopFilter" value="Legion" />
+              Legion</label
+            >
+            <label
+              ><input type="radio" name="desktopFilter" value="ThinkBook" />
+              ThinkBook</label
+            >
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Processor</summary>
+          <div class="filter-options muted-options">
+            <span>Intel Core Ultra</span>
+            <span>Windows 11</span>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Memory</summary>
+          <div class="filter-options muted-options">
+            <span>16GB</span>
+            <span>32GB</span>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Screen Size</summary>
+          <div class="filter-options muted-options">
+            <span>14"</span>
+            <span>16"</span>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Graphics</summary>
+          <div class="filter-options muted-options">
+            <span>Integrated</span>
+            <span>Discrete</span>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Storage</summary>
+          <div class="filter-options muted-options">
+            <span>512GB</span>
+            <span>1TB</span>
+          </div>
+        </details>
+
+        <h2 class="sidebar-section-title sidebar-sort-title">Sort</h2>
+
+        <details class="filter-group" open>
+          <summary>Price</summary>
+          <div class="filter-options">
+            <label
+              ><input type="radio" name="desktopSort" value="default" checked />
+              Default</label
+            >
+            <label
+              ><input type="radio" name="desktopSort" value="price-low" /> Low
+              to High</label
+            >
+            <label
+              ><input type="radio" name="desktopSort" value="price-high" /> High
+              to Low</label
+            >
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Color</summary>
+          <div class="filter-options muted-options">
+            <span>Black</span>
+            <span>Gray</span>
+          </div>
+        </details>
+
+        <details class="filter-group">
+          <summary>Rating</summary>
+          <div class="filter-options">
+            <label
+              ><input type="radio" name="desktopSort" value="name-az" /> Name
+              A-Z</label
+            >
+          </div>
+        </details>
+      </aside>
+
+      <section class="results-section">
+        <div class="results-head">
+          <p class="results-text" id="resultsText">Showing results for......</p>
+        </div>
+
+        <div class="skeleton-grid" id="skeletonGrid">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <div class="results-grid hidden" id="resultsGrid">
+          <article
+            class="result-card"
+            data-category="ThinkPad"
+            data-price="1935.46"
+            data-name="ThinkPad X1"
+          >
+            <img
+              src="images/thinkpadx1.avif"
+              alt="ThinkPad X1"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>ThinkPad X1</h3>
+              <span class="result-price">$1,935.46</span>
+            </div>
+            <div class="result-desc">
+              14&quot; premium PC with AI productivity-based features
+            </div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+
+          <article
+            class="result-card"
+            data-category="Yoga"
+            data-price="1699.99"
+            data-name="Yoga Pro 9i"
+          >
+            <img
+              src="images/thinkpadx9.webp"
+              alt="Yoga Pro 9i"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>Yoga Pro 9i</h3>
+              <span class="result-price">$1,699.99</span>
+            </div>
+            <div class="result-desc">Windows 11 Home 64</div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+
+          <article
+            class="result-card"
+            data-category="ThinkPad"
+            data-price="1539.00"
+            data-name="ThinkPad X9"
+          >
+            <img
+              src="images/thinkpadx9.webp"
+              alt="ThinkPad X9"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>ThinkPad X9</h3>
+              <span class="result-price">$1,539.00</span>
+            </div>
+            <div class="result-desc">
+              Windows 11 Home. Lenovo recommends Windows 11 Pro.
+            </div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+
+          <article
+            class="result-card"
+            data-category="ThinkPad"
+            data-price="1379.00"
+            data-name="ThinkPad T16"
+          >
+            <img
+              src="images/thinkpadt16.webp"
+              alt="ThinkPad T16"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>ThinkPad T16</h3>
+              <span class="result-price">$1,379.00</span>
+            </div>
+            <div class="result-desc">14&quot; WUXGA, anti-glare display.</div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+
+          <article
+            class="result-card"
+            data-category="ThinkPad"
+            data-price="2396.00"
+            data-name="ThinkPad P16"
+          >
+            <img
+              src="images/thinkpadp16.webp"
+              alt="ThinkPad P16"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>ThinkPad P16</h3>
+              <span class="result-price">$2,396.00</span>
+            </div>
+            <div class="result-desc">Built for performance.</div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+
+          <article
+            class="result-card"
+            data-category="ThinkPad"
+            data-price="1519.00"
+            data-name="ThinkPad 2-in-1"
+          >
+            <img
+              src="images/thinkpad21.webp"
+              alt="ThinkPad 2-in-1"
+              class="result-image"
+            />
+            <div class="result-card-header">
+              <h3>ThinkPad 2-in-1</h3>
+              <span class="result-price">$1,519.00</span>
+            </div>
+            <div class="result-desc">Intel Core Ultra processor.</div>
+            <button class="shop-btn" type="button">Shop</button>
+          </article>
+        </div>
+
+        <div class="load-more-wrap">
+          <button class="load-more-btn" id="loadMoreBtn" type="button">
+            Load more results
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="../script.js"></script>
+  </body>
 </html>

@@ -1,0 +1,457 @@
+/* =====================
+   BASIC RESET
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   BASE STYLES
+===================== */
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #111;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  min-width: 320px; /* prevents layout breaking on very small windows */
+}
+
+/* =====================
+   DARK MODE
+===================== */
+body.dark {
+  background: #1a1a1a;
+  color: #eee;
+}
+
+body.dark .header {
+  background: #111;
+  border-bottom-color: #333;
+}
+
+body.dark .nav {
+  background: #1f1f1f;
+  border-bottom-color: #333;
+}
+
+body.dark .nav a {
+  color: #ccc;
+}
+
+body.dark .feedbackContainer {
+  background-color: #1e3a5f;
+  border-color: #2d5a8e;
+  color: #eee;
+}
+
+body.dark .feedbackContainer h1 {
+  color: #eee;
+}
+
+body.dark .label {
+  color: #ddd;
+}
+
+body.dark .textBox {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark .dropBtn,
+body.dark .searchDropBtn {
+  background: #2a2a2a;
+  color: #eee;
+  border-color: #555;
+}
+
+body.dark .selection,
+body.dark .searchSelection {
+  background: #2a2a2a;
+  border-color: #555;
+}
+
+body.dark .selection a,
+body.dark .searchSelection a {
+  color: #eee;
+}
+
+body.dark .selection a:hover,
+body.dark .searchSelection a:hover {
+  background-color: #1e3a5f;
+}
+
+body.dark .search-bar {
+  border-color: #555;
+  background: #2a2a2a;
+}
+
+body.dark .search-bar input {
+  background: #2a2a2a;
+  color: #eee;
+}
+
+body.dark .back-btn {
+  color: #ccc;
+}
+
+body.dark .header-btn {
+  color: #ccc;
+  border-color: #555;
+}
+
+body.dark .header-btn:hover {
+  background: #2a2a2a;
+}
+
+/* =====================
+   HEADER — taller with more padding
+===================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px; /* increased from 10px */
+  min-height: 80px; /* explicit taller height */
+  background: #fff;
+  border-bottom: 2px solid #d0d8e4;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Lenovo logo red box */
+.logo {
+  background-color: #e2001a;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px 18px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  padding: 6px 10px;
+}
+
+/* =====================
+   SEARCH BAR
+===================== */
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  overflow: visible; /* allow dropdown to overflow */
+  background: #fff;
+  height: 42px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: clamp(120px, 35vw, 300px); /* fluid width */
+  font-family: inherit;
+  background: transparent;
+}
+
+.search-icon {
+  padding-left: 12px;
+  color: #888;
+  font-size: 15px;
+}
+
+/* =====================
+   SEARCH DROPDOWN
+   (same style as FeedDropdown)
+===================== */
+.SearchDropdown {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+}
+
+.searchDropBtn {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 0 14px;
+  height: 100%;
+  border: none;
+  border-left: 1.5px solid #bbb;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  border-radius: 0 4px 4px 0;
+}
+
+.searchDropBtn:hover {
+  background-color: blanchedalmond;
+}
+
+.searchSelection {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  min-width: 130px;
+  border: 1.5px solid #bbb;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 200;
+}
+
+.searchSelection.open {
+  display: block;
+}
+
+.searchSelection a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  transition: background 0.15s;
+}
+
+.searchSelection a:hover {
+  background-color: darkgrey;
+  color: #fff;
+}
+
+/* =====================
+   HEADER RIGHT BUTTONS
+===================== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.header-btn {
+  background: none;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.header-btn:hover {
+  background: #f0f0f0;
+}
+
+.theme-toggle {
+  background: #f0f0f0;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background: #e0e0e0;
+}
+
+/* =====================
+   NAV BAR
+===================== */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 10px 28px;
+  background: #fff;
+  border-bottom: 1.5px solid #d0d8e4;
+}
+
+.nav a {
+  color: #222;
+  text-decoration: underline;
+  font-size: 14px;
+  margin-right: 28px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.nav a:hover {
+  color: #e2001a;
+}
+
+/* 
+
+PRODUCT NAV SETION
+
+
+*/
+
+#product-nav {
+  display: flex;
+  gap: 24px;
+  padding: 12px 28px;
+  background: #fff;
+  border-bottom: 1px solid #000000;
+  border-top: 1px solid #000000;
+  background-color: #dcefff;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-item-wrapper img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.product-item-wrapper a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+/* =====================
+   MAIN CONTENT
+===================== */
+.content {
+  padding: 40px 24px;
+}
+
+/* PORDUCT SECTIOON */
+
+#product-section {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+#product-section h2 {
+  font-size: 2rem;
+
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.top-product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem; /* Optional: space between items */
+  padding: 2rem;
+}
+
+.top-product--item {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  outline: 1px solid #000000;
+  background-color: #eeeeee;
+  border-radius: 8px;
+}
+
+.top-product--item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  outline: 1px solid #000000;
+}
+
+.top-product--info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.top-product--info-wrapper a {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
+}
+
+.lenovo-banner {
+  padding: 0.5rem 1rem;
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lenovo-banner img {
+  width: 100%;
+  height: auto;
+}
+
+/* =====================
+   FULLY RESIZABLE — fluid breakpoints
+===================== */
+@media (max-width: 900px) {
+  .header-right .header-btn:not(:last-child) {
+    display: none; /* hide text buttons, keep theme toggle */
+  }
+}
+
+@media (max-width: 650px) {
+  .header-right {
+    display: none;
+  }
+
+  .feedbackContainer {
+    padding: 32px 22px 38px;
+  }
+
+  .nav a {
+    margin-right: 16px;
+  }
+
+  .search-bar input {
+    width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .logo {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  .back-btn {
+    display: none;
+  }
+}
