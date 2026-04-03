@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Project</title>
-    <link rel="stylesheet" href="design/Feedback.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/Feedback.css" />
   </head>
 
   <body>
-
     <!-- HEADER -->
     <header class="header">
       <div class="header-left">
@@ -18,7 +16,6 @@
 
         <!-- Search bar with custom dropdown -->
         <div class="search-bar">
-          <span class="search-icon">&#128269;</span>
           <input type="text" placeholder="Search" />
 
           <!-- Search dropdown (same style as FeedDropdown) -->
@@ -54,9 +51,14 @@
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
-
           <!-- Close Button -->
-          <button class="closeBtn" id="closeBtn" onclick="window.location.href='home.html'">&times;</button>
+          <button
+            class="closeBtn"
+            id="closeBtn"
+            onclick="window.location.href = 'home.html'"
+          >
+            &times;
+          </button>
 
           <h1>Feedback Form</h1>
 
@@ -78,64 +80,71 @@
 
           <!-- Submit -->
           <div class="submitWrapper">
-            <button class="submitBtn" onclick="window.location.href='FeedbackSubmission.html'">Submit</button>
+            <button
+              class="submitBtn"
+              onclick="window.location.href = 'FeedbackSubmission.html'"
+            >
+              Submit
+            </button>
           </div>
-
         </div>
       </section>
     </main>
 
     <script>
       // --- Feedback dropdown ---
-      const dropBtn = document.getElementById('dropBtn');
-      const dropMenu = document.getElementById('dropMenu');
+      const dropBtn = document.getElementById("dropBtn");
+      const dropMenu = document.getElementById("dropMenu");
 
-      dropBtn.addEventListener('click', function (e) {
+      dropBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         closeAll();
-        dropMenu.classList.toggle('open');
+        dropMenu.classList.toggle("open");
       });
 
       function selectOption(e, value) {
         e.preventDefault();
-        dropBtn.textContent = value + ' ▼';
-        dropMenu.classList.remove('open');
+        dropBtn.textContent = value + " ▼";
+        dropMenu.classList.remove("open");
       }
 
       // --- Search dropdown ---
-      const searchDropBtn = document.getElementById('searchDropBtn');
-      const searchDropMenu = document.getElementById('searchDropMenu');
+      const searchDropBtn = document.getElementById("searchDropBtn");
+      const searchDropMenu = document.getElementById("searchDropMenu");
 
-      searchDropBtn.addEventListener('click', function (e) {
+      searchDropBtn.addEventListener("click", function (e) {
         e.stopPropagation();
         closeAll();
-        searchDropMenu.classList.toggle('open');
+        searchDropMenu.classList.toggle("open");
       });
 
       function selectSearch(e, value) {
         e.preventDefault();
-        searchDropBtn.textContent = value + ' ▼';
-        searchDropMenu.classList.remove('open');
+        searchDropBtn.textContent = value + " ▼";
+        searchDropMenu.classList.remove("open");
       }
 
       // --- Close all dropdowns when clicking outside ---
       function closeAll() {
-        dropMenu.classList.remove('open');
-        searchDropMenu.classList.remove('open');
+        dropMenu.classList.remove("open");
+        searchDropMenu.classList.remove("open");
       }
 
-      document.addEventListener('click', closeAll);
+      document.addEventListener("click", closeAll);
 
       // --- Close button ---
-      document.getElementById('closeBtn').addEventListener('click', function () {
-        document.querySelector('.feedbackBox').style.display = 'none';
-      });
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.querySelector(".feedbackBox").style.display = "none";
+        });
 
       // --- Dark/light theme toggle ---
-      document.getElementById('themeToggle').addEventListener('click', function () {
-        document.body.classList.toggle('dark');
-      });
+      document
+        .getElementById("themeToggle")
+        .addEventListener("click", function () {
+          document.body.classList.toggle("dark");
+        });
     </script>
-
   </body>
 </html>

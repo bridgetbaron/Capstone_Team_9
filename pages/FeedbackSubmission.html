@@ -1,15 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Project</title>
-    <link rel="stylesheet" href="design/Feedback.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/Feedback.css" />
   </head>
 
   <body>
-
     <!-- HEADER -->
     <header class="header">
       <div class="header-left">
@@ -18,7 +16,6 @@
 
         <!-- Search bar with custom dropdown -->
         <div class="search-bar">
-          <span class="search-icon">&#128269;</span>
           <input type="text" placeholder="Search" />
 
           <!-- Search dropdown (same style as FeedDropdown) -->
@@ -54,37 +51,42 @@
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
-
           <!-- Close Button -->
-          <button class="closeBtn" id="closeBtn" onclick="window.location.href='home.html'">&times;</button>
+          <button
+            class="closeBtn"
+            id="closeBtn"
+            onclick="window.location.href = 'home.html'"
+          >
+            &times;
+          </button>
 
           <h1>Thank you for your Feedback!</h1>
-
         </div>
       </section>
-        <script>
-          // --- Search dropdown ---
-          const searchDropBtn = document.getElementById('searchDropBtn');
-          const searchDropMenu = document.getElementById('searchDropMenu');
-    
-          searchDropBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            closeAll();
-            searchDropMenu.classList.toggle('open');
-          });
-    
-          function selectSearch(e, value) {
-            e.preventDefault();
-            searchDropBtn.textContent = value + ' ▼';
-            searchDropMenu.classList.remove('open');
-          }
+      <script>
+        // --- Search dropdown ---
+        const searchDropBtn = document.getElementById("searchDropBtn");
+        const searchDropMenu = document.getElementById("searchDropMenu");
 
-                // --- Close button ---
-          document.getElementById('closeBtn').addEventListener('click', function () {
-          document.querySelector('.feedbackBox').style.display = 'none';
-          });
-        </script>
+        searchDropBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+          closeAll();
+          searchDropMenu.classList.toggle("open");
+        });
 
+        function selectSearch(e, value) {
+          e.preventDefault();
+          searchDropBtn.textContent = value + " ▼";
+          searchDropMenu.classList.remove("open");
+        }
+
+        // --- Close button ---
+        document
+          .getElementById("closeBtn")
+          .addEventListener("click", function () {
+            document.querySelector(".feedbackBox").style.display = "none";
+          });
+      </script>
     </main>
   </body>
 </html>
