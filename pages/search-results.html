@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lenovo Search Results</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- MOBILE HEADER -->
+  <header class="mobile-header">
+    <div class="mobile-topbar">
+      <span class="back-arrow">←</span>
+      <input type="text" placeholder="Search" class="search-input" />
+      <button id="menu-toggle" class="menu-toggle">☰</button>
+    </div>
+
+    <div class="mobile-icons">
+      <button id="dark-toggle-mobile" class="dark-toggle">☾</button>
+    </div>
+
+    <nav id="mobile-nav" class="mobile-nav">
+      <a href="#">Home</a>
+      <a href="#" class="active">Search</a>
+      <a href="#">Feedback</a>
+      <a href="#">Settings</a>
+    </nav>
+
+    <div class="mobile-controls">
+      <button>Filter</button>
+      <button>Sort</button>
+    </div>
+  </header>
+
+  <!-- DESKTOP HEADER -->
+  <header class="desktop-header">
+    <div class="desktop-left">
+      <div class="logo">Lenovo</div>
+      <span class="back-arrow">←</span>
+      <input type="text" placeholder="Search" class="search-input desktop-search" />
+    </div>
+
+    <nav class="desktop-nav">
+      <a href="#" class="active">Laptops</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
+
+    <div class="desktop-right">
+      <button>Sign-in / Create Account</button>
+      <button>My Cart</button>
+      <button>Settings</button>
+      <button id="dark-toggle-desktop" class="dark-toggle">☾</button>
+    </div>
+  </header>
+
+  <!-- MOBILE PAGE -->
+  <main class="mobile-page">
+    <section class="mobile-products">
+      <div class="product-card">
+        <div class="product-image"></div>
+        <h3>ThinkPad X1</h3>
+        <p class="price">$1,935.46</p>
+        <p class="description">14" premium PC with AI productivity-based features</p>
+        <button class="shop-btn">Shop</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-image red"></div>
+        <h3>Yoga Pro 9i</h3>
+        <p class="price">$1699.99</p>
+        <p class="description">Windows 11 Home 64</p>
+        <button class="shop-btn">Shop</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- DESKTOP PAGE -->
+  <main class="desktop-page">
+    <aside class="sidebar">
+      <h3>Filters</h3>
+      <div class="sidebar-item">Product type</div>
+      <div class="sidebar-item">Processor</div>
+      <div class="sidebar-item">Memory</div>
+      <div class="sidebar-item">Screen Size</div>
+      <div class="sidebar-item">Graphics</div>
+      <div class="sidebar-item">Storage</div>
+
+      <h3>Sort</h3>
+      <div class="sidebar-item">Price</div>
+      <div class="sidebar-item">Color</div>
+      <div class="sidebar-item">Rating</div>
+    </aside>
+
+    <section class="desktop-results">
+      <p class="results-text">Showing results for......</p>
+
+      <div class="desktop-grid">
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>ThinkPad X1</h3>
+          <p class="price">$1,935.46</p>
+          <p class="description">14" premium PC with AI productivity-based features</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image red"></div>
+          <h3>Yoga Pro 9i</h3>
+          <p class="price">$1699.99</p>
+          <p class="description">Windows 11 Home 64</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>ThinkPad X9</h3>
+          <p class="price">$1539.00</p>
+          <p class="description">Windows 11 Home Lenovo recommends Windows 11 Pro</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>ThinkPad T16</h3>
+          <p class="price">$1379.00</p>
+          <p class="description">14" WUXGA, anti-glare display</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image dark"></div>
+          <h3>ThinkPad P16</h3>
+          <p class="price">$2396.00</p>
+          <p class="description">Built for performance</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+
+        <div class="product-card">
+          <div class="product-image"></div>
+          <h3>ThinkPad 2-in-1</h3>
+          <p class="price">$1519.00</p>
+          <p class="description">Intel Core Ultra processor</p>
+          <button class="shop-btn">Shop</button>
+        </div>
+      </div>
+
+      <button class="load-more">Load more results</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
