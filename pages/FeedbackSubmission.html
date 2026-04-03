@@ -5,29 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Project</title>
     <link rel="stylesheet" href="design/Feedback.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
 
   <body>
-    <header class="header">
-      <div class="logo">My Website</div>
 
-      <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Explore</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
-    </header>
-    
-    <main class="content"></main>
-        <section class="feedbackBox">
-            <div class="feedbackContainer">
-              <button class="closeBtn">&times;</button>
-                <h1><center>Thank you for your Feedback!</center></h1>
-                
-            
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">Lenovo</div>
+        <button class="back-btn">&#8592;</button>
+
+        <!-- Search bar with custom dropdown -->
+        <div class="search-bar">
+          <span class="search-icon">&#128269;</span>
+          <input type="text" placeholder="Search" />
+
+          <!-- Search dropdown (same style as FeedDropdown) -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
             </div>
-        </section>
-    </main> 
-  </body>    
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-btn">&#128100; Sign-in / Create Account</button>
+        <button class="header-btn">&#128722; My Cart</button>
+        <button class="header-btn">&#9881; Settings</button>
+        <button class="theme-toggle" id="themeToggle">🌙☀️</button>
+      </div>
+    </header>
+
+    <!-- NAV -->
+    <nav class="nav">
+      <a href="#">Laptop</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="content">
+      <section class="feedbackBox">
+        <div class="feedbackContainer">
+
+          <!-- Close Button -->
+          <button class="closeBtn" id="closeBtn" onclick="window.location.href='home.html'">&times;</button>
+
+          <h1>Thank you for your Feedback!</h1>
+
+        </div>
+      </section>
+        <script>
+          // --- Search dropdown ---
+          const searchDropBtn = document.getElementById('searchDropBtn');
+          const searchDropMenu = document.getElementById('searchDropMenu');
+    
+          searchDropBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            closeAll();
+            searchDropMenu.classList.toggle('open');
+          });
+    
+          function selectSearch(e, value) {
+            e.preventDefault();
+            searchDropBtn.textContent = value + ' ▼';
+            searchDropMenu.classList.remove('open');
+          }
+
+                // --- Close button ---
+          document.getElementById('closeBtn').addEventListener('click', function () {
+          document.querySelector('.feedbackBox').style.display = 'none';
+          });
+        </script>
+
+    </main>
+  </body>
 </html>
