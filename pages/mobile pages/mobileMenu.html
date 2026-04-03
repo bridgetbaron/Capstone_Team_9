@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lenovo || Menu</title>
+    <link rel="stylesheet" href="../../styles/mobileMenu.css" />
+  </head>
+  <body>
+
+    <!-- header, the hamabuger menu was changed to the left (suggested by the TA) -->
+    <header class="menu-header">
+
+      <!-- hamburger on the left -->
+      <button class="hamburger-btn" onclick="history.back()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- back arrow next to the hamburger menu -->
+      <button class="back-btn" onclick="history.back()">&#8592;</button>
+
+      <!-- search bar with ion -->
+      <div class="search-bar">
+        <img src="../../images/search-interface-symbol.png" alt="search" class="search-icon" />
+        <input type="text" placeholder="Search" />
+      </div>
+
+    </header>
+
+    <!-- dark mode for later -->
+    <div class="theme-row">
+      <button class="theme-toggle" id="themeToggle">🌙☀️</button>
+    </div>
+
+    <!-- items that are selectable -->
+    <nav class="mobile-menu">
+
+      <a href="../../index.html" class="menu-item">
+        <img src="../../images/home.png" alt="Home" class="menu-icon" />
+        <span>Home</span>
+      </a>
+      <hr class="menu-divider" />
+
+      <a href="/pages/searchResults.html" class="menu-item">
+        <img src="../../images/search-interface-symbol.png" alt="Search" class="menu-icon" />
+        <span>Search</span>
+      </a>
+      <hr class="menu-divider" />
+
+      <a href="../feedBack.html" class="menu-item">
+        <img src="../../images/comment.png" alt="Feedback" class="menu-icon" />
+        <span>Feedback</span>
+      </a>
+      <hr class="menu-divider" />
+
+      <!-- wont be linked to anything -->
+      <a href="#" class="menu-item">
+        <img src="../../images/setting.png" alt="Settings" class="menu-icon" />
+        <span>Settings</span>
+      </a>
+      <hr class="menu-divider" />
+
+    </nav>
+
+  </body>
+</html>
