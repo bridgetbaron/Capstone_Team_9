@@ -1,133 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lenovo Search Results</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="header-left">
-      <div class="logo">Lenovo</div>
-      <a href="home.html" class="back" aria-label="Back">←</a>
-    </div>
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+const themeToggleMobile = document.getElementById("themeToggleMobile");
+const themeToggleDesktop = document.getElementById("themeToggleDesktop");
 
-    <div class="search-container">
-      <input type="text" placeholder="Search" aria-label="Search" />
-      <select aria-label="Search category">
-        <option>Select</option>
-        <option>Laptops</option>
-        <option>Desktop</option>
-        <option>Software</option>
-        <option>Tablet</option>
-        <option>Accessories</option>
-      </select>
-    </div>
+const searchInput = document.getElementById("searchInput");
+const searchCategory = document.getElementById("searchCategory");
+const categoryPills = document.querySelectorAll(".category-pill");
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">☰</button>
-    <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode">☾</button>
+const desktopFilterInputs = document.querySelectorAll('input[name="desktopFilter"]');
+const desktopSortInputs = document.querySelectorAll('input[name="desktopSort"]');
+const mobileFilterInputs = document.querySelectorAll('input[name="mobileFilter"]');
+const mobileSortInputs = document.querySelectorAll('input[name="mobileSort"]');
 
-    <nav class="nav" id="nav">
-      <a href="home.html">Home</a>
-      <a href="search-results.html" class="active">Search</a>
-      <a href="feedback.html">Feedback</a>
-      <a href="#">Settings</a>
-    </nav>
-  </header>
+const mobileFilterToggle = document.getElementById("mobileFilterToggle");
+const mobileSortToggle = document.getElementById("mobileSortToggle");
+const mobileFilterPanel = document.getElementById("mobileFilterPanel");
+const mobileSortPanel = document.getElementById("mobileSortPanel");
 
-  <section class="mobile-controls">
-    <button type="button">Filter</button>
-    <button type="button">Sort</button>
-  </section>
+const resultsGrid = document.getElementById("resultsGrid");
+const resultsText = document.getElementById("resultsText");
+const skeletonGrid = document.getElementById("skeletonGrid");
+const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-  <main class="search-page">
-    <aside class="search-sidebar">
-      <h2 class="sidebar-section-title">Filters</h2>
-      <div class="sidebar-item">Product type <span>⌄</span></div>
-      <div class="sidebar-item">Processor <span>⌄</span></div>
-      <div class="sidebar-item">Memory <span>⌄</span></div>
-      <div class="sidebar-item">Screen Size <span>⌄</span></div>
-      <div class="sidebar-item">Graphics <span>⌄</span></div>
-      <div class="sidebar-item">Storage <span>⌄</span></div>
+let activeCategory = "all";
+let activeSort = "default";
+let visibleCount = 6;
 
-      <h2 class="sidebar-section-title" style="margin-top: 28px;">Sort</h2>
-      <div class="sidebar-item">Price <span>⌄</span></div>
-      <div class="sidebar-item">Color <span>⌄</span></div>
-      <div class="sidebar-item">Rating <span>⌄</span></div>
-    </aside>
+function getCards() {
+  return Array.from(resultsGrid.querySelectorAll(".result-card"));
+}
 
-    <section class="results-section">
-      <p class="results-text">Showing results for......</p>
+function applyThemeButtonLabels() {
+  const isDark = document.body.classList.contains("dark");
+  if (themeToggleMobile) themeToggleMobile.textContent = isDark ? "☀" : "☾";
+  if (themeToggleDesktop) themeToggleDesktop.textContent = isDark ? "☀️" : "🌙☀️";
+}
 
-      <div class="results-grid">
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>ThinkPad X1</h3>
-            <span class="result-price">$1,935.46</span>
-          </div>
-          <div class="result-desc">14" premium PC with AI productivity-based features</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+  applyThemeButtonLabels();
+}
 
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>Yoga Pro 9i</h3>
-            <span class="result-price">$1,699.99</span>
-          </div>
-          <div class="result-desc">Windows 11 Home 64</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+function updateCategoryPills() {
+  categoryPills.forEach((pill) => {
+    pill.classList.toggle("active", pill.dataset.category === activeCategory);
+  });
+}
 
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>ThinkPad X9</h3>
-            <span class="result-price">$1,539.00</span>
-          </div>
-          <div class="result-desc">Windows 11 Home. Lenovo recommends Windows 11 Pro.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+function syncCategoryControls() {
+  if (searchCategory) searchCategory.value = activeCategory;
 
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>ThinkPad T16</h3>
-            <span class="result-price">$1,379.00</span>
-          </div>
-          <div class="result-desc">14" WUXGA, anti-glare display.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+  desktopFilterInputs.forEach((input) => {
+    input.checked = input.value === activeCategory;
+  });
 
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>ThinkPad P16</h3>
-            <span class="result-price">$2,396.00</span>
-          </div>
-          <div class="result-desc">Built for performance.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
+  mobileFilterInputs.forEach((input) => {
+    input.checked = input.value === activeCategory;
+  });
 
-        <article class="result-card">
-          <div class="result-image"></div>
-          <div class="result-card-header">
-            <h3>ThinkPad 2-in-1</h3>
-            <span class="result-price">$1,519.00</span>
-          </div>
-          <div class="result-desc">Intel Core Ultra processor.</div>
-          <button class="shop-btn" type="button">Shop</button>
-        </article>
-      </div>
+  updateCategoryPills();
+}
 
-      <div class="load-more-wrap">
-        <button class="load-more-btn" type="button">Load more results</button>
-      </div>
-    </section>
-  </main>
+function syncSortControls() {
+  desktopSortInputs.forEach((input) => {
+    input.checked = input.value === activeSort;
+  });
 
-  <script src="script.js"></script>
-</body>
-</html>
+  mobileSortInputs.forEach((input) => {
+    input.checked = input.value === activeSort;
+  });
+}
+
+function filterAndSortCards() {
+  const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+  let cards = getCards();
+
+  cards.forEach((card) => {
+    const cardCategory = card.dataset.category;
+    const cardName = card.dataset.name.toLowerCase();
+    const cardDesc = card.querySelector(".result-desc").textContent.toLowerCase();
+
+    const matchesCategory = activeCategory === "all" || cardCategory === activeCategory;
+    const matchesSearch =
+      query === "" || cardName.includes(query) || cardDesc.includes(query);
+
+    card.dataset.visible = matchesCategory && matchesSearch ? "true" : "false";
+  });
+
+  let visibleCards = cards.filter((card) => card.dataset.visible === "true");
+
+  if (activeSort === "price-low") {
+    visibleCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+  } else if (activeSort === "price-high") {
+    visibleCards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+  } else if (activeSort === "name-az") {
+    visibleCards.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
+  }
+
+  visibleCards.forEach((card) => resultsGrid.appendChild(card));
+
+  cards.forEach((card) => {
+    card.classList.add("hidden");
+  });
+
+  visibleCards.slice(0, visibleCount).forEach((card) => {
+    card.classList.remove("hidden");
+  });
+
+  const shownCount = Math.min(visibleCards.length, visibleCount);
+
+  if (resultsText) {
+    resultsText.textContent =
+      visibleCards.length === 0
+        ? "No results found."
+        : `Showing ${shownCount} of ${visibleCards.length} result${visibleCards.length === 1 ? "" : "s"}.`;
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.classList.toggle("hidden", shownCount >= visibleCards.length || visibleCards.length === 0);
+  }
+}
+
+function setCategory(category) {
+  activeCategory = category;
+  visibleCount = 6;
+  syncCategoryControls();
+  filterAndSortCards();
+}
+
+function setSort(sortValue) {
+  activeSort = sortValue;
+  visibleCount = 6;
+  syncSortControls();
+  filterAndSortCards();
+}
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("show");
+    });
+  });
+}
+
+if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
+if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    visibleCount = 6;
+    filterAndSortCards();
+  });
+}
+
+if (searchCategory) {
+  searchCategory.addEventListener("change", (e) => {
+    setCategory(e.target.value);
+  });
+}
+
+categoryPills.forEach((pill) => {
+  pill.addEventListener("click", () => {
+    setCategory(pill.dataset.category);
+  });
+});
+
+desktopFilterInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    setCategory(input.value);
+  });
+});
+
+mobileFilterInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    setCategory(input.value);
+  });
+});
+
+desktopSortInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    setSort(input.value);
+  });
+});
+
+mobileSortInputs.forEach((input) => {
+  input.addEventListener("change", () => {
+    setSort(input.value);
+  });
+});
+
+if (mobileFilterToggle && mobileFilterPanel && mobileSortPanel) {
+  mobileFilterToggle.addEventListener("click", () => {
+    mobileFilterPanel.classList.toggle("open");
+    mobileSortPanel.classList.remove("open");
+  });
+}
+
+if (mobileSortToggle && mobileSortPanel && mobileFilterPanel) {
+  mobileSortToggle.addEventListener("click", () => {
+    mobileSortPanel.classList.toggle("open");
+    mobileFilterPanel.classList.remove("open");
+  });
+}
+
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener("click", () => {
+    visibleCount += 3;
+    filterAndSortCards();
+  });
+}
+
+function initLoading() {
+  if (!skeletonGrid || !resultsGrid) return;
+  resultsGrid.classList.add("hidden");
+  skeletonGrid.classList.remove("hidden");
+
+  setTimeout(() => {
+    skeletonGrid.classList.add("hidden");
+    resultsGrid.classList.remove("hidden");
+    filterAndSortCards();
+  }, 850);
+}
+
+applyThemeButtonLabels();
+syncCategoryControls();
+syncSortControls();
+initLoading();
