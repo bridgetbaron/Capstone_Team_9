@@ -8,13 +8,14 @@
   </head>
 
   <body>
-    <!-- HEADER -->
+    <!-- header -->
     <header class="header">
       <div class="header-left">
-        <div class="logo">Lenovo</div>
+        <!-- logo leading to homepage -->
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
         <button class="back-btn">&#8592;</button>
 
-        <!-- Search bar with custom dropdown -->
+        <!-- Search bar with dropdown -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
 
@@ -30,6 +31,7 @@
         </div>
       </div>
 
+      <!-- header buttons -->
       <div class="header-right">
         <button class="header-btn">&#128100; Sign-in / Create Account</button>
         <button class="header-btn">&#128722; My Cart</button>
@@ -38,7 +40,7 @@
       </div>
     </header>
 
-    <!-- NAV -->
+    <!-- the options under the header -->
     <nav class="nav">
       <a href="#">Laptop</a>
       <a href="#">Desktop</a>
@@ -51,18 +53,15 @@
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
-          <!-- Close Button -->
-          <button
-            class="closeBtn"
-            id="closeBtn"
-            onclick="window.location.href = 'home.html'"
-          >
-            &times;
-          </button>
+
+          <!-- Close Button leading back to home -->
+          <button class="closeBtn" id="closeBtn" onclick="window.location.href='../index.html'">&times;</button>
 
           <h1>Thank you for your Feedback!</h1>
         </div>
       </section>
+
+
       <script>
         // --- Search dropdown ---
         const searchDropBtn = document.getElementById("searchDropBtn");
