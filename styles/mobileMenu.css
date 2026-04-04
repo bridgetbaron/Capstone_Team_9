@@ -83,6 +83,12 @@ body {
   background: #111;
   border-radius: 2px;
 }
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
  
 /* dark mode button */
 .theme-row {
