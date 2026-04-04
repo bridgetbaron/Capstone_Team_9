@@ -339,6 +339,22 @@ body {
   display: block;
 }
 
+/* Load more btn */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.load-more-btn {
+  padding: 12px 32px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #dcefff;
+  border-radius: 10px;
+}
+
 /* tablet responsive styling */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
