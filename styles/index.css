@@ -16,54 +16,37 @@ body {
   min-width: 320px;
 }
 
-/* dark mode styling*/
-body.dark {
-  background: #1a1a1a;
-  color: #eee;
+.header-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
-body.dark .header {
+
+/* hamburger menu button, mobile stuff */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
+ 
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
   background: #111;
-  border-bottom-color: #333;
+  border-radius: 2px;
 }
-body.dark .nav {
-  background: #1f1f1f;
-  border-bottom-color: #333;
-}
-body.dark .nav a {
-  color: #ccc;
-}
-body.dark .search-bar {
-  border-color: #555;
-  background: #2a2a2a;
-}
-body.dark .search-bar input {
-  background: #2a2a2a;
-  color: #eee;
-}
-body.dark .searchDropBtn {
-  background: #2a2a2a;
-  color: #eee;
-  border-color: #555;
-}
-body.dark .searchSelection {
-  background: #2a2a2a;
-  border-color: #555;
-}
-body.dark .searchSelection a {
-  color: #eee;
-}
-body.dark .searchSelection a:hover {
-  background-color: #1e3a5f;
-}
-body.dark .back-btn {
-  color: #ccc;
-}
-body.dark .header-btn {
-  color: #ccc;
-  border-color: #555;
-}
-body.dark .header-btn:hover {
-  background: #2a2a2a;
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /* header styling */
@@ -354,6 +337,22 @@ body.dark .header-btn:hover {
 }
 .banner-vertical {
   display: block;
+}
+
+/* Load more btn */
+.load-more-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.load-more-btn {
+  padding: 12px 32px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #dcefff;
+  border-radius: 10px;
 }
 
 /* tablet responsive styling */

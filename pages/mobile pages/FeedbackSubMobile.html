@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Project</title>
+    <link rel="stylesheet" href="../../styles/Feedback.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+          <button class="hamburger-btn" onclick="window.location.href='mobileMenu.html'">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        <button class="back-btn">
+          <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+
+        <!-- Search bar with dropdown -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+        </div>
+      </div>
+
+        <!-- dark mode for later -->
+        <button class="theme-toggle" id="themeToggle">
+          <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
+        </button>
+
+      
+    </header>
+
+
+      <!-- main box for feedback -->
+      <main class="content">
+        <section class="feedbackBox">
+          <div class="feedbackContainer">
+            <!-- Close Button X -->
+            <button class="closeBtn" id="closeBtn" onclick="window.location.href='../index.html'">&times;</button>
+
+            <h1>Thank you for your Feedback!</h1>
+
+          </div>
+        </section>
+    </main>
+
+  </body>
+</html>

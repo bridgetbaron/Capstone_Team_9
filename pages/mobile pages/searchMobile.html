@@ -4,55 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lenovo Search Results</title>
-    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../../styles/styles.css" />
   </head>
   <body>
     <header class="header">
       <div class="header-left">
-        <div class="logo">Lenovo</div>
-          <button class="back-btn">
-            <img src="../images/arrow.png" alt="Back" class="header-icon" />
+          <button class="hamburger-btn" onclick="window.location.href='mobileMenu.html'">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
+            <button class="back-btn">
+            <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+            </button>
 
-        <!-- Search bar with custom dropdown -->
-        <div class="search-bar">
-          <input type="text" placeholder="Search" />
-
-          <!-- Search dropdown (same style as FeedDropdown) -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            <!-- Search bar with dropdown -->
+            <div class="search-bar">
+            <input type="text" placeholder="Search" />
             </div>
-          </div>
-        </div>
       </div>
-
-      <div class="header-right">
-          <button class="header-btn">
-            <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="theme-toggle" id="themeToggle">
-            <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+                <button class="theme-toggle" id="themeToggle">
+                  <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
+                </button>
     </header>
-    <!-- NAV -->
-    <nav class="nav">
-      <a href="#">Laptop</a>
-      <a href="#">Desktop</a>
-      <a href="#">Software</a>
-      <a href="#">Tablet</a>
-      <a href="#">Accessories</a>
-    </nav>
+
 
     <section class="mobile-controls">
       <button type="button" id="mobileFilterToggle">Filter</button>
@@ -245,7 +220,7 @@
             data-name="ThinkPad X1"
           >
             <img
-              src="images/thinkpadx1.avif"
+              src="../../images/thinkpadx1.png"
               alt="ThinkPad X1"
               class="result-image"
             />
@@ -266,7 +241,7 @@
             data-name="Yoga Pro 9i"
           >
             <img
-              src="images/thinkpadx9.webp"
+              src="../../images/yogapro.png"
               alt="Yoga Pro 9i"
               class="result-image"
             />
@@ -285,7 +260,7 @@
             data-name="ThinkPad X9"
           >
             <img
-              src="images/thinkpadx9.webp"
+              src="../../images/thinkpadx9.png"
               alt="ThinkPad X9"
               class="result-image"
             />
@@ -306,7 +281,7 @@
             data-name="ThinkPad T16"
           >
             <img
-              src="images/thinkpadt16.webp"
+              src="../../images/thinkpadt16.png"
               alt="ThinkPad T16"
               class="result-image"
             />
@@ -325,7 +300,7 @@
             data-name="ThinkPad P16"
           >
             <img
-              src="images/thinkpadp16.webp"
+              src="../../images/thinkpadp16.png"
               alt="ThinkPad P16"
               class="result-image"
             />
@@ -344,7 +319,7 @@
             data-name="ThinkPad 2-in-1"
           >
             <img
-              src="images/thinkpad21.webp"
+              src="../../images/thinkpad21.png"
               alt="ThinkPad 2-in-1"
               class="result-image"
             />
@@ -365,6 +340,6 @@
       </section>
     </main>
 
-    <script src="../script.js"></script>
+    <script src="../../scripts/script.js"></script>
   </body>
 </html>

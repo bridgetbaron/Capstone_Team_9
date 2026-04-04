@@ -4,58 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Project</title>
-    <link rel="stylesheet" href="../styles/Feedback.css" />
+    <link rel="stylesheet" href="../../styles/Feedback.css" />
   </head>
 
   <body>
     <!-- Header -->
     <header class="header">
       <div class="header-left">
-        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
-          <button class="back-btn">
-            <img src="../images/arrow.png" alt="Back" class="header-icon" />
+          <button class="hamburger-btn" onclick="window.location.href='mobileMenu.html'">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
+            <button class="back-btn">
+              <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+            </button>
 
         <!-- Search bar with dropdown -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
 
-          <!-- Search dropdown: same style as FeedDropdown -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
-            </div>
-          </div>
         </div>
       </div>
 
-      <div class="header-right">
-          <button class="header-btn">
-            <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="theme-toggle" id="themeToggle">
-            <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+        <!-- dark mode for later -->
+        <button class="theme-toggle" id="themeToggle">
+          <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
+        </button>
+
     </header>
 
-    <!-- header nav -->
-    <nav class="nav">
-      <a href="#">Laptop</a>
-      <a href="#">Desktop</a>
-      <a href="#">Software</a>
-      <a href="#">Tablet</a>
-      <a href="#">Accessories</a>
-    </nav>
+
+
 
     <!-- main box for feedback -->
     <main class="content">
@@ -84,7 +64,7 @@
 
           <!-- Submit button -->
           <div class="submitWrapper">
-            <button class="submitBtn" onclick="window.location.href = 'FeedbackSubmission.html'"> Submit </button>
+            <button class="submitBtn" onclick="window.location.href = 'FeedbackSubMobile.html'"> Submit </button>
           </div>
         </div>
       </section>
@@ -131,6 +111,13 @@
       }
 
       document.addEventListener("click", closeAll);
+
+      // Close button 
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.querySelector(".feedbackBox").style.display = "none";
+        });
     </script>
   </body>
 </html>

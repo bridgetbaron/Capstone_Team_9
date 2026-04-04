@@ -25,6 +25,12 @@ body {
   min-width: 320px;
 }
 
+.header-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 button,
 input,
 select {
@@ -711,6 +717,33 @@ body.dark .header-btn:hover {
   .results-section {
     padding: 16px 24px 40px;
   }
+}
+
+/* hamburger menu button, mobile stuff */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
+ 
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #111;
+  border-radius: 2px;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
 }
 
 /* 

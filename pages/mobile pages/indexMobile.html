@@ -4,77 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lenovo || Home</title>
-    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="../../styles/index.css" />
   </head>
   <body>
     <header class="header">
       <div class="header-left">
-        <div class="logo">Lenovo</div>
-          <button class="back-btn">
-            <img src="images/arrow.png" alt="Back" class="header-icon" />
+          <button class="hamburger-btn" onclick="window.location.href='mobileMenu.html'">
+            <span></span>
+            <span></span>
+            <span></span>
           </button>
+            <button class="back-btn">
+                <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+            </button>
 
-        <!-- search bar-->
+        <!-- Search bar -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
-
-          <!-- the dropdown that appears in the search bar and helps to narrow down search options -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
-            </div>
-          </div>
         </div>
       </div>
-      <!-- this is the right side of the header that holds buttons for user actions -->
-      <div class="header-right">
-          <button class="header-btn">
-            <img src="images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="theme-toggle" id="themeToggle">
-            <img src="images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+
+        <button class="theme-toggle" id="themeToggle">
+         <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
+        </button>
+
     </header>
 
-    <!-- nav: this is the main nav for specific types of Lenovo products to narrow down your options -->
-    <nav class="nav">
-      <a href="#">Laptop</a>
-      <a href="#">Desktop</a>
-      <a href="#">Software</a>
-      <a href="#">Tablet</a>
-      <a href="#">Accessories</a>
-    </nav>
+
     <main>
       <!-- this is the product navigation section where you can choose from 5 different versions of lenovo products -->
       <section id="product-nav">
         <div class="product-item-wrapper">
-          <img src="../images/thinkpad.png" alt="" />
+          <img src="../../images/thinkpad.png" alt="" />
           <a href="">ThinkPad</a>
         </div>
         <div class="product-item-wrapper">
-          <img src="../images/yoga.png" alt="" />
+          <img src="../../images/yoga.png" alt="" />
           <a href="">Yoga</a>
         </div>
         <div class="product-item-wrapper">
-          <img src="../images/ideapad.png" alt="" />
+          <img src="../../images/ideapad.png" alt="" />
           <a href="">IdeaPad</a>
         </div>
         <div class="product-item-wrapper">
-          <img src="../images/legion.png" alt="" />
+          <img src="../../images/legion.png" alt="" />
           <a href="">Legion</a>
         </div>
         <div class="product-item-wrapper">
-          <img src="../images/thinkbook.png" alt="" />
+          <img src="../../images/thinkbook.png" alt="" />
           <a href="">ThinkBook</a>
         </div>
       </section>
@@ -84,7 +61,7 @@
           <!-- this is the thinkpad x1 bubble with a price and a button to explore more -->
           <div class="top-product-container">
             <div class="top-product--item">
-              <img src="../images/thinkpadx1.png" alt="" />
+              <img src="../../images/thinkpadx1.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>ThinkPad X1</h3>
@@ -97,7 +74,7 @@
             </div>
             <!-- this is the yoga pro 9i bubble with a price and a button to explore more -->
             <div class="top-product--item">
-              <img src="../images/yogapro.png" alt="" />
+              <img src="../../images/yogapro.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>Yoga Pro 9i</h3>
@@ -110,7 +87,7 @@
             </div>
             <!-- this is the thinkpad X9 bubble with a price and a button to explore more -->
             <div class="top-product--item">
-              <img src="../images/thinkpadx9.png" alt="" />
+              <img src="../../images/thinkpadx9.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>ThinkPad X9</h3>
@@ -123,7 +100,7 @@
             </div>
             <!-- this is the thinkpad T16 bubble with a price and a button to explore more -->
             <div class="top-product--item">
-              <img src="../images/thinkpadt16.png" alt="" />
+              <img src="../../images/thinkpadt16.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>ThinkPad T16</h3>
@@ -136,7 +113,7 @@
             </div>
             <!-- this is the thinkpad P16 bubble with a price and a button to explore more -->
             <div class="top-product--item">
-              <img src="../images/thinkpadp16.png" alt="" />
+              <img src="../../images/thinkpadp16.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>ThinkPad P16</h3>
@@ -149,7 +126,7 @@
             </div>
             <!-- this is the thinkpad 2-in-1 bubble with a price and a button to explore more -->
             <div class="top-product--item">
-              <img src="../images/thinkpad21.png" alt="" />
+              <img src="../../images/thinkpad21.png" alt="" />
               <div class="top-product--info-wrapper">
                 <div class="top-product--info">
                   <h3>ThinkPad 2-in-1</h3>
@@ -167,19 +144,21 @@
         <div class="lenovo-banner">
           <img
             class="banner-vertical"
-            src="../images/lenovo-banner.png"
+            src="../../images/lenovo-banner.png"
             alt=""
           />
           <img
             class="banner-horizontal"
-            src="../images/lenovo-banner-horizontal.png"
+            src="../../images/lenovo-banner-horizontal.png"
             alt=""
           />
         </div>
       </section>
+
         <div class="load-more-wrapper">
-          <button class="load-more-btn" onclick="window.location.href='pages/homeMoreResults.html'">Load more results</button>
+          <button class="load-more-btn" onclick="window.location.href='moreResultsMobile.html'">Load more results</button>
         </div>
+      
     </main>
     <footer>
       <div class="footer-info-wrapper">
