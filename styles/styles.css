@@ -25,6 +25,12 @@ body {
   min-width: 320px;
 }
 
+.header-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 button,
 input,
 select {

@@ -365,6 +365,33 @@ body {
   color: #fff;
 }
 
+/* hamburger menu button */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
+}
+ 
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #111;
+  border-radius: 2px;
+}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
 /* making it fully resizable — fluid breakpoints */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
