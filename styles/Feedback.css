@@ -1,133 +1,41 @@
-/* =====================
-   BASIC RESET
-===================== */
+/* basic reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
-/* =====================
-   BASE STYLES
-===================== */
+
+/* basic styling */
 body {
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: "Inter", Arial, sans-serif;
   background: #f5f7fa;
   color: #111;
-  transition: background 0.3s, color 0.3s;
-  min-width: 320px; /* prevents layout breaking on very small windows */
+  transition:
+    background 0.3s,
+    color 0.3s;
+  min-width: 320px; /* will prevents layout breaking on very small windows */
 }
- 
-/* =====================
-   DARK MODE
-===================== */
-body.dark {
-  background: #1a1a1a;
-  color: #eee;
-}
- 
-body.dark .header {
-  background: #111;
-  border-bottom-color: #333;
-}
- 
-body.dark .nav {
-  background: #1f1f1f;
-  border-bottom-color: #333;
-}
- 
-body.dark .nav a {
-  color: #ccc;
-}
- 
-body.dark .feedbackContainer {
-  background-color: #1e3a5f;
-  border-color: #2d5a8e;
-  color: #eee;
-}
- 
-body.dark .feedbackContainer h1 {
-  color: #eee;
-}
- 
-body.dark .label {
-  color: #ddd;
-}
- 
-body.dark .textBox {
-  background: #2a2a2a;
-  color: #eee;
-  border-color: #555;
-}
- 
-body.dark .dropBtn,
-body.dark .searchDropBtn {
-  background: #2a2a2a;
-  color: #eee;
-  border-color: #555;
-}
- 
-body.dark .selection,
-body.dark .searchSelection {
-  background: #2a2a2a;
-  border-color: #555;
-}
- 
-body.dark .selection a,
-body.dark .searchSelection a {
-  color: #eee;
-}
- 
-body.dark .selection a:hover,
-body.dark .searchSelection a:hover {
-  background-color: #1e3a5f;
-}
- 
-body.dark .search-bar {
-  border-color: #555;
-  background: #2a2a2a;
-}
- 
-body.dark .search-bar input {
-  background: #2a2a2a;
-  color: #eee;
-}
- 
-body.dark .back-btn {
-  color: #ccc;
-}
- 
-body.dark .header-btn {
-  color: #ccc;
-  border-color: #555;
-}
- 
-body.dark .header-btn:hover {
-  background: #2a2a2a;
-}
- 
-/* =====================
-   HEADER — taller with more padding
-===================== */
+
+/* Header*/
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 28px;        /* increased from 10px */
-  min-height: 80px;          /* explicit taller height */
+  padding: 20px 28px; 
+  min-height: 80px; 
   background: #fff;
   border-bottom: 2px solid #d0d8e4;
   flex-wrap: wrap;
   gap: 14px;
 }
- 
+
 .header-left {
   display: flex;
   align-items: center;
   gap: 12px;
   flex-wrap: wrap;
 }
- 
+
 /* Lenovo logo red box */
 .logo {
   background-color: #e2001a;
@@ -139,7 +47,7 @@ body.dark .header-btn:hover {
   letter-spacing: 1px;
   white-space: nowrap;
 }
- 
+
 .back-btn {
   background: none;
   border: none;
@@ -148,46 +56,41 @@ body.dark .header-btn:hover {
   color: #333;
   padding: 6px 10px;
 }
- 
-/* =====================
-   SEARCH BAR
-===================== */
+
+/* SEARCH BAR */
 .search-bar {
   display: flex;
   align-items: center;
   border: 1.5px solid #bbb;
   border-radius: 6px;
-  overflow: visible;          /* allow dropdown to overflow */
+  overflow: visible; /* will allow dropdown to overflow */
   background: #fff;
   height: 42px;
 }
- 
+
 .search-bar input {
   border: none;
   outline: none;
   padding: 8px 12px;
   font-size: 14px;
-  width: clamp(120px, 20vw, 300px);  /* fluid width */
+  width: clamp(120px, 35vw, 300px); /* fluid width */
   font-family: inherit;
   background: transparent;
 }
- 
+
 .search-icon {
   padding-left: 12px;
   color: #888;
   font-size: 15px;
 }
- 
-/* =====================
-   SEARCH DROPDOWN
-   (same style as FeedDropdown)
-===================== */
+
+/* SEARCH DROPDOWN (same style as FeedDropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
   height: 100%;
 }
- 
+
 .searchDropBtn {
   background-color: #f0f0f0;
   color: #333;
@@ -202,11 +105,11 @@ body.dark .header-btn:hover {
   transition: background 0.2s;
   border-radius: 0 4px 4px 0;
 }
- 
+
 .searchDropBtn:hover {
   background-color: blanchedalmond;
 }
- 
+
 .searchSelection {
   display: none;
   position: absolute;
@@ -219,11 +122,11 @@ body.dark .header-btn:hover {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.18);
   z-index: 200;
 }
- 
+
 .searchSelection.open {
   display: block;
 }
- 
+
 .searchSelection a {
   display: block;
   color: #333;
@@ -232,22 +135,20 @@ body.dark .header-btn:hover {
   font-size: 14px;
   transition: background 0.15s;
 }
- 
+
 .searchSelection a:hover {
   background-color: darkgrey;
   color: #fff;
 }
- 
-/* =====================
-   HEADER RIGHT BUTTONS
-===================== */
+
+/* HEADER RIGHT BUTTONS */
 .header-right {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
 }
- 
+
 .header-btn {
   background: none;
   border: 1.5px solid #ccc;
@@ -259,11 +160,11 @@ body.dark .header-btn:hover {
   white-space: nowrap;
   transition: background 0.2s;
 }
- 
+
 .header-btn:hover {
   background: #f0f0f0;
 }
- 
+
 .theme-toggle {
   background: #f0f0f0;
   border: 1.5px solid #ccc;
@@ -272,14 +173,12 @@ body.dark .header-btn:hover {
   font-size: 14px;
   cursor: pointer;
 }
- 
+
 .theme-toggle:hover {
   background: #e0e0e0;
 }
- 
-/* =====================
-   NAV BAR
-===================== */
+
+/* NAV BAR */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -288,7 +187,7 @@ body.dark .header-btn:hover {
   background: #fff;
   border-bottom: 1.5px solid #d0d8e4;
 }
- 
+
 .nav a {
   color: #222;
   text-decoration: underline;
@@ -298,31 +197,27 @@ body.dark .header-btn:hover {
   transition: color 0.2s;
   white-space: nowrap;
 }
- 
+
 .nav a:hover {
   color: #e2001a;
 }
- 
-/* =====================
-   MAIN CONTENT
-===================== */
+
+/*  MAIN CONTENT */
 .content {
   padding: 40px 24px;
 }
- 
-/* =====================
-   FEEDBACK BOX — bigger, fluid
-===================== */
+
+/* FEEDBACK BOX: bigger and fluid */
 .feedbackBox {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   margin-top: 30px;
 }
- 
+
 .feedbackContainer {
   background-color: #d6eaf8;
-  padding: 48px 56px 52px;       /* bigger padding than before */
+  padding: 48px 56px 52px; 
   border-radius: 18px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
   width: clamp(340px, 75vw, 900px); /* fluid: grows and shrinks with window */
@@ -330,7 +225,7 @@ body.dark .header-btn:hover {
   position: relative;
   border: 2px solid #a8cce4;
 }
- 
+
 /* Close button */
 .closeBtn {
   position: absolute;
@@ -344,11 +239,11 @@ body.dark .header-btn:hover {
   line-height: 1;
   transition: color 0.2s;
 }
- 
+
 .closeBtn:hover {
   color: #e2001a;
 }
- 
+
 /* Title */
 .feedbackContainer h1 {
   text-align: center;
@@ -357,7 +252,7 @@ body.dark .header-btn:hover {
   margin-bottom: 32px;
   color: #111;
 }
- 
+
 /* Labels */
 .label {
   font-size: 16px;
@@ -366,7 +261,7 @@ body.dark .header-btn:hover {
   margin-top: 24px;
   color: #222;
 }
- 
+
 /* Textarea */
 .textBox {
   width: 100%;
@@ -382,20 +277,18 @@ body.dark .header-btn:hover {
   outline: none;
   transition: border-color 0.2s;
 }
- 
+
 .textBox:focus {
   border-color: #5a9fd4;
 }
- 
-/* =====================
-   FEEDBACK DROPDOWN
-===================== */
+
+/* Feedback dropwdown */
 .FeedDropdown {
   position: relative;
   display: inline-block;
   margin-top: 8px;
 }
- 
+
 .dropBtn {
   background-color: #fff;
   color: #333;
@@ -409,11 +302,11 @@ body.dark .header-btn:hover {
   text-align: left;
   transition: background 0.2s;
 }
- 
+
 .dropBtn:hover {
   background-color: blanchedalmond;
 }
- 
+
 .selection {
   display: none;
   position: absolute;
@@ -426,11 +319,11 @@ body.dark .header-btn:hover {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 100;
 }
- 
+
 .selection.open {
   display: block;
 }
- 
+
 .selection a {
   display: block;
   color: #333;
@@ -439,21 +332,19 @@ body.dark .header-btn:hover {
   font-size: 14px;
   transition: background 0.15s;
 }
- 
+
 .selection a:hover {
   background-color: darkgrey;
   color: #fff;
 }
- 
-/* =====================
-   SUBMIT BUTTON
-===================== */
+
+/*  SUBMIT BUTTON */
 .submitWrapper {
   display: flex;
   justify-content: center;
   margin-top: 44px;
 }
- 
+
 .submitBtn {
   background: #fff;
   border: 2px solid #333;
@@ -464,47 +355,47 @@ body.dark .header-btn:hover {
   font-family: inherit;
   cursor: pointer;
   color: #111;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
 }
- 
+
 .submitBtn:hover {
   background: #333;
   color: #fff;
 }
- 
-/* =====================
-   FULLY RESIZABLE — fluid breakpoints
-===================== */
+
+/* making it fully resizable — fluid breakpoints */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
-    display: none;  /* hide text buttons, keep theme toggle */
+    display: none; /* hide text buttons, keep theme toggle */
   }
 }
- 
+
 @media (max-width: 650px) {
   .header-right {
     display: none;
   }
- 
+
   .feedbackContainer {
     padding: 32px 22px 38px;
   }
- 
+
   .nav a {
     margin-right: 16px;
   }
- 
+
   .search-bar input {
     width: 100px;
   }
 }
- 
+
 @media (max-width: 400px) {
   .logo {
     font-size: 16px;
     padding: 8px 12px;
   }
- 
+
   .back-btn {
     display: none;
   }

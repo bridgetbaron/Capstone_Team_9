@@ -4,24 +4,26 @@
   box-sizing: border-box;
 }
 
+/* base page styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #ffffff;
 }
 
-/* HEADER */
+/* main header container */
 .header {
   border-bottom: 1px solid #777;
   padding: 18px 20px 16px;
 }
 
-/* TOP ROW */
+/* top row holds logo, back button, search, and utility nav */
 .top-row {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
+/* logo block */
 .logo {
   background-color: #ff5a52;
   color: #ffffff;
@@ -33,6 +35,7 @@ body {
   justify-content: center;
 }
 
+/* back button kept simple and visible */
 .back-button {
   background: none;
   border: none;
@@ -40,11 +43,12 @@ body {
   cursor: pointer;
 }
 
-/* SEARCH */
+/* search area expands to fill available space */
 .search-area {
   flex: 1;
 }
 
+/* search bar container */
 .search-bar {
   display: flex;
   align-items: center;
@@ -56,23 +60,26 @@ body {
   background-color: #f5f5f5;
 }
 
+/* search icon sizing */
 .search-icon {
-  font-size: 1.5rem; 
+  font-size: 1.5rem;
   padding: 0 12px;
 }
 
+/* search placeholder text */
 .search-text {
   flex: 1;
   color: #333;
 }
 
+/* dropdown on right side of the search bar */
 .search-select {
   border: none;
   background: #ddd;
   padding: 10px;
 }
 
-/* UTILITY NAV */
+/* utility nav for account/cart/settings */
 .utility-nav {
   display: flex;
   gap: 10px;
@@ -86,7 +93,7 @@ body {
   border-radius: 10px;
 }
 
-/* BOTTOM ROW */
+/* bottom row gives space for the theme toggle */
 .bottom-row {
   display: flex;
   justify-content: space-between;
@@ -94,16 +101,31 @@ body {
   padding-left: 180px;
 }
 
-.category-nav {
+/* category navigation row below the header */
+.nav {
   display: flex;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 10px 28px;
+  background: #fff;
+  border-bottom: 1.5px solid #d0d8e4;
 }
 
-.category-nav a {
+.nav a {
+  color: #222;
   text-decoration: underline;
-  color: black;
+  font-size: 14px;
+  margin-right: 28px;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
 }
 
+.nav a:hover {
+  color: #e2001a;
+}
+
+/* theme toggle */
 .theme-toggle {
   display: flex;
   border: 1px solid #555;
@@ -116,7 +138,7 @@ body {
   cursor: pointer;
 }
 
-/* LOADING AREA */
+/* main loading area, fills most of the screen */
 .loading-content {
   height: 80vh;
   display: flex;
@@ -124,7 +146,7 @@ body {
   align-items: center;
 }
 
-/* SPINNER ICON */
+/* static loading circle */
 .spinner {
   width: 40px;
   height: 40px;
