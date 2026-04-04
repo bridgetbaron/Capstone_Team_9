@@ -93,12 +93,11 @@ body {
   border-radius: 10px;
 }
 
-/* bottom row gives space for the theme toggle */
 .bottom-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; 
   margin-top: 10px;
-  padding-left: 180px;
+  padding-right: 5px; /* aligns with header spacing */
 }
 
 /* category navigation row below the header */
