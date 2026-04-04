@@ -2,28 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- makes the page scale properly on different screen sizes -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Lenovo | Loading</title>
+
     <link rel="stylesheet" href="../styles/desktopLoading.css" />
   </head>
   <body>
+    <!-- main desktop header -->
     <header class="header">
       <div class="top-row">
+        <!-- brand/logo block -->
         <div class="logo">Lenovo</div>
 
-        <button class="back-button">←</button>
+        <!-- back button -->
+        <button class="back-button" aria-label="Go back">←</button>
 
+        <!-- search area -->
         <div class="search-area">
           <div class="search-bar">
+            <!-- search icon kept visible for consistency -->
             <span class="search-icon">⌕</span>
             <span class="search-text">Search</span>
 
-            <select class="search-select">
+            <!-- simple dropdown placeholder -->
+            <select class="search-select" aria-label="Select search category">
               <option>Select</option>
             </select>
           </div>
         </div>
 
+        <!-- utility links on the right -->
         <nav class="utility-nav">
           <a href="#">Sign-in / Create Account</a>
           <a href="#">My Cart</a>
@@ -32,13 +43,15 @@
       </div>
 
       <div class="bottom-row">
+        <!-- theme toggle placeholder -->
         <div class="theme-toggle">
-          <button>☾</button>
-          <button>☼</button>
+          <button aria-label="Dark mode">☾</button>
+          <button aria-label="Light mode">☼</button>
         </div>
       </div>
     </header>
 
+    <!-- main product navigation row -->
     <nav class="nav">
       <a href="#">Laptop</a>
       <a href="#">Desktop</a>
@@ -47,6 +60,7 @@
       <a href="#">Accessories</a>
     </nav>
 
+    <!-- main loading state -->
     <main class="loading-content">
       <div class="spinner"></div>
     </main>
