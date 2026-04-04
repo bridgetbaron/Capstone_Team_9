@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Project</title>
+    <link rel="stylesheet" href="../styles/Feedback.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
+        <button class="back-btn">&#8592;</button>
+
+        <!-- Search bar with dropdown -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+
+          <!-- Search dropdown: same style as FeedDropdown -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-btn">&#128100; Sign-in / Create Account</button>
+        <button class="header-btn">&#128722; My Cart</button>
+        <button class="header-btn">&#9881; Settings</button>
+        <button class="theme-toggle" id="themeToggle">🌙☀️</button>
+      </div>
+    </header>
+
+    <!-- header nav -->
+    <nav class="nav">
+      <a href="#">Laptop</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
+
+    <!-- main box for feedback -->
+    <main class="content">
+      <section class="feedbackBox">
+        <div class="feedbackContainer">
+          <!-- Close Button X -->
+          <button class="closeBtn" id="closeBtn" onclick="window.location.href='../index.html'">&times;</button>
+
+          <h1>Feedback Form</h1>
+
+          <p class="label">Any suggestions?</p>
+          <textarea class="textBox" placeholder="Type here..."></textarea>
+
+          <p class="label">What was your experience using our website?</p>
+
+          <!-- The Feedback Dropdown -->
+          <div class="FeedDropdown">
+            <button class="dropBtn" id="dropBtn">Select ▼</button>
+            <div class="selection" id="dropMenu">
+              <a href="#" onclick="selectOption(event, 'Great')">Great</a>
+              <a href="#" onclick="selectOption(event, 'Good')">Good</a>
+              <a href="#" onclick="selectOption(event, 'Okay')">Okay</a>
+              <a href="#" onclick="selectOption(event, 'Bad')">Bad</a>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <div class="submitWrapper">
+            <button class="submitBtn" onclick="window.location.href = 'FeedbackSubmission.html'"> Submit </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // JS for the dropdowns and X button
+      //  Feedback dropdown 
+      const dropBtn = document.getElementById("dropBtn");
+      const dropMenu = document.getElementById("dropMenu");
+
+      dropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAll();
+        dropMenu.classList.toggle("open");
+      });
+
+      function selectOption(e, value) {
+        e.preventDefault();
+        dropBtn.textContent = value + " ▼";
+        dropMenu.classList.remove("open");
+      }
+
+      // Search dropdown 
+      const searchDropBtn = document.getElementById("searchDropBtn");
+      const searchDropMenu = document.getElementById("searchDropMenu");
+
+      searchDropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAll();
+        searchDropMenu.classList.toggle("open");
+      });
+
+      function selectSearch(e, value) {
+        e.preventDefault();
+        searchDropBtn.textContent = value + " ▼";
+        searchDropMenu.classList.remove("open");
+      }
+
+      // Close all dropdowns when clicking outside 
+      function closeAll() {
+        dropMenu.classList.remove("open");
+        searchDropMenu.classList.remove("open");
+      }
+
+      document.addEventListener("click", closeAll);
+
+      // Close button 
+      document
+        .getElementById("closeBtn")
+        .addEventListener("click", function () {
+          document.querySelector(".feedbackBox").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
