@@ -57,7 +57,7 @@ body {
   padding: 6px 10px;
 }
 
-/* SEARCH BAR */
+/* Search designing */
 .search-bar {
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@ body {
   font-size: 15px;
 }
 
-/* SEARCH DROPDOWN (same style as FeedDropdown) */
+/* search dropdown (same style as FeedDropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -141,7 +141,7 @@ body {
   color: #fff;
 }
 
-/* HEADER RIGHT BUTTONS */
+/* right side header btns */
 .header-right {
   display: flex;
   align-items: center;
@@ -165,20 +165,11 @@ body {
   background: #f0f0f0;
 }
 
-.theme-toggle {
-  background: #f0f0f0;
-  border: 1.5px solid #ccc;
-  border-radius: 6px;
-  padding: 7px 12px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .theme-toggle:hover {
   background: #e0e0e0;
 }
 
-/* NAV BAR */
+/* small nav bar */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -202,12 +193,12 @@ body {
   color: #e2001a;
 }
 
-/*  MAIN CONTENT */
+/*  main content */
 .content {
   padding: 40px 24px;
 }
 
-/* FEEDBACK BOX: bigger and fluid */
+/* feedback box: bigger and fluid */
 .feedbackBox {
   display: flex;
   justify-content: center;
@@ -338,7 +329,7 @@ body {
   color: #fff;
 }
 
-/*  SUBMIT BUTTON */
+/*  submit button */
 .submitWrapper {
   display: flex;
   justify-content: center;
@@ -355,9 +346,7 @@ body {
   font-family: inherit;
   cursor: pointer;
   color: #111;
-  transition:
-    background 0.2s,
-    color 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .submitBtn:hover {
