@@ -23,7 +23,7 @@ body {
 }
 
 /* hamburger menu button, mobile stuff */
-.hamburger-btn {
+.hamburgerbtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@ body {
   flex-shrink: 0;
 }
  
-.hamburger-btn span {
+.hamburgerbtn span {
   display: block;
   width: 22px;
   height: 2.5px;
@@ -197,7 +197,7 @@ body {
   background: #f0f0f0;
 }
 
-.theme-toggle {
+.themetoggle {
   background: #f0f0f0;
   border: 1.5px solid #ccc;
   border-radius: 6px;
@@ -206,7 +206,7 @@ body {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.themetoggle:hover {
   background: #e0e0e0;
 }
 

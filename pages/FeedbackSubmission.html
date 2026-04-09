@@ -19,19 +19,23 @@
 
         <!-- Search bar with dropdown -->
         <div class="search-bar">
-          <input type="text" placeholder="Search" />
+          
 
-          <!-- Search dropdown: same style as FeedDropdown -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            <!-- Search dropdown: same style as FeedDropdown -->
+            <div class="SearchDropdown">
+              <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+              <div class="searchSelection" id="searchDropMenu">
+                <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+                <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+                <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+              </div>
             </div>
+              <input type="text" placeholder="Search" />
+              <a href="searchResults.html" class="searchiconlink">
+                <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+              </a>
           </div>
         </div>
-      </div>
 
       <!-- header buttons -->
       <div class="header-right">
@@ -72,23 +76,46 @@
       </section>
 
       <script>
-        // Js for search dropdown
-        
-        // Search dropdown 
-        const searchDropBtn = document.getElementById("searchDropBtn");
-        const searchDropMenu = document.getElementById("searchDropMenu");
+      // JS for the dropdowns 
+      //  Feedback dropdown 
+      const dropBtn = document.getElementById("dropBtn");
+      const dropMenu = document.getElementById("dropMenu");
 
-        searchDropBtn.addEventListener("click", function (e) {
-          e.stopPropagation();
-          closeAll();
-          searchDropMenu.classList.toggle("open");
-        });
+      dropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAll();
+        dropMenu.classList.toggle("open");
+      });
 
-        function selectSearch(e, value) {
-          e.preventDefault();
-          searchDropBtn.textContent = value + " ▼";
-          searchDropMenu.classList.remove("open");
-        }
+      function selectOption(e, value) {
+        e.preventDefault();
+        dropBtn.textContent = value + " ▼";
+        dropMenu.classList.remove("open");
+      }
+
+      // Search dropdown 
+      const searchDropBtn = document.getElementById("searchDropBtn");
+      const searchDropMenu = document.getElementById("searchDropMenu");
+
+      searchDropBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        closeAll();
+        searchDropMenu.classList.toggle("open");
+      });
+
+      function selectSearch(e, value) {
+        e.preventDefault();
+        searchDropBtn.textContent = value + " ▼";
+        searchDropMenu.classList.remove("open");
+      }
+
+      // Close all dropdowns when clicking outside 
+      function closeAll() {
+        dropMenu.classList.remove("open");
+        searchDropMenu.classList.remove("open");
+      }
+
+      document.addEventListener("click", closeAll);
       </script>
     </main>
   </body>
