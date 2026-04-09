@@ -1,0 +1,135 @@
+/* Week10 */
+
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE STYLES */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #333;
+  color: white;
+}
+
+.nav a {
+  color: white;
+  margin-left: 16px;
+  text-decoration: none;
+}
+
+/* CONTENT */
+.content {
+  padding: 24px;
+}
+
+/* NAV HOVER & CLICK FEEDBACK - MOVED OUTSIDE MEDIA QUERY */
+.nav a {
+  color: white;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.3s, color 0.3s, box-shadow 0.2s;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+/* Hover effect */
+.nav a:hover {
+  background-color: #ff5722;
+  color: white;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Click feedback */
+.nav a:active {
+  background-color: #d84315;
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s;
+}
+
+/* Focus state */
+.nav a:focus {
+  outline: 2px solid #ff5722;
+  outline-offset: 2px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Week11 */
+
+/* SEARCH AREA */
+.search-section {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+/* SEARCH INPUT */
+#search {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+/* RESULTS */
+#results li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  list-style: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+/* Add hover for search results too */
+#results li:hover {
+  background-color: #f5f5f5;
+}
+
+#results li:active {
+  background-color: #e0e0e0;
+}
+
+/* LOADING OVERLAY */
+.loader {
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  border: 8px solid #ddd;
+  border-top: 8px solid #ff5722;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* HIDE ELEMENT */
+.hidden {
+  display: none;
+}
+
+/* SPIN ANIMATION */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
