@@ -3,13 +3,21 @@ const navMenu = document.getElementById("nav-menu");
 const themeToggleMobile = document.getElementById("themeToggleMobile");
 const themeToggleDesktop = document.getElementById("themeToggleDesktop");
 
-const searchInput = document.getElementById("searchInput");
+const searchInput =
+  document.getElementById("searchInput") ||
+  document.querySelector(".search-bar input");
 const searchCategory = document.getElementById("searchCategory");
 const categoryPills = document.querySelectorAll(".category-pill");
 
-const desktopFilterInputs = document.querySelectorAll('input[name="desktopFilter"]');
-const desktopSortInputs = document.querySelectorAll('input[name="desktopSort"]');
-const mobileFilterInputs = document.querySelectorAll('input[name="mobileFilter"]');
+const desktopFilterInputs = document.querySelectorAll(
+  'input[name="desktopFilter"]',
+);
+const desktopSortInputs = document.querySelectorAll(
+  'input[name="desktopSort"]',
+);
+const mobileFilterInputs = document.querySelectorAll(
+  'input[name="mobileFilter"]',
+);
 const mobileSortInputs = document.querySelectorAll('input[name="mobileSort"]');
 
 const mobileFilterToggle = document.getElementById("mobileFilterToggle");
@@ -26,6 +34,11 @@ let activeCategory = "all";
 let activeSort = "default";
 let visibleCount = 6;
 
+// this cleans up text so thinkpad x1 still matches even with spaces or symbols
+function normalizeForMatch(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
 function getCards() {
   return Array.from(resultsGrid.querySelectorAll(".result-card"));
 }
@@ -33,7 +46,8 @@ function getCards() {
 function applyThemeButtonLabels() {
   const isDark = document.body.classList.contains("dark");
   if (themeToggleMobile) themeToggleMobile.textContent = isDark ? "☀" : "☾";
-  if (themeToggleDesktop) themeToggleDesktop.textContent = isDark ? "☀️" : "🌙☀️";
+  if (themeToggleDesktop)
+    themeToggleDesktop.textContent = isDark ? "☀️" : "🌙☀️";
 }
 
 function toggleTheme() {
@@ -72,30 +86,58 @@ function syncSortControls() {
 }
 
 function filterAndSortCards() {
+  // this grabs what user typed and gets it ready for exact or partial matching
   const query = searchInput ? searchInput.value.trim().toLowerCase() : "";
+  const normalizedQuery = normalizeForMatch(query);
   let cards = getCards();
 
   cards.forEach((card) => {
     const cardCategory = card.dataset.category;
     const cardName = card.dataset.name.toLowerCase();
-    const cardDesc = card.querySelector(".result-desc").textContent.toLowerCase();
+    const normalizedCardName = normalizeForMatch(card.dataset.name);
+    const cardDesc = card
+      .querySelector(".result-desc")
+      .textContent.toLowerCase();
 
-    const matchesCategory = activeCategory === "all" || cardCategory === activeCategory;
-    const matchesSearch =
-      query === "" || cardName.includes(query) || cardDesc.includes(query);
+    const matchesCategory =
+      activeCategory === "all" || cardCategory === activeCategory;
+    const hasExactMatch =
+      normalizedQuery !== "" && normalizedCardName === normalizedQuery;
+    const hasPartialMatch =
+      normalizedQuery !== "" &&
+      (cardName.includes(query) ||
+        cardDesc.includes(query) ||
+        normalizedCardName.includes(normalizedQuery));
 
-    card.dataset.visible = matchesCategory && matchesSearch ? "true" : "false";
+    // this gives cards a rank so exact match comes first then partial then the rest
+    card.dataset.matchRank =
+      query === "" ? "2" : hasExactMatch ? "0" : hasPartialMatch ? "1" : "2";
+
+    // this keeps category filter working while still letting other models show after best match
+    card.dataset.visible = matchesCategory ? "true" : "false";
   });
 
   let visibleCards = cards.filter((card) => card.dataset.visible === "true");
 
-  if (activeSort === "price-low") {
-    visibleCards.sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
-  } else if (activeSort === "price-high") {
-    visibleCards.sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
-  } else if (activeSort === "name-az") {
-    visibleCards.sort((a, b) => a.dataset.name.localeCompare(b.dataset.name));
-  }
+  // this sorting puts better search matches first then uses selected sort option
+  visibleCards.sort((a, b) => {
+    const matchDiff = Number(a.dataset.matchRank) - Number(b.dataset.matchRank);
+    if (matchDiff !== 0) return matchDiff;
+
+    if (activeSort === "price-low") {
+      return Number(a.dataset.price) - Number(b.dataset.price);
+    }
+
+    if (activeSort === "price-high") {
+      return Number(b.dataset.price) - Number(a.dataset.price);
+    }
+
+    if (activeSort === "name-az") {
+      return a.dataset.name.localeCompare(b.dataset.name);
+    }
+
+    return Number(a.dataset.order) - Number(b.dataset.order);
+  });
 
   visibleCards.forEach((card) => resultsGrid.appendChild(card));
 
@@ -117,7 +159,10 @@ function filterAndSortCards() {
   }
 
   if (loadMoreBtn) {
-    loadMoreBtn.classList.toggle("hidden", shownCount >= visibleCards.length || visibleCards.length === 0);
+    loadMoreBtn.classList.toggle(
+      "hidden",
+      shownCount >= visibleCards.length || visibleCards.length === 0,
+    );
   }
 }
 
@@ -148,7 +193,8 @@ if (menuToggle && navMenu) {
 }
 
 if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
-if (themeToggleDesktop) themeToggleDesktop.addEventListener("click", toggleTheme);
+if (themeToggleDesktop)
+  themeToggleDesktop.addEventListener("click", toggleTheme);
 
 if (searchInput) {
   searchInput.addEventListener("input", () => {
@@ -216,6 +262,18 @@ if (loadMoreBtn) {
 
 function initLoading() {
   if (!skeletonGrid || !resultsGrid) return;
+
+  // this saves original card order so default view can be restored later
+  getCards().forEach((card, index) => {
+    card.dataset.order = String(index);
+  });
+
+  // this reads ?q= from url and puts it in search box when page opens
+  const queryFromUrl = new URLSearchParams(window.location.search).get("q");
+  if (searchInput && queryFromUrl) {
+    searchInput.value = queryFromUrl;
+  }
+
   resultsGrid.classList.add("hidden");
   skeletonGrid.classList.remove("hidden");
 
