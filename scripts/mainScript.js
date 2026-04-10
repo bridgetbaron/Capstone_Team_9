@@ -2,21 +2,25 @@
 const searchDropBtn = document.getElementById("searchDropBtn");
 const searchDropMenu = document.getElementById("searchDropMenu");
 
-searchDropBtn.addEventListener("click", function (e) {
-  e.stopPropagation();
-  searchDropMenu.classList.toggle("open");
- });
+if (searchDropBtn && searchDropMenu) {
+  searchDropBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    searchDropMenu.classList.toggle("open");
+  });
 
+  // Closes the options when user clicks somewhere else
+  document.addEventListener("click", function () {
+    searchDropMenu.classList.remove("open");
+  });
+}
+
+//prevent crashes for mobile
 function selectSearch(e, value) {
   e.preventDefault();
-  searchDropBtn.textContent = value + " ▼";
-  searchDropMenu.classList.remove("open");
- }
+  if (searchDropBtn) searchDropBtn.textContent = value + " ▼";
+  if (searchDropMenu) searchDropMenu.classList.remove("open");
+}
 
-// Closes the options when user clicks somewhere else
-  document.addEventListener("click", function () {
-  searchDropMenu.classList.remove("open");
-  });
 
 // adding in the data from our products selection
 const products = [
@@ -71,7 +75,7 @@ if (searchInput) searchInput.addEventListener("input", () => {
   if (query === "") {
     hideSuggestions();
     showAllCards();
-    resultsText.textContent = "Showing all results";
+    if (resultsText) resultsText.textContent = "Showing all results";
     return;
   }
  
@@ -90,7 +94,7 @@ if (searchInput) searchInput.addEventListener("input", () => {
  
 // Hide suggestions when clicking outside the search bar
 document.addEventListener("click", (e) => {
-  if (!searchBar.contains(e.target)) hideSuggestions();
+  if (searchBar && !searchBar.contains(e.target)) hideSuggestions();
 });
  
 // helps suggest stuff for the user when using the search bar for searching for a product
@@ -118,7 +122,7 @@ function updateSuggestions(matches, query) {
  
       // Clicking a suggestion fills the input and filters the grid
       li.addEventListener("click", () => {
-        searchInput.value = product.name;
+        if (searchInput) searchInput.value = product.name;
         hideSuggestions();
         filterCards(product.name.toLowerCase());
       });
@@ -141,6 +145,8 @@ function hideSuggestions() {
  
 // filters the cards / show or hide deppending on the search 
 function filterCards(query) {
+  if (!resultsGrid) return; // prevents crash on pages without results
+
   const cards = resultsGrid.querySelectorAll(".result-card");
   let visibleCount = 0;
  
@@ -157,14 +163,18 @@ function filterCards(query) {
   });
  
   // Update the results count text
-  if (visibleCount === 0) {
-    resultsText.textContent = `No results found for "${searchInput.value.trim()}"`;
-  } else {
-    resultsText.textContent = `Showing ${visibleCount} result${visibleCount !== 1 ? "s" : ""}`;
+  if (resultsText) {
+    if (visibleCount === 0) {
+      resultsText.textContent = `No results found for "${searchInput.value.trim()}"`;
+    } else {
+      resultsText.textContent = `Showing ${visibleCount} result${visibleCount !== 1 ? "s" : ""}`;
+    }
   }
 }
  
 function showAllCards() {
+  if (!resultsGrid) return; // prevents crash
+
   resultsGrid.querySelectorAll(".result-card").forEach(card => {
     card.style.display = "";
   });
@@ -185,8 +195,11 @@ if (skeletonGrid && resultsGrid) setTimeout(() => {
     card.style.transform = "translateY(0)";
   });
  
-  resultsText.textContent = `Showing ${cards.length} results`;
+  if (resultsText) {
+    resultsText.textContent = `Showing ${cards.length} results`;
+  }
 }, 1500);
+
 
 // feedback page only 
 const dropBtn  = document.getElementById("dropBtn");
