@@ -13,41 +13,49 @@
   <body>
     <!-- main desktop header -->
     <header class="header">
-      <div class="top-row">
+      <div class="header-left">
         <!-- brand/logo block -->
-        <div class="logo">Lenovo</div>
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor: pointer;">
+          Lenovo
+        </div>
 
         <!-- back button -->
-        <button class="back-button" aria-label="Go back">←</button>
+        <button class="back-btn" aria-label="Go back">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
         <!-- search area -->
-        <div class="search-area">
-          <div class="search-bar">
-            <!-- search icon kept visible for consistency -->
-            <span class="search-icon">⌕</span>
-            <span class="search-text">Search</span>
+        <div class="search-bar">
+          <input type="text" placeholder="Search" aria-label="Search" />
 
-            <!-- simple dropdown placeholder -->
-            <select class="search-select" aria-label="Select search category">
-              <option>Select</option>
-            </select>
+          <!-- simple dropdown placeholder -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" type="button">Select ▼</button>
           </div>
         </div>
-
-        <!-- utility links on the right -->
-        <nav class="utility-nav">
-          <a href="#">Sign-in / Create Account</a>
-          <a href="#">My Cart</a>
-          <a href="#">Settings</a>
-        </nav>
       </div>
 
-      <div class="bottom-row">
+      <!-- utility links on the right -->
+      <div class="header-right">
+        <button class="header-btn" type="button">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+
+        <button class="header-btn" type="button">
+          <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" />
+          My Cart
+        </button>
+
+        <button class="header-btn" type="button">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+
         <!-- theme toggle placeholder -->
-        <div class="theme-toggle">
-          <button aria-label="Dark mode">☾</button>
-          <button aria-label="Light mode">☼</button>
-        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme">
+          <img src="../images/sun-and-moon.png" alt="Theme Toggle" class="header-icon" />
+        </button>
       </div>
     </header>
 
@@ -62,7 +70,10 @@
 
     <!-- main loading state -->
     <main class="loading-content">
-      <div class="spinner"></div>
+      <div class="loading-box">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Loading results...</p>
+      </div>
     </main>
   </body>
 </html>

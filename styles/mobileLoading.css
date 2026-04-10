@@ -4,90 +4,169 @@
   box-sizing: border-box;
 }
 
+/* base page styles for the mobile loading screen */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #efefef;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f5f7fa;
+  color: #111;
+  min-width: 320px;
 }
 
-.mobile-header {
+/* shared icon sizing so the header looks like the other pages */
+.header-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* mobile header follows the same structure as the other mobile pages */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 16px;
+  min-height: 80px;
+  background: #fff;
+  border-bottom: 2px solid #d0d8e4;
+  gap: 12px;
+}
+
+.header-left {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 14px 12px;
-  border-bottom: 1px solid #8a8a8a;
-  background-color: #efefef;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
 }
 
-.icon-button {
+/* hamburger lines match the rest of the project more closely */
+.hamburger-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
   background: none;
   border: none;
-  color: #111;
   cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
 }
 
-.back-button {
-  font-size: 2rem;
-  line-height: 1;
+.hamburger-btn span {
+  display: block;
+  width: 22px;
+  height: 2.5px;
+  background: #111;
+  border-radius: 2px;
 }
 
-.menu-button {
-  font-size: 2rem;
-  line-height: 1;
+/* back button */
+.back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  flex-shrink: 0;
 }
 
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* search bar is now styled the same way as the main mobile pages */
 .search-bar {
-  flex: 1;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border: 2px solid #7f7f7f;
-  border-radius: 14px;
-  background-color: #f7f7f7;
+  border: 1.5px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  height: 42px;
+  flex: 1;
+  min-width: 0;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
   padding: 8px 12px;
-  min-height: 48px;
+  font-size: 14px;
+  width: 100%;
+  font-family: inherit;
+  background: transparent;
 }
 
-.search-icon {
-  width: 16px;
-  height: 16px;
-  border: 2px solid #222;
-  border-radius: 50%;
-  position: relative;
-  margin-right: 6px;
+/* theme button kept simple so it matches the shared header style */
+.theme-toggle {
+  background: #f0f0f0;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 7px 10px;
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
-.search-icon::after {
-  content: "";
-  position: absolute;
-  width: 8px;
-  height: 2px;
-  background: #222;
-  bottom: -4px;
-  right: -5px;
-  transform: rotate(45deg);
+.theme-toggle:hover {
+  background: #e0e0e0;
 }
 
-.search-text {
-  font-size: 1.15rem;
-  color: #222;
-}
-
+/* main loading area */
 .loading-container {
-  min-height: calc(100vh - 77px);
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px;
 }
 
+/* little card helps the page feel less empty while loading */
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #d0d8e4;
+  border-radius: 12px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.loading-box p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* animated spinner */
 .spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #bbb;
-  border-top: 4px solid #555;
+  width: 42px;
+  height: 42px;
+  border: 4px solid #d9d9d9;
+  border-top: 4px solid #e2001a;
   border-radius: 50%;
+  animation: spin 0.9s linear infinite;
 }
 
-.mobile-header {
-  padding: 16px;
+/* simple loading animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* a couple of small tweaks for very narrow phones */
+@media (max-width: 420px) {
+  .header {
+    padding: 16px 12px;
+  }
+
+  .header-left {
+    gap: 8px;
+  }
+
+  .loading-box {
+    width: 100%;
+    max-width: 280px;
+  }
 }
