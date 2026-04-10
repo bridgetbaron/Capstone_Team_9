@@ -24,7 +24,7 @@ function selectSearch(e, value) {
 
 // adding in the data from our products selection
 const products = [
-  { name: "ThinkPad X1",     category: "ThinkPad",  price: 1935.46 },
+  { name: "ThinkPad X1",     category: "ThinkPad",  price: 1699.99},
   { name: "Yoga Pro 9i",     category: "Yoga",      price: 1699.99 },
   { name: "ThinkPad X9",     category: "ThinkPad",  price: 1539.00 },
   { name: "ThinkPad T16",    category: "ThinkPad",  price: 1379.00 },
@@ -143,66 +143,6 @@ function hideSuggestions() {
   suggestionBox.style.pointerEvents = "none";
 }
 
-//for the search page (dont know if it works yet)
- 
-// filters the cards / show or hide deppending on the search 
-function filterCards(query) {
-  if (!resultsGrid) return; // prevents crash on pages without results
-
-  const cards = resultsGrid.querySelectorAll(".result-card");
-  let visibleCount = 0;
- 
-  cards.forEach(card => {
-    const name     = card.dataset.name.toLowerCase();
-    const category = card.dataset.category.toLowerCase();
- 
-    if (name.includes(query) || category.includes(query)) {
-      card.style.display = "";
-      visibleCount++;
-    } else {
-      card.style.display = "none";
-    }
-  });
- 
-  // Update the results count text
-  if (resultsText) {
-    if (visibleCount === 0) {
-      resultsText.textContent = `No results found for "${searchInput.value.trim()}"`;
-    } else {
-      resultsText.textContent = `Showing ${visibleCount} result${visibleCount !== 1 ? "s" : ""}`;
-    }
-  }
-}
- 
-function showAllCards() {
-  if (!resultsGrid) return; // prevents crash
-
-  resultsGrid.querySelectorAll(".result-card").forEach(card => {
-    card.style.display = "";
-  });
-}
- 
-// special animations for laoding in the page 
-if (skeletonGrid && resultsGrid) setTimeout(() => {
-  skeletonGrid.classList.add("hidden");
-  resultsGrid.classList.remove("hidden");
- 
-  const cards = resultsGrid.querySelectorAll(".result-card");
-  cards.forEach((card, i) => {
-    card.style.opacity = "0";
-    card.style.transform = "translateY(16px)";
-    card.style.transition = `opacity 0.3s ease ${i * 0.08}s, transform 0.3s ease ${i * 0.08}s`;
-    void card.offsetWidth; // force browser to register the starting state
-    card.style.opacity = "1";
-    card.style.transform = "translateY(0)";
-  });
- 
-  if (resultsText) {
-    resultsText.textContent = `Showing ${cards.length} results`;
-  }
-}, 1500);
-
-
 // feedback page only 
 const dropBtn  = document.getElementById("dropBtn");
 const dropMenu = document.getElementById("dropMenu");
@@ -223,4 +163,40 @@ function selectOption(e, value) {
   e.preventDefault();
   if (dropBtn) dropBtn.textContent = value + " ▼";
   if (dropMenu) dropMenu.classList.remove("open");
+}
+
+// showing Loading indicators for submitting feedback form
+const submitBtn = document.querySelector(".submitBtn");
+ 
+if (submitBtn) {
+  // fades the container when submitting
+  submitBtn.addEventListener("click", function (e) {
+ 
+    // Change button text to show something is happening
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    submitBtn.style.opacity = "6s";
+    submitBtn.style.cursor = "not-allowed";
+ 
+    // After 1.5s the form is submitted and go to the submission page
+    setTimeout(() => {
+      window.location.href = "FeedbackSubmission.html";
+    }, 1500);
+  });
+}
+ 
+//animation for the feedback page, fades in the container 
+const feedbackContainer = document.querySelector(".feedbackContainer");
+ 
+if (feedbackContainer) {
+  // Start invisible and slightly below
+  feedbackContainer.style.opacity = "0";
+  feedbackContainer.style.transform = "translateY(24px)";
+  feedbackContainer.style.transition = "opacity 3s ease, transform 3s ease";
+ 
+  // Small delay so the browser has painted the page first
+  setTimeout(() => {
+    feedbackContainer.style.opacity = "1";
+    feedbackContainer.style.transform = "translateY(0)";
+  }, 100);
 }
