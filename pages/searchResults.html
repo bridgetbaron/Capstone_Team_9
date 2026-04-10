@@ -14,21 +14,24 @@
             <img src="../images/arrow.png" alt="Back" class="header-icon" />
           </button>
 
-        <!-- Search bar with custom dropdown -->
-        <div class="search-bar">
-          <input type="text" placeholder="Search" />
-
-          <!-- Search dropdown (same style as FeedDropdown) -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
-            </div>
+            <!-- Search bar with dropdown -->
+            <div class="search-bar">
+                <!-- Search dropdown: same style as FeedDropdown -->
+                <div class="SearchDropdown">
+                  <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+                  <div class="searchSelection" id="searchDropMenu">
+                    <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+                    <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+                    <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+                  </div>
+                </div>
+                  <input type="text" placeholder="Search" />
+                  <a href="searchResults.html" class="searchiconlink">
+                    <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+                  </a>
+              </div>
           </div>
-        </div>
-      </div>
+          <!-- end of search bar code -->
 
       <div class="header-right">
           <button class="header-btn">

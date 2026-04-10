@@ -93,27 +93,6 @@
         </div>
       </section>
     </main>
-
-    <script>
-      // Search dropdown still not working
-      const searchDropBtn = document.getElementById("searchDropBtn");
-      const searchDropMenu = document.getElementById("searchDropMenu");
-
-      searchDropBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        searchDropMenu.classList.toggle("open");
-      });
-
-      function selectSearch(e, value) {
-        e.preventDefault();
-        searchDropBtn.textContent = value + " ▼";
-        searchDropMenu.classList.remove("open");
-      }
-
-      // Close when clicking outside
-      document.addEventListener("click", function () {
-        searchDropMenu.classList.remove("open");
-      });
-    </script>
+      <script src="../scripts/mainScript.js"></script>
   </body>
 </html>

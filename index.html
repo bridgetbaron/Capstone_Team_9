@@ -14,21 +14,25 @@
             <img src="images/arrow.png" alt="Back" class="header-icon" />
           </button>
 
-        <!-- search bar-->
-        <div class="search-bar">
-          <input type="text" placeholder="Search" />
-
-          <!-- the dropdown that appears in the search bar and helps to narrow down search options -->
-          <div class="SearchDropdown">
-            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-            <div class="searchSelection" id="searchDropMenu">
-              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            <!-- Search bar with dropdown -->
+            <div class="search-bar">
+              <!-- the dropdown that appears in the search bar and helps to narrow down search options -->
+              <div class="SearchDropdown">
+                <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+                <div class="searchSelection" id="searchDropMenu">
+                  <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+                  <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+                  <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+                </div>
+              </div>
+                <input type="text" placeholder="Search" />
+                <a href="searchResults.html" class="searchiconlink">
+                  <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+                </a>
             </div>
-          </div>
         </div>
-      </div>
+
+
       <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
           <button class="header-btn">
@@ -189,5 +193,6 @@
       </div>
       <a href="/pages/feedBack.html">Give Feedback</a>
     </footer>
+    <script src="scripts/mainScript.js"></script>
   </body>
 </html>

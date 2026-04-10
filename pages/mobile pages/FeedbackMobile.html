@@ -69,55 +69,6 @@
         </div>
       </section>
     </main>
-
-    <script>
-      // JS for the dropdowns and X button
-      //  Feedback dropdown 
-      const dropBtn = document.getElementById("dropBtn");
-      const dropMenu = document.getElementById("dropMenu");
-
-      dropBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        closeAll();
-        dropMenu.classList.toggle("open");
-      });
-
-      function selectOption(e, value) {
-        e.preventDefault();
-        dropBtn.textContent = value + " ▼";
-        dropMenu.classList.remove("open");
-      }
-
-      // Search dropdown 
-      const searchDropBtn = document.getElementById("searchDropBtn");
-      const searchDropMenu = document.getElementById("searchDropMenu");
-
-      searchDropBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        closeAll();
-        searchDropMenu.classList.toggle("open");
-      });
-
-      function selectSearch(e, value) {
-        e.preventDefault();
-        searchDropBtn.textContent = value + " ▼";
-        searchDropMenu.classList.remove("open");
-      }
-
-      // Close all dropdowns when clicking outside 
-      function closeAll() {
-        dropMenu.classList.remove("open");
-        searchDropMenu.classList.remove("open");
-      }
-
-      document.addEventListener("click", closeAll);
-
-      // Close button 
-      document
-        .getElementById("closeBtn")
-        .addEventListener("click", function () {
-          document.querySelector(".feedbackBox").style.display = "none";
-        });
-    </script>
+    <script src="../../scripts/mainScript.js"></script>
   </body>
 </html>
