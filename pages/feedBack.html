@@ -18,7 +18,7 @@
 
         <!-- Search bar with dropdown -->
         <div class="search-bar">
-          <input type="text" placeholder="Search" />
+          
 
           <!-- Search dropdown: same style as FeedDropdown -->
           <div class="SearchDropdown">
@@ -29,6 +29,10 @@
               <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
             </div>
           </div>
+            <input type="text" placeholder="Search" />
+            <a href="searchResults.html" class="searchiconlink">
+              <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+            </a>
         </div>
       </div>
 
@@ -42,7 +46,7 @@
           <button class="header-btn">
             <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
           </button>
-          <button class="theme-toggle" id="themeToggle">
+          <button class="themetoggle" id="themeToggle">
             <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
           </button>
         </div>
@@ -84,53 +88,11 @@
 
           <!-- Submit button -->
           <div class="submitWrapper">
-            <button class="submitBtn" onclick="window.location.href = 'FeedbackSubmission.html'"> Submit </button>
+            <button class="submitBtn"> Submit </button>
           </div>
         </div>
       </section>
     </main>
-
-    <script>
-      // JS for the dropdowns and X button
-      //  Feedback dropdown 
-      const dropBtn = document.getElementById("dropBtn");
-      const dropMenu = document.getElementById("dropMenu");
-
-      dropBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        closeAll();
-        dropMenu.classList.toggle("open");
-      });
-
-      function selectOption(e, value) {
-        e.preventDefault();
-        dropBtn.textContent = value + " ▼";
-        dropMenu.classList.remove("open");
-      }
-
-      // Search dropdown 
-      const searchDropBtn = document.getElementById("searchDropBtn");
-      const searchDropMenu = document.getElementById("searchDropMenu");
-
-      searchDropBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        closeAll();
-        searchDropMenu.classList.toggle("open");
-      });
-
-      function selectSearch(e, value) {
-        e.preventDefault();
-        searchDropBtn.textContent = value + " ▼";
-        searchDropMenu.classList.remove("open");
-      }
-
-      // Close all dropdowns when clicking outside 
-      function closeAll() {
-        dropMenu.classList.remove("open");
-        searchDropMenu.classList.remove("open");
-      }
-
-      document.addEventListener("click", closeAll);
-    </script>
+      <script src="../scripts/mainScript.js"></script>
   </body>
 </html>

@@ -9,16 +9,20 @@
   <body>
     <header class="header">
       <div class="header-left">
-        <div class="logo">Lenovo</div>
-          <button class="back-btn">
-            <img src="../images/arrow.png" alt="Back" class="header-icon" />
-          </button>
+        <div
+          class="logo"
+          onclick="window.location.href = '../index.html'"
+          style="cursor: pointer"
+        >
+          Lenovo
+        </div>
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
-        <!-- Search bar with custom dropdown -->
+        <!-- Search bar with dropdown -->
         <div class="search-bar">
-          <input type="text" placeholder="Search" />
-
-          <!-- Search dropdown (same style as FeedDropdown) -->
+          <!-- Search dropdown: same style as FeedDropdown -->
           <div class="SearchDropdown">
             <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
             <div class="searchSelection" id="searchDropMenu">
@@ -27,23 +31,43 @@
               <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
             </div>
           </div>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img
+              src="../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
         </div>
       </div>
+      <!-- end of search bar code -->
 
       <div class="header-right">
-          <button class="header-btn">
-            <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="theme-toggle" id="themeToggle">
-            <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+        <button class="header-btn">
+          <img
+            src="../images/shopping-cart.png"
+            alt="My Cart"
+            class="header-icon"
+          />
+          My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+        <button class="theme-toggle" id="themeToggle">
+          <img
+            src="../images/sun-and-moon.png"
+            alt="Dark Mode"
+            class="header-icon"
+          />
+        </button>
+      </div>
     </header>
     <!-- NAV -->
     <nav class="nav">
@@ -237,7 +261,9 @@
           <div class="skeleton-card"></div>
         </div>
 
+        <!-- these cards use the same pics from home page so it all matches up -->
         <div class="results-grid hidden" id="resultsGrid">
+          <!-- this is the thinkpad x1 card with pic and price on search results -->
           <article
             class="result-card"
             data-category="ThinkPad"
@@ -245,7 +271,7 @@
             data-name="ThinkPad X1"
           >
             <img
-              src="images/thinkpadx1.avif"
+              src="../images/thinkpadx1.png"
               alt="ThinkPad X1"
               class="result-image"
             />
@@ -259,6 +285,7 @@
             <button class="shop-btn" type="button">Shop</button>
           </article>
 
+          <!-- this is the yoga pro 9i card with pic and price on search results -->
           <article
             class="result-card"
             data-category="Yoga"
@@ -266,7 +293,7 @@
             data-name="Yoga Pro 9i"
           >
             <img
-              src="images/thinkpadx9.webp"
+              src="../images/yogapro.png"
               alt="Yoga Pro 9i"
               class="result-image"
             />
@@ -278,6 +305,7 @@
             <button class="shop-btn" type="button">Shop</button>
           </article>
 
+          <!-- this is the thinkpad x9 card with pic and price on search results -->
           <article
             class="result-card"
             data-category="ThinkPad"
@@ -285,7 +313,7 @@
             data-name="ThinkPad X9"
           >
             <img
-              src="images/thinkpadx9.webp"
+              src="../images/thinkpadx9.png"
               alt="ThinkPad X9"
               class="result-image"
             />
@@ -299,6 +327,7 @@
             <button class="shop-btn" type="button">Shop</button>
           </article>
 
+          <!-- this is the thinkpad t16 card with pic and price on search results -->
           <article
             class="result-card"
             data-category="ThinkPad"
@@ -306,7 +335,7 @@
             data-name="ThinkPad T16"
           >
             <img
-              src="images/thinkpadt16.webp"
+              src="../images/thinkpadt16.png"
               alt="ThinkPad T16"
               class="result-image"
             />
@@ -318,6 +347,7 @@
             <button class="shop-btn" type="button">Shop</button>
           </article>
 
+          <!-- this is the thinkpad p16 card with pic and price on search results -->
           <article
             class="result-card"
             data-category="ThinkPad"
@@ -325,7 +355,7 @@
             data-name="ThinkPad P16"
           >
             <img
-              src="images/thinkpadp16.webp"
+              src="../images/thinkpadp16.png"
               alt="ThinkPad P16"
               class="result-image"
             />
@@ -337,6 +367,7 @@
             <button class="shop-btn" type="button">Shop</button>
           </article>
 
+          <!-- this is the thinkpad 2-in-1 card with pic and price on search results -->
           <article
             class="result-card"
             data-category="ThinkPad"
@@ -344,7 +375,7 @@
             data-name="ThinkPad 2-in-1"
           >
             <img
-              src="images/thinkpad21.webp"
+              src="../images/thinkpad21.png"
               alt="ThinkPad 2-in-1"
               class="result-image"
             />
@@ -365,6 +396,8 @@
       </section>
     </main>
 
-    <script src="../script.js"></script>
+    <!-- this loads the search page js so filtering and top match ranking can work -->
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/mainScript.js"></script>
   </body>
 </html>

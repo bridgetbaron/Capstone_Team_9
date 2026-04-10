@@ -23,7 +23,7 @@ body {
 }
 
 /* hamburger menu button, mobile stuff */
-.hamburger-btn {
+.hamburgerbtn {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,7 +35,7 @@ body {
   flex-shrink: 0;
 }
  
-.hamburger-btn span {
+.hamburgerbtn span {
   display: block;
   width: 22px;
   height: 2.5px;
@@ -89,13 +89,13 @@ body {
   padding: 6px 10px;
 }
 
-/* search bar styling */
+/* Search designing */
 .search-bar {
   display: flex;
   align-items: center;
   border: 1.5px solid #bbb;
   border-radius: 6px;
-  overflow: visible;
+  overflow: visible; /* will allow dropdown to overflow */
   background: #fff;
   height: 42px;
 }
@@ -105,18 +105,34 @@ body {
   outline: none;
   padding: 8px 12px;
   font-size: 14px;
-  width: clamp(120px, 35vw, 300px);
+  width: clamp(120px, 35vw, 300px); /* fluid width */
   font-family: inherit;
   background: transparent;
+  height: auto;
+  overflow: hidden;
 }
 
-.search-icon {
-  padding-left: 12px;
-  color: #888;
-  font-size: 15px;
+
+.searchiconlink {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-left: 1.5px solid #bbb;
+  height: 100%;
+  transition: background 0.2s;
 }
 
-/* search dropdown styling */
+.searchiconlink:hover {
+  background-color: #f0f0f0;
+}
+
+.searchiconlink img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+}
+
+/* search dropdown (same style as FeedDropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -129,13 +145,14 @@ body {
   padding: 0 14px;
   height: 100%;
   border: none;
-  border-left: 1.5px solid #bbb;
+  border-left: none;
+  border-right: 1.5px solid #bbb; /* border is now on the RIGHT side */
+  border-radius: 0 4px 4px 0;
   font-size: 13px;
   font-family: inherit;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s;
-  border-radius: 0 4px 4px 0;
 }
 
 .searchDropBtn:hover {
@@ -146,7 +163,8 @@ body {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  right: auto;
+  left: 0;
   background-color: #fff;
   min-width: 130px;
   border: 1.5px solid #bbb;
@@ -197,7 +215,7 @@ body {
   background: #f0f0f0;
 }
 
-.theme-toggle {
+.themetoggle {
   background: #f0f0f0;
   border: 1.5px solid #ccc;
   border-radius: 6px;
@@ -206,7 +224,7 @@ body {
   cursor: pointer;
 }
 
-.theme-toggle:hover {
+.themetoggle:hover {
   background: #e0e0e0;
 }
 
