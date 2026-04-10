@@ -175,7 +175,7 @@ if (submitBtn) {
     // Change button text to show something is happening
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
-    submitBtn.style.opacity = "6s";
+    submitBtn.style.opacity = "3s";
     submitBtn.style.cursor = "not-allowed";
  
     // After 1.5s the form is submitted and go to the submission page
@@ -189,7 +189,7 @@ if (submitBtn) {
 const feedbackContainer = document.querySelector(".feedbackContainer");
  
 if (feedbackContainer) {
-  // Start invisible and slightly below
+  // Starts invisible and slightly below
   feedbackContainer.style.opacity = "0";
   feedbackContainer.style.transform = "translateY(24px)";
   feedbackContainer.style.transition = "opacity 3s ease, transform 3s ease";
@@ -200,3 +200,22 @@ if (feedbackContainer) {
     feedbackContainer.style.transform = "translateY(0)";
   }, 100);
 }
+
+//loading anytime going to another page
+// creating a white overlay with a spinning circle and hide it
+const spinner = document.createElement("div");
+spinner.innerHTML = `
+  <div style="width:40px; 
+  height:40px; border:4px solid #ddd; 
+  border-top-color:#e2001a; border-radius:50%; 
+  animation:spin 0.7s linear infinite;">
+  </div>
+  <style>@keyframes spin { to { transform:rotate(360deg); } }</style>
+`;
+spinner.style.cssText = "display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.85); z-index:9999; align-items:center; justify-content:center;";
+document.body.appendChild(spinner);
+ 
+// show the spinner whenever the page is leaving
+window.addEventListener("beforeunload", function() {
+  spinner.style.display = "flex";
+});
