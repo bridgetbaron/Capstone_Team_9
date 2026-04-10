@@ -142,6 +142,8 @@ function hideSuggestions() {
   suggestionBox.style.transform = "translateY(-4px)";
   suggestionBox.style.pointerEvents = "none";
 }
+
+//for the search page (dont know if it works yet)
  
 // filters the cards / show or hide deppending on the search 
 function filterCards(query) {
