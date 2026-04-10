@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThinkPad X1 Carbon</title>
+    <link rel="stylesheet" href="../../styles/Feedback.css" />
+    <link rel="stylesheet" href="../../styles/product.css" />
+  </head>
+  <body>
+ 
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
+        <button class="back-btn">
+          <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+ 
+        <!-- Search bar with dropdown -->
+        <div class="search-bar">
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+          <input type="text" placeholder="Search" />
+          <a href="../../pages/searchResults.html" class="searchiconlink">
+            <img src="../../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+          </a>
+        </div>
+      </div>
+ 
+      <div class="header-right">
+        <button class="header-btn">
+          <img src="../../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
+        </button>
+        <button class="header-btn">
+          <img src="../../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../../images/setting.png" alt="Settings" class="header-icon" /> Settings
+        </button>
+        <button class="themetoggle" id="themeToggle">
+          <img src="../../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
+        </button>
+      </div>
+    </header>
+ 
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="#">Laptop</a>
+      <a href="#">Desktop</a>
+      <a href="#">Software</a>
+      <a href="#">Tablet</a>
+      <a href="#">Accessories</a>
+    </nav>
+ 
+    <!-- Product content -->
+    <main class="product-page">
+ 
+      <!-- Product image -->
+      <div class="product-image-wrap">
+        <img src="../../images/thinkpadx1.png" alt="ThinkPad X1 Carbon" />
+      </div>
+ 
+      <!-- Product info -->
+      <div class="product-info">
+ 
+        <div>
+          <p class="product-category">ThinkPad</p>
+          <h1 class="product-name">ThinkPad X1 Carbon</h1>
+          <p class="product-desc">14" premium laptop with Intel Core Ultra processor</p>
+        </div>
+ 
+        <div class="product-price-wrap">
+          <p class="product-price-label">Starting at</p>
+          <p class="product-price">$1,935.46</p>
+        </div>
+ 
+        <button class="cart-btn" id="cartBtn">Add to cart</button>
+ 
+        <p class="cart-confirm" id="cartConfirm">Added to cart</p>
+ 
+      </div>
+    </main>
+ 
+    <script src="../../scripts/mainScript.js"></script>
+    <script>
+      const cartBtn     = document.getElementById("cartBtn");
+      const cartConfirm = document.getElementById("cartConfirm");
+ 
+      cartBtn.addEventListener("click", () => {
+        cartBtn.textContent = "Adding...";
+        cartBtn.disabled = true;
+ 
+        setTimeout(() => {
+          cartBtn.textContent = "Add to cart";
+          cartBtn.disabled = false;
+          cartConfirm.style.opacity = "1";
+          setTimeout(() => cartConfirm.style.opacity = "0", 2000);
+        }, 900);
+      });
+    </script>
+ 
+  </body>
+</html>
