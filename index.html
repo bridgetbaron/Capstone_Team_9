@@ -9,8 +9,14 @@
   <body>
     <header class="header">
       <div class="header-left">
-        <div class="logo">Lenovo</div>
-        <button class="back-btn">
+        <div
+          class="logo"
+          onclick="window.location.href='index.html'"
+          style="cursor: pointer;"
+        >
+          Lenovo
+        </div>
+        <button class="back-btn" onclick="window.location.href='index.html'">
           <img src="images/arrow.png" alt="Back" class="header-icon" />
         </button>
 
@@ -27,8 +33,9 @@
           </div>
           <input type="text" placeholder="Search" />
           <a href="pages/searchResults.html" class="searchiconlink">
+            <!-- root page uses the root images folder -->
             <img
-              src="../images/search-interface-symbol.png"
+              src="images/search-interface-symbol.png"
               alt="Search"
               class="search-icon"
             />
@@ -77,23 +84,23 @@
       <section id="product-nav">
         <div class="product-item-wrapper">
           <img src="../images/thinkpad.png" alt="" />
-          <a href="">ThinkPad</a>
+          <a href="pages/searchResults.html?q=ThinkPad">ThinkPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../images/yoga.png" alt="" />
-          <a href="">Yoga</a>
+          <a href="pages/searchResults.html?q=Yoga">Yoga</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../images/ideapad.png" alt="" />
-          <a href="">IdeaPad</a>
+          <a href="pages/searchResults.html?q=IdeaPad">IdeaPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../images/legion.png" alt="" />
-          <a href="">Legion</a>
+          <a href="pages/searchResults.html?q=Legion">Legion</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../images/thinkbook.png" alt="" />
-          <a href="">ThinkBook</a>
+          <a href="pages/searchResults.html?q=ThinkBook">ThinkBook</a>
         </div>
       </section>
       <section id="product-section">

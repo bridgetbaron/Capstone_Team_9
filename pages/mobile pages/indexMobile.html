@@ -9,52 +9,64 @@
   <body>
     <header class="header">
       <div class="header-left">
-          <button class="hamburgerbtn" onclick="window.location.href='mobileMenu.html'">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-            <button class="back-btn">
-                <img src="../../images/arrow.png" alt="Back" class="header-icon" />
-            </button>
+        <!-- this matches the existing mobile menu button styling in the css -->
+        <button
+          class="hamburger-btn"
+          onclick="window.location.href='mobileMenu.html'"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="back-btn" onclick="window.location.href='indexMobile.html'">
+          <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
         <!-- search bar -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
           <a href="searchMobile.html" class="searchiconlink">
-            <img src="../../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+            <img
+              src="../../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
           </a>
         </div>
+      </div>
 
-        <button class="themetoggle" id="themeToggle">
-         <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
-        </button>
-
+      <button class="theme-toggle" id="themeToggle">
+        <img
+          src="../../images/sun-and-moon.png"
+          alt="Toggle Theme"
+          class="header-icon"
+        />
+      </button>
     </header>
-
 
     <main>
       <!-- this is the product navigation section where you can choose from 5 different versions of lenovo products -->
       <section id="product-nav">
         <div class="product-item-wrapper">
           <img src="../../images/thinkpad.png" alt="" />
-          <a href="">ThinkPad</a>
+          <a href="searchMobile.html?q=ThinkPad">ThinkPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/yoga.png" alt="" />
-          <a href="">Yoga</a>
+          <a href="searchMobile.html?q=Yoga">Yoga</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/ideapad.png" alt="" />
-          <a href="">IdeaPad</a>
+          <a href="searchMobile.html?q=IdeaPad">IdeaPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/legion.png" alt="" />
-          <a href="">Legion</a>
+          <a href="searchMobile.html?q=Legion">Legion</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/thinkbook.png" alt="" />
-          <a href="">ThinkBook</a>
+          <a href="searchMobile.html?q=ThinkBook">ThinkBook</a>
         </div>
       </section>
       <section id="product-section">
@@ -70,7 +82,7 @@
                   <p>$1,935.46</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Thinkpadxone.html">More...</a>
                 </div>
               </div>
             </div>
@@ -83,7 +95,7 @@
                   <p>$1,699.99</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Yogapro9i.html">More...</a>
                 </div>
               </div>
             </div>
@@ -96,7 +108,7 @@
                   <p>$1,539.00</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Thinkpadx9.html">More...</a>
                 </div>
               </div>
             </div>
@@ -109,7 +121,7 @@
                   <p>$1,379.00</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Thinkpadt16.html">More...</a>
                 </div>
               </div>
             </div>
@@ -122,7 +134,7 @@
                   <p>$2,539.00</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Thinkpadp16.html">More...</a>
                 </div>
               </div>
             </div>
@@ -135,7 +147,7 @@
                   <p>$1,519.00</p>
                 </div>
                 <div>
-                  <a href="">More...</a>
+                  <a href="../product pages/Thinkpad2in1.html">More...</a>
                 </div>
               </div>
             </div>
@@ -157,10 +169,11 @@
         </div>
       </section>
 
-        <div class="load-more-wrapper">
-          <button class="load-more-btn" onclick="window.location.href='moreResultsMobile.html'">Load more results</button>
-        </div>
-      
+      <div class="load-more-wrapper">
+        <button class="load-more-btn" onclick="window.location.href='moreResultsMobile.html'">
+          Load more results
+        </button>
+      </div>
     </main>
     <footer>
       <div class="footer-info-wrapper">

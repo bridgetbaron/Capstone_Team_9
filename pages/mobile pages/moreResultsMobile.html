@@ -9,53 +9,64 @@
   <body>
     <header class="header">
       <div class="header-left">
-          <button class="hamburgerbtn" onclick="window.location.href='mobileMenu.html'">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-            <button class="back-btn">
-                <img src="../../images/arrow.png" alt="Back" class="header-icon" />
-            </button>
+        <!-- keep the menu behavior, but use the class name the css already expects -->
+        <button
+          class="hamburger-btn"
+          onclick="window.location.href='mobileMenu.html'"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="back-btn" onclick="window.location.href='indexMobile.html'">
+          <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
         <!-- search bar -->
         <div class="search-bar">
           <input type="text" placeholder="Search" />
           <a href="searchMobile.html" class="searchiconlink">
-            <img src="../../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+            <img
+              src="../../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
           </a>
         </div>
+      </div>
 
-        <button class="themetoggle" id="themeToggle">
-         <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
-        </button>
-
+      <button class="theme-toggle" id="themeToggle">
+        <img
+          src="../../images/sun-and-moon.png"
+          alt="Toggle Theme"
+          class="header-icon"
+        />
+      </button>
     </header>
-
-
 
     <!-- this is the product navigation section where you can choose from 5 different versions of lenovo products -->
     <main>
       <section id="product-nav">
         <div class="product-item-wrapper">
           <img src="../../images/thinkpad.png" alt="" />
-          <a href="">ThinkPad</a>
+          <a href="searchMobile.html?q=ThinkPad">ThinkPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/yoga.png" alt="" />
-          <a href="">Yoga</a>
+          <a href="searchMobile.html?q=Yoga">Yoga</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/ideapad.png" alt="" />
-          <a href="">IdeaPad</a>
+          <a href="searchMobile.html?q=IdeaPad">IdeaPad</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/legion.png" alt="" />
-          <a href="">Legion</a>
+          <a href="searchMobile.html?q=Legion">Legion</a>
         </div>
         <div class="product-item-wrapper">
           <img src="../../images/thinkbook.png" alt="" />
-          <a href="">ThinkBook</a>
+          <a href="searchMobile.html?q=ThinkBook">ThinkBook</a>
         </div>
       </section>
 
@@ -73,7 +84,7 @@
                   <h3>ThinkPad X1</h3>
                   <p>$1,935.46</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Thinkpadxone.html">More...</a></div>
               </div>
             </div>
 
@@ -85,7 +96,7 @@
                   <h3>Yoga Pro 9i</h3>
                   <p>$1,699.99</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Yogapro9i.html">More...</a></div>
               </div>
             </div>
 
@@ -97,7 +108,7 @@
                   <h3>ThinkPad X9</h3>
                   <p>$1,539.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Thinkpadx9.html">More...</a></div>
               </div>
             </div>
 
@@ -109,7 +120,7 @@
                   <h3>ThinkPad T16</h3>
                   <p>$1,379.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Thinkpadt16.html">More...</a></div>
               </div>
             </div>
 
@@ -121,7 +132,7 @@
                   <h3>ThinkPad P16</h3>
                   <p>$2,539.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Thinkpadp16.html">More...</a></div>
               </div>
             </div>
 
@@ -133,7 +144,7 @@
                   <h3>ThinkPad 2-in-1</h3>
                   <p>$1,519.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="../product pages/Thinkpad2in1.html">More...</a></div>
               </div>
             </div>
 
@@ -145,7 +156,7 @@
                   <h3>ThinkPad E16</h3>
                   <p>$1,299.99</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%20E16">More...</a></div>
               </div>
             </div>
 
@@ -157,7 +168,7 @@
                   <h3>ThinkPad P16v</h3>
                   <p>$1,579.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%20P16v">More...</a></div>
               </div>
             </div>
 
@@ -169,7 +180,7 @@
                   <h3>ThinkPad T14s</h3>
                   <p>$2,139.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%20T14s">More...</a></div>
               </div>
             </div>
 
@@ -181,7 +192,7 @@
                   <h3>ThinkPad T16g</h3>
                   <p>$1,379.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%20T16g">More...</a></div>
               </div>
             </div>
 
@@ -193,7 +204,7 @@
                   <h3>ThinkPad X7</h3>
                   <p>$1,050.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%20X7">More...</a></div>
               </div>
             </div>
 
@@ -205,7 +216,7 @@
                   <h3>ThinkPad 14</h3>
                   <p>$1,219.00</p>
                 </div>
-                <div><a href="">More...</a></div>
+                <div><a href="searchMobile.html?q=ThinkPad%2014">More...</a></div>
               </div>
             </div>
 
