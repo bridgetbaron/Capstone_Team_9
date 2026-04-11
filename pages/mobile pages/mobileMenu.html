@@ -7,19 +7,17 @@
     <link rel="stylesheet" href="../../styles/mobileMenu.css" />
   </head>
   <body>
-
     <!-- header, the hamabuger menu was changed to the left (suggested by the ta) -->
     <header class="menu-header">
-
       <!-- hamburger on the left -->
-      <button class="hamburger-btn" onclick="history.back()">
+      <button class="hamburger-btn" onclick="history.back()" aria-label="Close menu">
         <span></span>
         <span></span>
         <span></span>
       </button>
 
       <!-- back arrow next to the hamburger menu -->
-      <button class="back-btn" onclick="history.back()">
+      <button class="back-btn" onclick="history.back()" aria-label="Go back">
         <img src="../../images/arrow.png" alt="Back" class="header-icon" />
       </button>
 
@@ -27,20 +25,27 @@
       <div class="search-bar">
         <input type="text" placeholder="Search" />
         <a href="searchMobile.html" class="searchiconlink">
-          <img src="../../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+          <img
+            src="../../images/search-interface-symbol.png"
+            alt="Search"
+            class="search-icon"
+          />
         </a>
       </div>
 
       <!-- dark mode for later -->
       <button class="theme-toggle" id="themeToggle">
-        <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" style="width: 20px; height: 20px; object-fit: contain;" />
+        <img
+          src="../../images/sun-and-moon.png"
+          alt="Toggle Theme"
+          class="header-icon"
+          style="width: 20px; height: 20px; object-fit: contain;"
+        />
       </button>
-
     </header>
 
     <!-- items that are selectable -->
     <nav class="mobile-menu">
-
       <a href="indexMobile.html" class="menu-item">
         <img src="../../images/home.png" alt="Home" class="menu-icon" />
         <span>Home</span>
@@ -48,7 +53,11 @@
       <hr class="menu-divider" />
 
       <a href="searchMobile.html" class="menu-item">
-        <img src="../../images/search-interface-symbol.png" alt="Search" class="menu-icon" />
+        <img
+          src="../../images/search-interface-symbol.png"
+          alt="Search"
+          class="menu-icon"
+        />
         <span>Search</span>
       </a>
       <hr class="menu-divider" />
@@ -65,8 +74,8 @@
         <span>Settings</span>
       </a>
       <hr class="menu-divider" />
-
     </nav>
+
     <script src="../../scripts/mainScript.js"></script>
   </body>
 </html>

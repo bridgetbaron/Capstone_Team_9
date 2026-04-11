@@ -9,28 +9,40 @@
   <body>
     <header class="header">
       <div class="header-left">
-          <button class="hamburger-btn" onclick="window.location.href='mobileMenu.html'">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-            <button class="back-btn">
-            <img src="../../images/arrow.png" alt="Back" class="header-icon" />
-            </button>
+        <button
+          class="hamburger-btn"
+          onclick="window.location.href='mobileMenu.html'"
+          aria-label="Open menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <button class="back-btn" onclick="window.location.href='indexMobile.html'">
+          <img src="../../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
-          <!-- search bar -->
-          <div class="search-bar">
-            <input type="text" placeholder="Search" />
-            <a href="searchMobile.html" class="searchiconlink">
-              <img src="../../images/search-interface-symbol.png" alt="Search" class="search-icon" />
-            </a>
-          </div>
+        <!-- search bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search" />
+          <a href="searchMobile.html" class="searchiconlink">
+            <img
+              src="../../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
+        </div>
+      </div>
 
-            <button class="theme-toggle" id="themeToggle">
-              <img src="../../images/sun-and-moon.png" alt="Toggle Theme" class="header-icon" />
-            </button>
+      <button class="theme-toggle" id="themeToggle">
+        <img
+          src="../../images/sun-and-moon.png"
+          alt="Toggle Theme"
+          class="header-icon"
+        />
+      </button>
     </header>
-
 
     <section class="mobile-controls">
       <button type="button" id="mobileFilterToggle">Filter</button>
@@ -40,51 +52,22 @@
     <section class="mobile-panel" id="mobileFilterPanel">
       <div class="mobile-panel-inner">
         <h3>Filter</h3>
-        <label
-          ><input type="radio" name="mobileFilter" value="all" checked />
-          All</label
-        >
-        <label
-          ><input type="radio" name="mobileFilter" value="ThinkPad" />
-          ThinkPad</label
-        >
-        <label
-          ><input type="radio" name="mobileFilter" value="Yoga" /> Yoga</label
-        >
-        <label
-          ><input type="radio" name="mobileFilter" value="IdeaPad" />
-          IdeaPad</label
-        >
-        <label
-          ><input type="radio" name="mobileFilter" value="Legion" />
-          Legion</label
-        >
-        <label
-          ><input type="radio" name="mobileFilter" value="ThinkBook" />
-          ThinkBook</label
-        >
+        <label><input type="radio" name="mobileFilter" value="all" checked /> All</label>
+        <label><input type="radio" name="mobileFilter" value="ThinkPad" /> ThinkPad</label>
+        <label><input type="radio" name="mobileFilter" value="Yoga" /> Yoga</label>
+        <label><input type="radio" name="mobileFilter" value="IdeaPad" /> IdeaPad</label>
+        <label><input type="radio" name="mobileFilter" value="Legion" /> Legion</label>
+        <label><input type="radio" name="mobileFilter" value="ThinkBook" /> ThinkBook</label>
       </div>
     </section>
 
     <section class="mobile-panel" id="mobileSortPanel">
       <div class="mobile-panel-inner">
         <h3>Sort</h3>
-        <label
-          ><input type="radio" name="mobileSort" value="default" checked />
-          Default</label
-        >
-        <label
-          ><input type="radio" name="mobileSort" value="price-low" /> Price: Low
-          to High</label
-        >
-        <label
-          ><input type="radio" name="mobileSort" value="price-high" /> Price:
-          High to Low</label
-        >
-        <label
-          ><input type="radio" name="mobileSort" value="name-az" /> Name: A to
-          Z</label
-        >
+        <label><input type="radio" name="mobileSort" value="default" checked /> Default</label>
+        <label><input type="radio" name="mobileSort" value="price-low" /> Price: Low to High</label>
+        <label><input type="radio" name="mobileSort" value="price-high" /> Price: High to Low</label>
+        <label><input type="radio" name="mobileSort" value="name-az" /> Name: A to Z</label>
       </div>
     </section>
 
@@ -95,30 +78,12 @@
         <details class="filter-group" open>
           <summary>Product type</summary>
           <div class="filter-options">
-            <label
-              ><input type="radio" name="desktopFilter" value="all" checked />
-              All</label
-            >
-            <label
-              ><input type="radio" name="desktopFilter" value="ThinkPad" />
-              ThinkPad</label
-            >
-            <label
-              ><input type="radio" name="desktopFilter" value="Yoga" />
-              Yoga</label
-            >
-            <label
-              ><input type="radio" name="desktopFilter" value="IdeaPad" />
-              IdeaPad</label
-            >
-            <label
-              ><input type="radio" name="desktopFilter" value="Legion" />
-              Legion</label
-            >
-            <label
-              ><input type="radio" name="desktopFilter" value="ThinkBook" />
-              ThinkBook</label
-            >
+            <label><input type="radio" name="desktopFilter" value="all" checked /> All</label>
+            <label><input type="radio" name="desktopFilter" value="ThinkPad" /> ThinkPad</label>
+            <label><input type="radio" name="desktopFilter" value="Yoga" /> Yoga</label>
+            <label><input type="radio" name="desktopFilter" value="IdeaPad" /> IdeaPad</label>
+            <label><input type="radio" name="desktopFilter" value="Legion" /> Legion</label>
+            <label><input type="radio" name="desktopFilter" value="ThinkBook" /> ThinkBook</label>
           </div>
         </details>
 
@@ -167,18 +132,9 @@
         <details class="filter-group" open>
           <summary>Price</summary>
           <div class="filter-options">
-            <label
-              ><input type="radio" name="desktopSort" value="default" checked />
-              Default</label
-            >
-            <label
-              ><input type="radio" name="desktopSort" value="price-low" /> Low
-              to High</label
-            >
-            <label
-              ><input type="radio" name="desktopSort" value="price-high" /> High
-              to Low</label
-            >
+            <label><input type="radio" name="desktopSort" value="default" checked /> Default</label>
+            <label><input type="radio" name="desktopSort" value="price-low" /> Low to High</label>
+            <label><input type="radio" name="desktopSort" value="price-high" /> High to Low</label>
           </div>
         </details>
 
@@ -193,10 +149,7 @@
         <details class="filter-group">
           <summary>Rating</summary>
           <div class="filter-options">
-            <label
-              ><input type="radio" name="desktopSort" value="name-az" /> Name
-              A-Z</label
-            >
+            <label><input type="radio" name="desktopSort" value="name-az" /> Name A-Z</label>
           </div>
         </details>
       </aside>
@@ -343,6 +296,10 @@
       </section>
     </main>
 
+    <!-- script.js handles results filtering, sorting, loading and url query support -->
     <script src="../../scripts/script.js"></script>
+
+    <!-- mainScript.js handles shared search bar behavior and suggestions -->
+    <script src="../../scripts/mainScript.js"></script>
   </body>
 </html>
