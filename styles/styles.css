@@ -46,16 +46,14 @@ a {
   display: none !important;
 }
 
-/* ===================== BASIC RESET ===================== */
+/* ===================== basic reset ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* =====================
-   BASE STYLES
-===================== */
+/*  BASE STYLES*/
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #f5f7fa;
@@ -66,9 +64,7 @@ body {
   min-width: 320px; /* prevents layout breaking on very small windows */
 }
 
-/* =====================
-   DARK MODE
-===================== */
+/*DARK MODE*/
 body.dark {
   background: #1a1a1a;
   color: #eee;
@@ -154,9 +150,7 @@ body.dark .header-btn:hover {
   background: #2a2a2a;
 }
 
-/* =====================
-   HEADER — taller with more padding
-===================== */
+/*  HEADER — taller with more padding*/
 .header {
   margin-top: 10px;
   display: flex;
@@ -177,7 +171,7 @@ body.dark .header-btn:hover {
   flex-wrap: wrap;
 }
 
-/* Lenovo logo red box */
+/* lenovo logo red box */
 .logo {
   background-color: #e2001a;
   color: white;
@@ -198,7 +192,7 @@ body.dark .header-btn:hover {
   padding: 6px 10px;
 }
 
-/* Search designing */
+/* search designing */
 .search-bar {
   display: flex;
   align-items: center;
@@ -221,7 +215,6 @@ body.dark .header-btn:hover {
   overflow: hidden;
 }
 
-
 .searchiconlink {
   display: flex;
   align-items: center;
@@ -241,7 +234,7 @@ body.dark .header-btn:hover {
   object-fit: contain;
 }
 
-/* search dropdown (same style as FeedDropdown) */
+/* search dropdown (same style as feeddropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -255,7 +248,7 @@ body.dark .header-btn:hover {
   height: 100%;
   border: none;
   border-left: none;
-  border-right: 1.5px solid #bbb; /* border is now on the RIGHT side */
+  border-right: 1.5px solid #bbb; /* border is now on the right side */
   border-radius: 0 4px 4px 0;
   font-size: 13px;
   font-family: inherit;
@@ -300,9 +293,7 @@ body.dark .header-btn:hover {
   color: #fff;
 }
 
-/* =====================
-   HEADER RIGHT BUTTONS
-===================== */
+/*HEADER RIGHT BUTTONS*/
 .header-right {
   display: flex;
   align-items: center;
@@ -339,9 +330,7 @@ body.dark .header-btn:hover {
   background: #e0e0e0;
 }
 
-/* =====================
-   NAV BAR
-===================== */
+/*  NAV BAR */
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -744,7 +733,7 @@ body.dark .header-btn:hover {
   padding: 4px 6px;
   flex-shrink: 0;
 }
- 
+
 .hamburger-btn span {
   display: block;
   width: 22px;

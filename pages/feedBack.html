@@ -8,19 +8,23 @@
   </head>
 
   <body>
-    <!-- Header -->
+    <!-- header -->
     <header class="header">
       <div class="header-left">
-        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
-          <button class="back-btn">
-            <img src="../images/arrow.png" alt="Back" class="header-icon" />
-          </button>
+        <div
+          class="logo"
+          onclick="window.location.href = '../index.html'"
+          style="cursor: pointer"
+        >
+          Lenovo
+        </div>
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
 
-        <!-- Search bar with dropdown -->
+        <!-- search bar with dropdown -->
         <div class="search-bar">
-          
-
-          <!-- Search dropdown: same style as FeedDropdown -->
+          <!-- search dropdown: same style as feeddropdown -->
           <div class="SearchDropdown">
             <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
             <div class="searchSelection" id="searchDropMenu">
@@ -29,27 +33,42 @@
               <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
             </div>
           </div>
-            <input type="text" placeholder="Search" />
-            <a href="searchResults.html" class="searchiconlink">
-              <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
-            </a>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img
+              src="../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
         </div>
       </div>
 
       <div class="header-right">
-          <button class="header-btn">
-            <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="themetoggle" id="themeToggle">
-            <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+        <button class="header-btn">
+          <img
+            src="../images/shopping-cart.png"
+            alt="My Cart"
+            class="header-icon"
+          />
+          My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+        <button class="themetoggle" id="themeToggle">
+          <img
+            src="../images/sun-and-moon.png"
+            alt="Dark Mode"
+            class="header-icon"
+          />
+        </button>
+      </div>
     </header>
 
     <!-- header nav -->
@@ -65,8 +84,14 @@
     <main class="content">
       <section class="feedbackBox">
         <div class="feedbackContainer">
-          <!-- Close Button X -->
-          <button class="closeBtn" id="closeBtn" onclick="window.location.href='../index.html'">&times;</button>
+          <!-- close button x -->
+          <button
+            class="closeBtn"
+            id="closeBtn"
+            onclick="window.location.href = '../index.html'"
+          >
+            &times;
+          </button>
 
           <h1>Feedback Form</h1>
 
@@ -75,7 +100,7 @@
 
           <p class="label">What was your experience using our website?</p>
 
-          <!-- The Feedback Dropdown -->
+          <!-- the feedback dropdown -->
           <div class="FeedDropdown">
             <button class="dropBtn" id="dropBtn">Select ▼</button>
             <div class="selection" id="dropMenu">
@@ -86,13 +111,13 @@
             </div>
           </div>
 
-          <!-- Submit button -->
+          <!-- submit button -->
           <div class="submitWrapper">
-            <button class="submitBtn"> Submit </button>
+            <button class="submitBtn">Submit</button>
           </div>
         </div>
       </section>
     </main>
-      <script src="../scripts/mainScript.js"></script>
+    <script src="../scripts/mainScript.js"></script>
   </body>
 </html>

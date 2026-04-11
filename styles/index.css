@@ -34,7 +34,7 @@ body {
   padding: 4px 6px;
   flex-shrink: 0;
 }
- 
+
 .hamburgerbtn span {
   display: block;
   width: 22px;
@@ -89,7 +89,7 @@ body {
   padding: 6px 10px;
 }
 
-/* Search designing */
+/* search designing */
 .search-bar {
   display: flex;
   align-items: center;
@@ -112,7 +112,6 @@ body {
   overflow: hidden;
 }
 
-
 .searchiconlink {
   display: flex;
   align-items: center;
@@ -132,7 +131,7 @@ body {
   object-fit: contain;
 }
 
-/* search dropdown (same style as FeedDropdown) */
+/* search dropdown (same style as feeddropdown) */
 .SearchDropdown {
   position: relative;
   display: inline-block;
@@ -146,7 +145,7 @@ body {
   height: 100%;
   border: none;
   border-left: none;
-  border-right: 1.5px solid #bbb; /* border is now on the RIGHT side */
+  border-right: 1.5px solid #bbb; /* border is now on the right side */
   border-radius: 0 4px 4px 0;
   font-size: 13px;
   font-family: inherit;
@@ -357,7 +356,7 @@ body {
   display: block;
 }
 
-/* Load more btn */
+/* load more btn */
 .load-more-wrapper {
   display: flex;
   justify-content: center;
@@ -382,7 +381,7 @@ body {
 
 /* mobile responsive styling */
 @media (max-width: 650px) {
-  /* Hide desktop-only chrome */
+  /* hide desktop-only chrome */
   .nav {
     display: none;
   }
@@ -513,7 +512,7 @@ body {
   }
 }
 
-/* FOOTEr */
+/* footer */
 
 footer {
   display: flex;

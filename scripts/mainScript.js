@@ -1,4 +1,4 @@
-//Search dropdown for all teh pages
+//search dropdown for all teh pages
 const searchDropBtn = document.getElementById("searchDropBtn");
 const searchDropMenu = document.getElementById("searchDropMenu");
 
@@ -8,26 +8,35 @@ if (searchDropBtn && searchDropMenu) {
     searchDropMenu.classList.toggle("open");
   });
 
-  // Closes the options when user clicks somewhere else
+  // closes the options when user clicks somewhere else
   document.addEventListener("click", function () {
     searchDropMenu.classList.remove("open");
   });
 }
 
 const searchBars = document.querySelectorAll(".search-bar");
-const backButton = document.querySelector(".back-btn");
+const backButtons = document.querySelectorAll(".back-btn");
 
-// this makes the back arrow on search results go back to home page
-if (
-  backButton &&
-  window.location.pathname.endsWith("/pages/searchResults.html")
-) {
-  backButton.addEventListener("click", function () {
-    window.location.href = "../index.html";
+// this makes every back arrow go to home page no matter which page you are on
+if (backButtons.length > 0) {
+  const path = window.location.pathname.toLowerCase();
+  const decodedPath = decodeURIComponent(path);
+  let homePath = "index.html";
+
+  if (decodedPath.includes("/pages/product pages/")) {
+    homePath = "../../index.html";
+  } else if (path.includes("/pages/")) {
+    homePath = "../index.html";
+  }
+
+  backButtons.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      window.location.href = homePath;
+    });
   });
 }
 
-// this makes every search bar send what user typed over to searchResults.html with ?q=
+// this makes every search bar send what user typed over to searchresults.html with ?q=
 searchBars.forEach((bar) => {
   const input = bar.querySelector("input");
   const link = bar.querySelector(".searchiconlink");
@@ -105,7 +114,7 @@ suggestionBox.style.cssText = `
   pointer-events: none;
 `;
 
-// The search bar needs position:relative so the dropdown sits under it
+// the search bar needs position:relative so the dropdown sits under it
 const searchBar = document.querySelector(".search-bar");
 if (searchBar) {
   searchBar.style.position = "relative";
@@ -183,7 +192,7 @@ function updateSuggestions(matches, query) {
     });
   }
 
-  // Show the dropdown
+  // show the dropdown
   suggestionBox.style.opacity = "1";
   suggestionBox.style.transform = "translateY(0)";
   suggestionBox.style.pointerEvents = "auto";
@@ -210,26 +219,26 @@ if (dropBtn && dropMenu) {
   });
 }
 
-// Makes selectOption available globally so the onclick in the HTML can call it
+// makes selectoption available globally so the onclick in the html can call it
 function selectOption(e, value) {
   e.preventDefault();
   if (dropBtn) dropBtn.textContent = value + " ▼";
   if (dropMenu) dropMenu.classList.remove("open");
 }
 
-// showing Loading indicators for submitting feedback form
+// showing loading indicators for submitting feedback form
 const submitBtn = document.querySelector(".submitBtn");
 
 if (submitBtn) {
   // fades the container when submitting
   submitBtn.addEventListener("click", function (e) {
-    // Change button text to show something is happening
+    // change button text to show something is happening
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "3s";
     submitBtn.style.cursor = "not-allowed";
 
-    // After 1.5s the form is submitted and go to the submission page
+    // after 1.5s the form is submitted and go to the submission page
     setTimeout(() => {
       window.location.href = "FeedbackSubmission.html";
     }, 1500);
@@ -240,12 +249,12 @@ if (submitBtn) {
 const feedbackContainer = document.querySelector(".feedbackContainer");
 
 if (feedbackContainer) {
-  // Starts invisible and slightly below
+  // starts invisible and slightly below
   feedbackContainer.style.opacity = "0";
   feedbackContainer.style.transform = "translateY(24px)";
   feedbackContainer.style.transition = "opacity 3s ease, transform 3s ease";
 
-  // Small delay so the browser has painted the page first
+  // small delay so the browser has painted the page first
   setTimeout(() => {
     feedbackContainer.style.opacity = "1";
     feedbackContainer.style.transform = "translateY(0)";
