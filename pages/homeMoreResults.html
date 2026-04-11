@@ -9,48 +9,69 @@
   <body>
     <header class="header">
       <div class="header-left">
-        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
-          <button class="back-btn">
-            <img src="../images/arrow.png" alt="Back" class="header-icon" />
-          </button>
-
-          <!-- Search bar with dropdown -->
-          <div class="search-bar">
-              <!-- Search dropdown: same style as FeedDropdown -->
-              <div class="SearchDropdown">
-                <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
-                <div class="searchSelection" id="searchDropMenu">
-                  <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
-                  <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
-                  <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
-                </div>
-              </div>
-                <input type="text" placeholder="Search" />
-                <a href="searchResults.html" class="searchiconlink">
-                  <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
-                </a>
-            </div>
+        <div
+          class="logo"
+          onclick="window.location.href = '../index.html'"
+          style="cursor: pointer"
+        >
+          Lenovo
         </div>
-        <!-- end of search bar code -->
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+
+        <!-- search bar with dropdown -->
+        <div class="search-bar">
+          <!-- search dropdown: same style as feeddropdown -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img
+              src="../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- end of search bar code -->
 
       <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
-          <button class="header-btn">
-            <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
-          </button>
-          <button class="header-btn">
-            <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
-          </button>
-          <button class="header-btn">
-            <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
-          </button>
-          <button class="theme-toggle" id="themeToggle">
-            <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
-          </button>
-        </div>
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+        <button class="header-btn">
+          <img
+            src="../images/shopping-cart.png"
+            alt="My Cart"
+            class="header-icon"
+          />
+          My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+        <button class="theme-toggle" id="themeToggle">
+          <img
+            src="../images/sun-and-moon.png"
+            alt="Dark Mode"
+            class="header-icon"
+          />
+        </button>
+      </div>
     </header>
 
-    <!-- nav: this is the main nav for specific types of Lenovo products to narrow down your options -->
+    <!-- nav: this is the main nav for specific types of lenovo products to narrow down your options -->
     <nav class="nav">
       <a href="#">Laptop</a>
       <a href="#">Desktop</a>
@@ -89,8 +110,7 @@
           <h2>Top Products</h2>
           <!-- this is the thinkpad x1 bubble with a price and a button to explore more -->
           <div class="top-product-container">
-
-            <!-- Option 1 -->
+            <!-- option 1 -->
             <div class="top-product--item">
               <img src="../images/thinkpadx1.png" alt="" />
               <div class="top-product--info-wrapper">
@@ -233,13 +253,20 @@
                 <div><a href="">More...</a></div>
               </div>
             </div>
-
           </div>
         </div>
 
         <div class="lenovo-banner">
-          <img class="banner-vertical" src="../images/lenovo-banner.png" alt="" />
-          <img class="banner-horizontal" src="../images/lenovo-banner-horizontal.png" alt="" />
+          <img
+            class="banner-vertical"
+            src="../images/lenovo-banner.png"
+            alt=""
+          />
+          <img
+            class="banner-horizontal"
+            src="../images/lenovo-banner-horizontal.png"
+            alt=""
+          />
         </div>
       </section>
     </main>

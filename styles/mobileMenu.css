@@ -4,16 +4,18 @@
   padding: 0;
   box-sizing: border-box;
 }
- 
+
 /* base */
 body {
   font-family: "Inter", Arial, sans-serif;
   background: #fff;
   color: #111;
   min-width: 320px;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
 }
- 
+
 /* header */
 .menu-header {
   display: flex;
@@ -23,7 +25,7 @@ body {
   background: #fff;
   border-bottom: 1.5px solid #d0d8e4;
 }
- 
+
 /* back arrow */
 .back-btn {
   background: none;
@@ -34,7 +36,7 @@ body {
   padding: 4px 6px;
   flex-shrink: 0;
 }
- 
+
 /* search bar */
 .search-bar {
   display: flex;
@@ -46,7 +48,7 @@ body {
   background: #f0f0f0;
   gap: 8px;
 }
- 
+
 .search-bar input {
   border: none;
   outline: none;
@@ -56,13 +58,13 @@ body {
   width: 100%;
   color: #111;
 }
- 
+
 .search-icon {
   width: 18px;
   height: 18px;
   opacity: 0.5;
 }
- 
+
 /* hamburger menu button */
 .hamburger-btn {
   display: flex;
@@ -75,7 +77,7 @@ body {
   padding: 4px 6px;
   flex-shrink: 0;
 }
- 
+
 .hamburger-btn span {
   display: block;
   width: 22px;
@@ -89,7 +91,7 @@ body {
   height: 20px;
   object-fit: contain;
 }
- 
+
 /* dark mode button */
 .theme-row {
   display: flex;
@@ -97,7 +99,7 @@ body {
   padding: 10px 16px;
   border-bottom: 1.5px solid #d0d8e4;
 }
- 
+
 .theme-toggle {
   background: #f0f0f0;
   border: 1.5px solid #ccc;
@@ -106,18 +108,18 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
- 
+
 .theme-toggle:hover {
   background: #e0e0e0;
 }
- 
+
 /* clickble menu links */
 .mobile-menu {
   display: flex;
   flex-direction: column;
   padding: 20px 0;
 }
- 
+
 .menu-item {
   display: flex;
   align-items: center;
@@ -129,17 +131,17 @@ body {
   font-weight: 500;
   transition: background 0.15s;
 }
- 
+
 .menu-item:hover {
   background: #f5f5f5;
 }
- 
+
 .menu-icon {
   width: 32px;
   height: 32px;
   object-fit: contain;
 }
- 
+
 /* line between items */
 .menu-divider {
   border: none;
