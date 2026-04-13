@@ -261,6 +261,47 @@ if (feedbackContainer) {
   }, 100);
 }
 
+// in the feedbackform verifys that the user input something if not send an invaild message 
+const emailInput  = document.getElementById("emailInput");
+const emailError  = document.getElementById("emailError");
+ 
+if (submitBtn) {
+  submitBtn.addEventListener("click", function () {
+ 
+    // check if email field exists and is empty
+    if (emailInput && emailInput.value.trim() === "") {
+      emailInput.classList.add("invalid");
+      emailError.classList.add("visible");
+      return; // stop here — do not navigate
+    }
+ 
+    // email is filled — clear any error and proceed
+    if (emailInput) {
+      emailInput.classList.remove("invalid");
+      emailError.classList.remove("visible");
+    }
+ 
+    // show loading state on the button
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Submitting...";
+    submitBtn.style.opacity = "0.7";
+    submitBtn.style.cursor = "not-allowed";
+ 
+    // navigate after 1.5s
+    setTimeout(() => {
+      window.location.href = "FeedbackSubmission.html";
+    }, 1500);
+  });
+ 
+  // clear the email error as soon as the user starts typing
+  if (emailInput) {
+    emailInput.addEventListener("input", function () {
+      emailInput.classList.remove("invalid");
+      emailError.classList.remove("visible");
+    });
+  }
+}
+
 //loading anytime going to another page
 // creating a white overlay with a spinning circle and hide it
 const spinner = document.createElement("div");
