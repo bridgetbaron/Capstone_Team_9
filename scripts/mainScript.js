@@ -124,7 +124,7 @@ if (searchBar) {
 // this watches typing in the header search box
 if (headerSearchInput)
   headerSearchInput.addEventListener("input", () => {
-    const query = headerSearchInput.value.trim().toLowerCase();
+    const query = headerSearchInput.value.trim().toLowerCase();  
 
     // if input is empty we hide suggestion list and reset text if we can
     if (query === "") {
