@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed</title>
+    <link rel="stylesheet" href="../styles/Feedback.css" />
+    <link rel="stylesheet" href="../styles/cart.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+        <div class="search-bar">
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
+        </button>
+        <button class="header-btn">
+          <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
+        </button>
+        <button class="themetoggle" id="themeToggle">
+          <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
+        </button>
+      </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="homeMoreResults.html">Laptop</a>
+      <a href="desktops.html">Desktop</a>
+      <a href="software.html">Software</a>
+      <a href="Accessories.html">Accessories</a>
+    </nav>
+
+    <!-- Confirmation content -->
+    <main class="cart-page">
+      <div class="confirm-box">
+        <div class="confirm-check">&#10003;</div>
+        <h1 class="confirm-title">Order confirmed!</h1>
+        <p class="confirm-desc">Thank you for your business, it is greatly appericated!</p>
+        <a href="../index.html">
+          <button class="checkout-btn" style="max-width:260px; margin-top: 1.5rem;">Continue shopping</button>
+        </a>
+      </div>
+    </main>
+
+    <script src="../scripts/mainScript.js"></script>
+  </body>
+</html>

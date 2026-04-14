@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cart</title>
+    <link rel="stylesheet" href="../styles/Feedback.css" />
+    <link rel="stylesheet" href="../styles/cart.css" />
+  </head>
+  <body>
+ 
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo" onclick="window.location.href='../index.html'" style="cursor:pointer;">Lenovo</div>
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+        <div class="search-bar">
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img src="../images/search-interface-symbol.png" alt="Search" class="search-icon" />
+          </a>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" /> Sign-in / Create Account
+        </button>
+        <button class="header-btn" onclick="window.location.href='cart.html'">
+          <img src="../images/shopping-cart.png" alt="My Cart" class="header-icon" /> My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" /> Settings
+        </button>
+        <button class="themetoggle" id="themeToggle">
+          <img src="../images/sun-and-moon.png" alt="Dark Mode" class="header-icon" />
+        </button>
+      </div>
+    </header>
+ 
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="homeMoreResults.html">Laptop</a>
+      <a href="desktops.html">Desktop</a>
+      <a href="software.html">Software</a>
+      <a href="Accessories.html">Accessories</a>
+    </nav>
+ 
+    <!-- Cart content -->
+    <main class="cart-page">
+      <h1 class="cart-title">My cart</h1>
+ 
+      <!-- cart items go here, filled by JS -->
+      <div id="cartItems"></div>
+ 
+      <!-- total and checkout button go here, filled by JS -->
+      <div id="cartFooter"></div>
+    </main>
+ 
+    <script src="../scripts/mainScript.js"></script>
+    <script src="../scripts/cart.js"></script>
+  </body>
+</html>

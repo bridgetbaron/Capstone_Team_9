@@ -261,45 +261,49 @@ if (feedbackContainer) {
   }, 100);
 }
 
-// in the feedbackform verifys that the user input something if not send an invaild message 
-const emailInput  = document.getElementById("emailInput");
-const emailError  = document.getElementById("emailError");
+// email validation
+const emailInput = document.getElementById("emailInput");
+const emailError = document.getElementById("emailError");
+ 
+if (emailInput && emailError) {
+  // show error the moment the user clicks out of the field without typing
+  emailInput.addEventListener("blur", function () {
+    if (emailInput.value.trim() === "") {
+      emailInput.classList.add("invalid");
+      emailError.classList.add("visible");
+    }
+  });
+ 
+  // clear the error as soon as the user starts typing
+  emailInput.addEventListener("input", function () {
+    emailInput.classList.remove("invalid");
+    emailError.classList.remove("visible");
+  });
+}
+ 
+// ONE submit listener — only one in the entire file
+
  
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
  
-    // check if email field exists and is empty
+    // if email is empty, show error and stop — do not navigate
     if (emailInput && emailInput.value.trim() === "") {
       emailInput.classList.add("invalid");
       emailError.classList.add("visible");
-      return; // stop here — do not navigate
+      return;
     }
  
-    // email is filled — clear any error and proceed
-    if (emailInput) {
-      emailInput.classList.remove("invalid");
-      emailError.classList.remove("visible");
-    }
- 
-    // show loading state on the button
+    // email is filled — proceed
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "0.7";
     submitBtn.style.cursor = "not-allowed";
  
-    // navigate after 1.5s
     setTimeout(() => {
       window.location.href = "FeedbackSubmission.html";
     }, 1500);
   });
- 
-  // clear the email error as soon as the user starts typing
-  if (emailInput) {
-    emailInput.addEventListener("input", function () {
-      emailInput.classList.remove("invalid");
-      emailError.classList.remove("visible");
-    });
-  }
 }
 
 //loading anytime going to another page
