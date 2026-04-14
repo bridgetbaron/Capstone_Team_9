@@ -252,46 +252,54 @@ if (textBox) {
     textBox.style.boxShadow = "none";
   });
 }
- 
+
+// verifying the email function
 // in feedback form making the user enter their email or they will get an error message
 const emailInput = document.getElementById("emailInput");
 const emailError = document.getElementById("emailError");
- 
+
+// checking if the email is vaild with special characters 
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 if (emailInput && emailError) {
-  // show error the moment the user clicks out of the field without typing
+  // show error the moment the user clicks out of the field without a valid email
   emailInput.addEventListener("blur", function () {
-    if (emailInput.value.trim() === "") {
+    if (!isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
+      emailError.textContent = "Please enter a valid email";
       emailError.classList.add("visible");
     }
   });
- 
-  // clear the error as soon as the user starts typing
+
+  // clears the error as soon as the user starts typing
   emailInput.addEventListener("input", function () {
     emailInput.classList.remove("invalid");
     emailError.classList.remove("visible");
   });
 }
- 
+
 // making the submit button not work unless user has entered an email
 const submitBtn = document.querySelector(".submitBtn");
- 
+
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
- 
-    // if email is empty, show error and stop, do not navigate to submission page
-    if (emailInput && emailInput.value.trim() === "") {
+
+    // if email is missing or not a real email, show error and stop
+    if (!emailInput || !isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
+      emailError.textContent = "Please enter a valid email";
       emailError.classList.add("visible");
       return;
     }
- 
-    // if the email is filled then navigate
+
+    // email is valid navigate to the submission page
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "0.7";
     submitBtn.style.cursor = "not-allowed";
- 
+
     setTimeout(() => {
       window.location.href = "FeedbackSubmission.html";
     }, 1500);
