@@ -204,64 +204,56 @@ function hideSuggestions() {
   suggestionBox.style.pointerEvents = "none";
 }
 
-// feedback page only
+// Feedback page only
+//feedback questions dropdown
 const dropBtn = document.getElementById("dropBtn");
 const dropMenu = document.getElementById("dropMenu");
-
+ 
 if (dropBtn && dropMenu) {
   dropBtn.addEventListener("click", function (e) {
     e.stopPropagation();
     dropMenu.classList.toggle("open");
   });
-
+ 
   document.addEventListener("click", function () {
     dropMenu.classList.remove("open");
   });
 }
-
-// makes selectoption available globally so the onclick in the html can call it
+ 
 function selectOption(e, value) {
   e.preventDefault();
   if (dropBtn) dropBtn.textContent = value + " ▼";
   if (dropMenu) dropMenu.classList.remove("open");
 }
-
-// showing loading indicators for submitting feedback form
-const submitBtn = document.querySelector(".submitBtn");
-
-if (submitBtn) {
-  // fades the container when submitting
-  submitBtn.addEventListener("click", function (e) {
-    // change button text to show something is happening
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Submitting...";
-    submitBtn.style.opacity = "3s";
-    submitBtn.style.cursor = "not-allowed";
-
-    // after 1.5s the form is submitted and go to the submission page
-    setTimeout(() => {
-      window.location.href = "FeedbackSubmission.html";
-    }, 1500);
-  });
-}
-
-//animation for the feedback page, fades in the container
+ 
+// feedback page animation that fades in the feedback container
 const feedbackContainer = document.querySelector(".feedbackContainer");
-
+ 
 if (feedbackContainer) {
-  // starts invisible and slightly below
   feedbackContainer.style.opacity = "0";
   feedbackContainer.style.transform = "translateY(24px)";
-  feedbackContainer.style.transition = "opacity 3s ease, transform 3s ease";
-
-  // small delay so the browser has painted the page first
+  feedbackContainer.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+ 
   setTimeout(() => {
     feedbackContainer.style.opacity = "1";
     feedbackContainer.style.transform = "translateY(0)";
   }, 100);
 }
-
-// email validation
+ 
+// feedback page that make the textarea focus glow when user is using the textbox
+const textBox = document.querySelector(".textBox");
+ 
+if (textBox) {
+  textBox.addEventListener("focus", () => {
+    textBox.style.transition = "box-shadow 0.2s ease";
+    textBox.style.boxShadow = "0 0 0 3px rgba(90, 159, 212, 0.25)";
+  });
+  textBox.addEventListener("blur", () => {
+    textBox.style.boxShadow = "none";
+  });
+}
+ 
+// in feedback form making the user enter their email or they will get an error message
 const emailInput = document.getElementById("emailInput");
 const emailError = document.getElementById("emailError");
  
@@ -281,20 +273,20 @@ if (emailInput && emailError) {
   });
 }
  
-// ONE submit listener — only one in the entire file
-
+// making the submit button not work unless user has entered an email
+const submitBtn = document.querySelector(".submitBtn");
  
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
  
-    // if email is empty, show error and stop — do not navigate
+    // if email is empty, show error and stop, do not navigate to submission page
     if (emailInput && emailInput.value.trim() === "") {
       emailInput.classList.add("invalid");
       emailError.classList.add("visible");
       return;
     }
  
-    // email is filled — proceed
+    // if the email is filled then navigate
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "0.7";
