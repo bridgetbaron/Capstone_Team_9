@@ -1,5 +1,5 @@
-// having cart store the items that are added to cart in loacal storage 
-// reads the cart from localStorage, returns an empty array if nothing saved yet
+// using json so the cart can store the items that are added to cart in loacal storage 
+// reads the cart from localStorage, and returns an empty array if nothing saved yet
 function getCart() {
   return JSON.parse(localStorage.getItem("cart") || "[]");
 }
@@ -9,7 +9,7 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// adds a product to the cart and saves it
+// adds the product from the product page to the cart and saves it in the cart page
 function addToCart(name, desc, price) {
   const cart = getCart();
   cart.push({ name, desc, price });
@@ -46,6 +46,7 @@ if (cartBtn && cartConfirm) {
 }
 
 // Cart page only functions
+// if there are items in the cart than show if not than dont
 function renderCart() {
   const container = document.getElementById("cartItems");
   const footer    = document.getElementById("cartFooter");
@@ -61,7 +62,7 @@ function renderCart() {
     return;
   }
 
-  // build a row for each item
+  // adding css to build a row for each product added in the cart
   cart.forEach((item, i) => {
     const div = document.createElement("div");
     div.className = "cart-item";
@@ -80,6 +81,7 @@ function renderCart() {
   // adding to get the total price of all the items in a cart
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
+  // css for the checkout button
   footer.innerHTML = `
     <div class="cart-total">
       <span>Total</span>
@@ -89,6 +91,7 @@ function renderCart() {
   `;
 
   // remove item when the X button is clicked
+  // removes the item from the dataset
   document.querySelectorAll(".cart-remove-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const cart = getCart();
@@ -99,12 +102,14 @@ function renderCart() {
   });
 
   // checkout, clears cart then go to confirmation page
+  // shows animation to confirm user their order is proccessing 
   document.getElementById("checkoutBtn").addEventListener("click", () => {
     const btn = document.getElementById("checkoutBtn");
     btn.textContent = "Processing...";
     btn.disabled = true;
     btn.style.opacity = "0.7";
 
+    // removes all items from the local storage when user clicks on the checkout
     setTimeout(() => {
       localStorage.removeItem("cart"); // empty the cart after ordering
       window.location.href = "../pages/orderConfirm.html";

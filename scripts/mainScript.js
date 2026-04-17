@@ -268,7 +268,7 @@ if (emailInput && emailError) {
   emailInput.addEventListener("blur", function () {
     if (!isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
-      emailError.textContent = "Please enter a valid email";
+      emailError.textContent = "Enter a valid email";
       emailError.classList.add("visible");
     }
   });
@@ -289,7 +289,7 @@ if (submitBtn) {
     // if email is missing or not a real email, show error and stop
     if (!emailInput || !isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
-      emailError.textContent = "Please enter a valid email";
+      emailError.textContent = "Enter a valid email";
       emailError.classList.add("visible");
       return;
     }
