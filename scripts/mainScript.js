@@ -324,4 +324,55 @@ document.body.appendChild(spinner);
 // show the spinner whenever the page is leaving
 window.addEventListener("beforeunload", function () {
   spinner.style.display = "flex";
-});
+}
+// Sign in page only
+const signInForm = document.getElementById("signInForm");
+const signInEmail = document.getElementById("signInEmail");
+const signInPassword = document.getElementById("signInPassword");
+const signInEmailError = document.getElementById("signInEmailError");
+const signInPasswordError = document.getElementById("signInPasswordError");
+const signInBtn = document.getElementById("signInBtn");
+
+//for sign in page password
+if (signInForm) {
+  signInForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let isValid = true;
+
+    // clear old errors
+    if (signInEmailError) signInEmailError.textContent = "";
+    if (signInPasswordError) signInPasswordError.textContent = "";
+    if (signInEmail) signInEmail.classList.remove("invalid");
+    if (signInPassword) signInPassword.classList.remove("invalid");
+
+    // email validation
+    if (!signInEmail || !isValidEmail(signInEmail.value.trim())) {
+      isValid = false;
+      if (signInEmail) signInEmail.classList.add("invalid");
+      if (signInEmailError) signInEmailError.textContent = "Enter a valid email";
+    }
+
+    // password validation
+    if (!signInPassword || signInPassword.value.trim() === "") {
+      isValid = false;
+      if (signInPassword) signInPassword.classList.add("invalid");
+      if (signInPasswordError) signInPasswordError.textContent = "Enter your password";
+    }
+
+    if (!isValid) return;
+
+    // fake sign in success
+    signInBtn.disabled = true;
+    signInBtn.textContent = "Signing in...";
+    signInBtn.style.opacity = "0.7";
+    signInBtn.style.cursor = "not-allowed";
+
+    setTimeout(() => {
+      window.location.href = "../index.html";
+    }, 1200);
+  });
+}
+
+
+
