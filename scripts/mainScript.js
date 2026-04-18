@@ -372,6 +372,37 @@ if (signInForm) {
       window.location.href = "../index.html";
     }, 1200);
   });
+//settings
+  const saveSettingsBtn = document.getElementById("saveSettingsBtn");
+const settingsMessage = document.getElementById("settingsMessage");
+
+const darkModeToggle = document.getElementById("darkModeToggle");
+const emailNotifications = document.getElementById("emailNotifications");
+const orderUpdates = document.getElementById("orderUpdates");
+const languageSelect = document.getElementById("languageSelect");
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedDarkMode = localStorage.getItem("darkMode");
+  const savedEmailNotifications = localStorage.getItem("emailNotifications");
+  const savedOrderUpdates = localStorage.getItem("orderUpdates");
+  const savedLanguage = localStorage.getItem("language");
+
+  if (savedDarkMode === "true") darkModeToggle.checked = true;
+  if (savedEmailNotifications === "true") emailNotifications.checked = true;
+  if (savedOrderUpdates === "true") orderUpdates.checked = true;
+  if (savedLanguage) languageSelect.value = savedLanguage;
+});
+
+if (saveSettingsBtn) {
+  saveSettingsBtn.addEventListener("click", () => {
+    localStorage.setItem("darkMode", darkModeToggle.checked);
+    localStorage.setItem("emailNotifications", emailNotifications.checked);
+    localStorage.setItem("orderUpdates", orderUpdates.checked);
+    localStorage.setItem("language", languageSelect.value);
+
+    settingsMessage.textContent = "Settings saved successfully.";
+  });
+}
 }
 
 

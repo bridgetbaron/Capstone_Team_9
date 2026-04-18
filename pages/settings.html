@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="../styles/Feedback.css" />
+    <link rel="stylesheet" href="../styles/cart.css" />
+    <link rel="stylesheet" href="../styles/settings.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div
+          class="logo"
+          onclick="window.location.href='../index.html'"
+          style="cursor: pointer"
+        >
+          Lenovo
+        </div>
+
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+
+        <div class="search-bar">
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img
+              src="../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <button class="header-btn" onclick="window.location.href='signIn.html'">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+
+        <button class="header-btn" onclick="window.location.href='cart.html'">
+          <img
+            src="../images/shopping-cart.png"
+            alt="My Cart"
+            class="header-icon"
+          />
+          My Cart
+        </button>
+
+        <button class="header-btn" onclick="window.location.href='settings.html'">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+
+        <button class="themetoggle" id="themeToggle">
+          <img
+            src="../images/sun-and-moon.png"
+            alt="Dark Mode"
+            class="header-icon"
+          />
+        </button>
+      </div>
+    </header>
+
+    <!-- Nav -->
+    <nav class="nav">
+      <a href="homeMoreResults.html">Laptop</a>
+      <a href="desktops.html">Desktop</a>
+      <a href="software.html">Software</a>
+      <a href="Accessories.html">Accessories</a>
+    </nav>
+
+    <!-- Settings content -->
+    <main class="settings-page">
+      <section class="settings-container">
+        <h1>Settings</h1>
+
+        <div class="settings-group">
+          <h2>Appearance</h2>
+          <label class="settings-option">
+            <span>Dark Mode</span>
+            <input type="checkbox" id="darkModeToggle" />
+          </label>
+        </div>
+
+        <div class="settings-group">
+          <h2>Notifications</h2>
+          <label class="settings-option">
+            <span>Email Notifications</span>
+            <input type="checkbox" id="emailNotifications" />
+          </label>
+
+          <label class="settings-option">
+            <span>Order Updates</span>
+            <input type="checkbox" id="orderUpdates" />
+          </label>
+        </div>
+
+        <div class="settings-group">
+          <h2>Account</h2>
+          <label for="languageSelect">Language</label>
+          <select id="languageSelect">
+            <option>English</option>
+            <option>Spanish</option>
+            <option>French</option>
+          </select>
+        </div>
+
+        <button class="save-settings-btn" id="saveSettingsBtn">
+          Save Changes
+        </button>
+
+        <p class="settings-message" id="settingsMessage"></p>
+      </section>
+    </main>
+
+    <script src="../scripts/mainScript.js"></script>
+    <script src="../scripts/settings.js"></script>
+  </body>
+</html>
