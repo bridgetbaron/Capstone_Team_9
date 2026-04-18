@@ -4,9 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign In | Lenovo</title>
-  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/styles.css" />
 </head>
 <body>
+
+      <header class="header">
+      <div class="header-left">
+        <div
+          class="logo"
+          onclick="window.location.href = '../index.html'"
+          style="cursor: pointer"
+        >
+          Lenovo
+        </div>
+        <button class="back-btn">
+          <img src="../images/arrow.png" alt="Back" class="header-icon" />
+        </button>
+
+        <!-- search bar with dropdown -->
+        <div class="search-bar">
+          <!-- search dropdown: same style as feeddropdown -->
+          <div class="SearchDropdown">
+            <button class="searchDropBtn" id="searchDropBtn">Select ▼</button>
+            <div class="searchSelection" id="searchDropMenu">
+              <a href="#" onclick="selectSearch(event, 'Laptops')">Laptops</a>
+              <a href="#" onclick="selectSearch(event, 'PC')">PC</a>
+              <a href="#" onclick="selectSearch(event, 'Monitors')">Monitors</a>
+            </div>
+          </div>
+          <input type="text" placeholder="Search" />
+          <a href="searchResults.html" class="searchiconlink">
+            <img
+              src="../images/search-interface-symbol.png"
+              alt="Search"
+              class="search-icon"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- end of search bar code -->
+
+      <!-- this is the right side of the header that holds buttons for user actions -->
+      <div class="header-right">
+        <button class="header-btn">
+          <img src="../images/user.png" alt="Sign-in" class="header-icon" />
+          Sign-in / Create Account
+        </button>
+        <button class="header-btn" onclick="window.location.href='cart.html'">
+          <img
+            src="../images/shopping-cart.png"
+            alt="My Cart"
+            class="header-icon"
+          />
+          My Cart
+        </button>
+        <button class="header-btn">
+          <img src="../images/setting.png" alt="Settings" class="header-icon" />
+          Settings
+        </button>
+        <button class="theme-toggle" id="themeToggle">
+          <img
+            src="../images/sun-and-moon.png"
+            alt="Dark Mode"
+            class="header-icon"
+          />
+        </button>
+      </div>
+    </header>
+
+    <!-- nav: this is the main nav for specific types of lenovo products to narrow down your options -->
+    <nav class="nav">
+      <a href="homeMoreResults.html">Laptop</a>
+      <a href="desktops.html">Desktop</a>
+      <a href="software.html">Software</a>
+      <a href="Accessories.html">Accessories</a>
+    </nav>
+
   <main class="signin-page">
     <section class="signin-container">
       <h1>Sign In</h1>
