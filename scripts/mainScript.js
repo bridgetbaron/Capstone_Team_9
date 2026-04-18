@@ -324,7 +324,7 @@ document.body.appendChild(spinner);
 // show the spinner whenever the page is leaving
 window.addEventListener("beforeunload", function () {
   spinner.style.display = "flex";
-}
+})
 // Sign in page only
 const signInForm = document.getElementById("signInForm");
 const signInEmail = document.getElementById("signInEmail");
