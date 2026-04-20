@@ -259,13 +259,18 @@ const emailInput = document.getElementById("emailInput");
 const emailError = document.getElementById("emailError");
 
 // checking if the email is vaild with special characters 
+// uses a regular expression, regex
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
+//checking if the elements exist beforehand 
 if (emailInput && emailError) {
   // show error the moment the user clicks out of the field without a valid email
+  //blur is used when teh user clicks out of the text box
   emailInput.addEventListener("blur", function () {
+    //checking what the user types 
+    // trim removes extra spaces
     if (!isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
       emailError.textContent = "Enter a valid email";
@@ -274,7 +279,9 @@ if (emailInput && emailError) {
   });
 
   // clears the error as soon as the user starts typing
+  // used every time the user types something in the textbox
   emailInput.addEventListener("input", function () {
+    // removes or inputs the error message depending on what the user types
     emailInput.classList.remove("invalid");
     emailError.classList.remove("visible");
   });
@@ -286,7 +293,9 @@ const submitBtn = document.querySelector(".submitBtn");
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
 
+    //Checks If the input exists and if the email is valid
     // if email is missing or not a real email, show error and stop
+    // trim is used to removes extra spaces
     if (!emailInput || !isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
       emailError.textContent = "Enter a valid email";
@@ -295,11 +304,13 @@ if (submitBtn) {
     }
 
     // email is valid navigate to the submission page
+    // showing that the page is about the submit
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "0.7";
     submitBtn.style.cursor = "not-allowed";
 
+    // going to the submission page to confirm with user
     setTimeout(() => {
       window.location.href = "FeedbackSubmission.html";
     }, 1500);
@@ -325,6 +336,8 @@ document.body.appendChild(spinner);
 window.addEventListener("beforeunload", function () {
   spinner.style.display = "flex";
 })
+
+
 // Sign in page only
 const signInForm = document.getElementById("signInForm");
 const signInEmail = document.getElementById("signInEmail");
