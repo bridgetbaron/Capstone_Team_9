@@ -861,3 +861,7 @@ body.dark .skeleton-card {
   background: linear-gradient(90deg, #2d2d2d 25%, #373737 37%, #2d2d2d 63%);
   background-size: 400% 100%;
 }
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
