@@ -403,6 +403,48 @@ if (saveSettingsBtn) {
     settingsMessage.textContent = "Settings saved successfully.";
   });
 }
+// theme toggle for all pages
+const themeToggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
+
+// apply saved theme on page load
+if (savedTheme === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+// toggle theme when button is clicked
+if (themeToggle) {
+  updateThemeIcon();
+
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+
+    const currentTheme = document.body.classList.contains("dark-mode")
+      ? "dark"
+      : "light";
+
+    localStorage.setItem("theme", currentTheme);
+    updateThemeIcon();
+  });
+}
+
+function updateThemeIcon() {
+  if (!themeToggle) return;
+
+  themeToggle.setAttribute(
+    "aria-label",
+    document.body.classList.contains("dark-mode")
+      ? "Switch to light mode"
+      : "Switch to dark mode",
+  );
+
+  themeToggle.setAttribute(
+    "title",
+    document.body.classList.contains("dark-mode")
+      ? "Dark mode is active"
+      : "Light mode is active",
+  );
+}
 }
 
 
