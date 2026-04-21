@@ -124,7 +124,7 @@ if (searchBar) {
 // this watches typing in the header search box
 if (headerSearchInput)
   headerSearchInput.addEventListener("input", () => {
-    const query = headerSearchInput.value.trim().toLowerCase();
+    const query = headerSearchInput.value.trim().toLowerCase();  
 
     // if input is empty we hide suggestion list and reset text if we can
     if (query === "") {
@@ -252,46 +252,65 @@ if (textBox) {
     textBox.style.boxShadow = "none";
   });
 }
- 
+
+// verifying the email function
 // in feedback form making the user enter their email or they will get an error message
 const emailInput = document.getElementById("emailInput");
 const emailError = document.getElementById("emailError");
- 
+
+// checking if the email is vaild with special characters 
+// uses a regular expression, regex
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+//checking if the elements exist beforehand 
 if (emailInput && emailError) {
-  // show error the moment the user clicks out of the field without typing
+  // show error the moment the user clicks out of the field without a valid email
+  //blur is used when teh user clicks out of the text box
   emailInput.addEventListener("blur", function () {
-    if (emailInput.value.trim() === "") {
+    //checking what the user types 
+    // trim removes extra spaces
+    if (!isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
+      emailError.textContent = "Enter a valid email";
       emailError.classList.add("visible");
     }
   });
- 
-  // clear the error as soon as the user starts typing
+
+  // clears the error as soon as the user starts typing
+  // used every time the user types something in the textbox
   emailInput.addEventListener("input", function () {
+    // removes or inputs the error message depending on what the user types
     emailInput.classList.remove("invalid");
     emailError.classList.remove("visible");
   });
 }
- 
+
 // making the submit button not work unless user has entered an email
 const submitBtn = document.querySelector(".submitBtn");
- 
+
 if (submitBtn) {
   submitBtn.addEventListener("click", function () {
- 
-    // if email is empty, show error and stop, do not navigate to submission page
-    if (emailInput && emailInput.value.trim() === "") {
+
+    //Checks If the input exists and if the email is valid
+    // if email is missing or not a real email, show error and stop
+    // trim is used to removes extra spaces
+    if (!emailInput || !isValidEmail(emailInput.value.trim())) {
       emailInput.classList.add("invalid");
+      emailError.textContent = "Enter a valid email";
       emailError.classList.add("visible");
       return;
     }
- 
-    // if the email is filled then navigate
+
+    // email is valid navigate to the submission page
+    // showing that the page is about the submit
     submitBtn.disabled = true;
     submitBtn.textContent = "Submitting...";
     submitBtn.style.opacity = "0.7";
     submitBtn.style.cursor = "not-allowed";
- 
+
+    // going to the submission page to confirm with user
     setTimeout(() => {
       window.location.href = "FeedbackSubmission.html";
     }, 1500);
@@ -316,4 +335,4 @@ document.body.appendChild(spinner);
 // show the spinner whenever the page is leaving
 window.addEventListener("beforeunload", function () {
   spinner.style.display = "flex";
-});
+})

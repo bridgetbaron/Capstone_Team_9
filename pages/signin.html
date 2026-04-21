@@ -1,17 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Project</title>
-    <link rel="stylesheet" href="../styles/Feedback.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In | Lenovo</title>
+  <link rel="stylesheet" href="../styles/styles.css" />
+  <link rel="stylesheet" href="../styles/signIn.css" />
+</head>
+<body>
 
-  <body>
-    <!-- header -->
-    <header class="header">
+      <header class="header">
       <div class="header-left">
-        <!-- logo leading to homepage -->
         <div
           class="logo"
           onclick="window.location.href = '../index.html'"
@@ -46,7 +45,7 @@
       </div>
       <!-- end of search bar code -->
 
-      <!-- header buttons -->
+      <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
         <button class="header-btn" onclick="window.location.href='signIn.html'">
           <img src="../images/user.png" alt="Sign-in" class="header-icon" />
@@ -74,7 +73,7 @@
       </div>
     </header>
 
-    <!-- the options under the header -->
+    <!-- nav: this is the main nav for specific types of lenovo products to narrow down your options -->
     <nav class="nav">
       <a href="homeMoreResults.html">Laptop</a>
       <a href="desktops.html">Desktop</a>
@@ -82,17 +81,26 @@
       <a href="Accessories.html">Accessories</a>
     </nav>
 
-    <!-- feedback box -->
-    <main class="content">
-      <section class="feedbackBox">
-        <div class="feedbackContainer">
-          <!-- close button leading back to home -->
-          <button class="closeBtn" id="closeBtn" onclick="window.location.href = '../index.html'">&times;</button>
+  <main class="signin-page">
+    <section class="signin-container">
+      <h1>Sign In</h1>
 
-          <h1>Thank you for your Feedback!</h1>
-        </div>
-      </section>
-    </main>
-    <script src="../scripts/mainScript.js"></script>
-  </body>
+      <form id="signInForm">
+        <label for="signInEmail">Email</label>
+        <input type="email" id="signInEmail" placeholder="Enter your email" />
+
+        <p id="signInEmailError" class="error-message"></p>
+
+        <label for="signInPassword">Password</label>
+        <input type="password" id="signInPassword" placeholder="Enter your password" />
+
+        <p id="signInPasswordError" class="error-message"></p>
+
+        <button type="submit" id="signInBtn">Sign In</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="../js/mainscript.js"></script>
+</body>
 </html>

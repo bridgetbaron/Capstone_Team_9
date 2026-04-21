@@ -44,11 +44,11 @@
       </div>
 
       <div class="header-right">
-        <button class="header-btn">
+        <button class="header-btn" onclick="window.location.href='/pages/signIn.html'">
           <img src="../../images/user.png" alt="Sign-in" class="header-icon" />
           Sign-in / Create Account
         </button>
-        <button class="header-btn">
+        <button class="header-btn" onclick="window.location.href='/pages/cart.html'">
           <img
             src="../../images/shopping-cart.png"
             alt="My Cart"
@@ -56,7 +56,7 @@
           />
           My Cart
         </button>
-        <button class="header-btn">
+        <button class="header-btn" onclick="window.location.href='/pages/settings.html'">
           <img
             src="../../images/setting.png"
             alt="Settings"
@@ -100,7 +100,6 @@
         </div>
 
         <div class="product-price-wrap">
-          <p class="product-price-label">Starting at</p>
           <p class="product-price">$1,379.00</p>
         </div>
 
@@ -111,21 +110,6 @@
     </main>
 
     <script src="../../scripts/mainScript.js"></script>
-    <script>
-      const cartBtn = document.getElementById("cartBtn");
-      const cartConfirm = document.getElementById("cartConfirm");
-
-      cartBtn.addEventListener("click", () => {
-        cartBtn.textContent = "Adding...";
-        cartBtn.disabled = true;
-
-        setTimeout(() => {
-          cartBtn.textContent = "Add to cart";
-          cartBtn.disabled = false;
-          cartConfirm.style.opacity = "1";
-          setTimeout(() => (cartConfirm.style.opacity = "0"), 2000);
-        }, 900);
-      });
-    </script>
+    <script src="../../scripts/cart.js"></script>
   </body>
 </html>

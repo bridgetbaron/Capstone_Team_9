@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lenovo || Home</title>
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/index.css" />
+  </head>
   </head>
   <body>
     <header class="header">
@@ -45,8 +47,13 @@
 
       <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
-        <button class="header-btn">
-          <img src="images/user.png" alt="Sign-in" class="header-icon" />
+        <button 
+          class="header-btn" 
+          onclick="window.location.href = 'pages/signIn.html'">
+          <img src="images/user.png" 
+          alt="Sign-in" 
+          class="header-icon" 
+          />
           Sign-in / Create Account
         </button>
         <button class="header-btn" onclick="window.location.href = 'pages/cart.html'">
@@ -57,7 +64,7 @@
           />
           My Cart
         </button>
-        <button class="header-btn">
+         <button class="header-btn" onclick="window.location.href='pages/settings.html'">
           <img src="images/setting.png" alt="Settings" class="header-icon" />
           Settings
         </button>
