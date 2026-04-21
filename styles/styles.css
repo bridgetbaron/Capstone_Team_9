@@ -865,3 +865,12 @@ body.dark-mode {
   background-color: #121212;
   color: white;
 }
+body.dark-mode header,
+body.dark-mode nav,
+body.dark-mode main,
+body.dark-mode .signin-container,
+body.dark-mode .settings-container,
+body.dark-mode .cart-page {
+  background-color: #1e1e1e;
+  color: white;
+}
