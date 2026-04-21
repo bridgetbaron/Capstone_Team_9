@@ -336,3 +336,13 @@ document.body.appendChild(spinner);
 window.addEventListener("beforeunload", function () {
   spinner.style.display = "flex";
 })
+
+// dark mode for all pages
+const themeToggle = document.getElementById("themeToggle");
+
+// when clicked the css will change
+if (themeToggle) {
+  themeToggle.addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+}
