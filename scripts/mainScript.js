@@ -408,8 +408,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
 if (saveSettingsBtn) {
   saveSettingsBtn.addEventListener("click", () => {
-    localStorage.setItem("dark", darkModeToggle.checked);
-    localStorage.setItem("emailNotifications", emailNotifications.checked);
+    localStorage.setItem("theme", "dark");
+        localStorage.setItem("emailNotifications", emailNotifications.checked);
     localStorage.setItem("orderUpdates", orderUpdates.checked);
     localStorage.setItem("language", languageSelect.value);
 
@@ -436,6 +436,4 @@ if (themeToggle) {
       localStorage.setItem("theme", "light");
     }
   });
-}
-
 
