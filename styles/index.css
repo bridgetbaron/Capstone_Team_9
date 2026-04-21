@@ -540,3 +540,65 @@ footer a {
   font-size: 14px;
   transition: color 0.2s;
 }
+body.dark {
+  background: #121212 !important;
+  color: #f5f5f5 !important;
+}
+
+body.dark .header,
+body.dark .nav,
+body.dark main,
+body.dark #product-nav,
+body.dark #product-section,
+body.dark footer,
+body.dark .top-product--item,
+body.dark .lenovo-banner,
+body.dark .load-more-wrapper {
+  background: #1e1e1e !important;
+  color: #f5f5f5 !important;
+}
+
+body.dark .nav a,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p,
+body.dark a,
+body.dark span,
+body.dark div {
+  color: #f5f5f5 !important;
+}
+
+body.dark .header-btn,
+body.dark .theme-toggle,
+body.dark .load-more-btn,
+body.dark .top-product--info-wrapper a {
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+body.dark .search-bar {
+  background: #2a2a2a !important;
+  border-color: #555 !important;
+}
+
+body.dark .search-bar input {
+  background: transparent !important;
+  color: #ffffff !important;
+}
+
+body.dark .searchDropBtn,
+body.dark .searchSelection {
+  background: #2a2a2a !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+body.dark .searchSelection a {
+  color: #ffffff !important;
+}
+
+body.dark .searchSelection a:hover {
+  background: #3a3a3a !important;
+}

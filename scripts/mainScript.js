@@ -385,55 +385,88 @@ if (signInForm) {
       window.location.href = "../index.html";
     }, 1200);
   });
-//settings
+// dark mode
+
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("themeToggle");
+
+  // apply saved theme on page load
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+
+  // header toggle button
+  if (themeToggle) {
+    themeToggle.addEventListener("click", function () {
+      document.body.classList.toggle("dark");
+
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+  }
+
+
+  // settings
+  
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const emailNotifications = document.getElementById("emailNotifications");
+  const orderUpdates = document.getElementById("orderUpdates");
+  const languageSelect = document.getElementById("languageSelect");
   const saveSettingsBtn = document.getElementById("saveSettingsBtn");
-const settingsMessage = document.getElementById("settingsMessage");
+  const settingsMessage = document.getElementById("settingsMessage");
 
-const darkModeToggle = document.getElementById("darkModeToggle");
-const emailNotifications = document.getElementById("emailNotifications");
-const orderUpdates = document.getElementById("orderUpdates");
-const languageSelect = document.getElementById("languageSelect");
+  // load saved settings if settings page exists
+  if (darkModeToggle) {
+    darkModeToggle.checked = localStorage.getItem("theme") === "dark";
+  }
 
-window.addEventListener("DOMContentLoaded", () => {
-  const savedDarkMode = localStorage.getItem("dark");
-  const savedEmailNotifications = localStorage.getItem("emailNotifications");
-  const savedOrderUpdates = localStorage.getItem("orderUpdates");
-  const savedLanguage = localStorage.getItem("language");
+  if (emailNotifications) {
+    emailNotifications.checked =
+      localStorage.getItem("emailNotifications") === "true";
+  }
 
-  if (savedDarkMode === "true") darkModeToggle.checked = true;
-  if (savedEmailNotifications === "true") emailNotifications.checked = true;
-  if (savedOrderUpdates === "true") orderUpdates.checked = true;
-  if (savedLanguage) languageSelect.value = savedLanguage;
+  if (orderUpdates) {
+    orderUpdates.checked = localStorage.getItem("orderUpdates") === "true";
+  }
+
+  if (languageSelect && localStorage.getItem("language")) {
+    languageSelect.value = localStorage.getItem("language");
+  }
+
+  // save settings
+  if (saveSettingsBtn) {
+    saveSettingsBtn.addEventListener("click", function () {
+      // save theme
+      if (darkModeToggle && darkModeToggle.checked) {
+        localStorage.setItem("theme", "dark");
+        document.body.classList.add("dark");
+      } else {
+        localStorage.setItem("theme", "light");
+        document.body.classList.remove("dark");
+      }
+
+      // save other settings
+      if (emailNotifications) {
+        localStorage.setItem(
+          "emailNotifications",
+          emailNotifications.checked,
+        );
+      }
+
+      if (orderUpdates) {
+        localStorage.setItem("orderUpdates", orderUpdates.checked);
+      }
+
+      if (languageSelect) {
+        localStorage.setItem("language", languageSelect.value);
+      }
+
+      if (settingsMessage) {
+        settingsMessage.textContent = "Settings saved successfully.";
+      }
+    });
+  }
 });
-
-if (saveSettingsBtn) {
-  saveSettingsBtn.addEventListener("click", () => {
-    localStorage.setItem("theme", "dark");
-        localStorage.setItem("emailNotifications", emailNotifications.checked);
-    localStorage.setItem("orderUpdates", orderUpdates.checked);
-    localStorage.setItem("language", languageSelect.value);
-
-    settingsMessage.textContent = "Settings saved successfully.";
-  });
-// DARK MODE TOGGLE (GLOBAL)
-
-const themeToggle = document.getElementById("themeToggle");
-
-// apply saved theme on page load
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
-}
-
-// toggle when button is clicked
-if (themeToggle) {
-  themeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("dark");
-
-    // save preference
-    if (document.body.classList.contains("dark")) {
-      localStorage.setItem("theme", "dark");
-    } else {
-      localStorage.setItem("theme", "light");
-    }
-  });
-
