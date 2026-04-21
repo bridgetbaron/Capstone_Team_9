@@ -395,7 +395,7 @@ const orderUpdates = document.getElementById("orderUpdates");
 const languageSelect = document.getElementById("languageSelect");
 
 window.addEventListener("DOMContentLoaded", () => {
-  const savedDarkMode = localStorage.getItem("darkMode");
+  const savedDarkMode = localStorage.getItem("dark");
   const savedEmailNotifications = localStorage.getItem("emailNotifications");
   const savedOrderUpdates = localStorage.getItem("orderUpdates");
   const savedLanguage = localStorage.getItem("language");
@@ -408,7 +408,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 if (saveSettingsBtn) {
   saveSettingsBtn.addEventListener("click", () => {
-    localStorage.setItem("darkMode", darkModeToggle.checked);
+    localStorage.setItem("dark", darkModeToggle.checked);
     localStorage.setItem("emailNotifications", emailNotifications.checked);
     localStorage.setItem("orderUpdates", orderUpdates.checked);
     localStorage.setItem("language", languageSelect.value);
