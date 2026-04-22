@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="img-src 'self' data:;"
+    />
     <title>Student Project</title>
     <link rel="stylesheet" href="../styles/Feedback.css" />
   </head>
@@ -45,11 +49,14 @@
       </div>
 
       <div class="header-right">
-        <button class="header-btn" onclick="window.location.href='signIn.html'">
+        <button
+          class="header-btn"
+          onclick="window.location.href = 'signIn.html'"
+        >
           <img src="../images/user.png" alt="Sign-in" class="header-icon" />
           Sign-in / Create Account
         </button>
-        <button class="header-btn" onclick="window.location.href='cart.html'">
+        <button class="header-btn" onclick="window.location.href = 'cart.html'">
           <img
             src="../images/shopping-cart.png"
             alt="My Cart"
@@ -57,7 +64,10 @@
           />
           My Cart
         </button>
-        <button class="header-btn" onclick="window.location.href='/pages/settings.html'">
+        <button
+          class="header-btn"
+          onclick="window.location.href = '/pages/settings.html'"
+        >
           <img src="../images/setting.png" alt="Settings" class="header-icon" />
           Settings
         </button>
@@ -95,7 +105,12 @@
           <h1>Feedback Form</h1>
 
           <p class="label">Please enter your email</p>
-          <input type="email" class="textBoxEmail" id="emailInput" placeholder="Enter your email" />
+          <input
+            type="email"
+            class="textBoxEmail"
+            id="emailInput"
+            placeholder="Enter your email"
+          />
           <p class="email-error" id="emailError">Please enter your email</p>
 
           <p class="label">Any suggestions?</p>
