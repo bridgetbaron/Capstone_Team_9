@@ -42,3 +42,34 @@
   .signin-container button:hover {
     background: #c81d15;
   }
+
+body.dark-mode .signin-page {
+  background-color: #121212;
+}
+
+body.dark-mode .signin-container {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode .signin-container h1 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .signin-container label {
+  color: #cccccc;
+}
+
+body.dark-mode .signin-container input {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .signin-container input::placeholder {
+  color: #777777;
+}
+
+body.dark-mode .error-message {
+  color: #ff6b6b;
+}

@@ -130,3 +130,38 @@
   max-width: 400px;
   margin: 0 auto;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .nav {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .cart-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode .cart-item-name,
+body.dark-mode .cart-item-price {
+  color: #e0e0e0;
+}
+
+body.dark-mode .cart-summary {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode #cartFooter p,
+body.dark-mode #cartFooter div,
+body.dark-mode #cartFooter span {
+  color: #e0e0e0;
+}

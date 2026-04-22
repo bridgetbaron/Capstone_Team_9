@@ -372,6 +372,53 @@ body {
   border-radius: 10px;
 }
 
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .nav {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .nav a {
+  color: #cccccc;
+}
+
+body.dark-mode .nav a:hover {
+  color: #ffffff;
+}
+
+body.dark-mode .top-product--item {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode footer {
+  background-color: #1a1a1a;
+  color: #aaaaaa;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .header-btn {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav a {
+  color: #cccccc;
+}
+
 /* tablet responsive styling */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {

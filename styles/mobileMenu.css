@@ -148,3 +148,34 @@ body {
   border-top: 1px solid #ccc;
   margin: 0 28px;
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .menu-header {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #333;
+}
+
+
+body.dark-mode .mobile-menu {
+  background-color: #121212;
+}
+
+body.dark-mode .menu-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .menu-item:hover {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .menu-divider {
+  border-color: #333;
+}
+
+body.dark-mode .hamburger-btn span {
+  background-color: #e0e0e0;
+}

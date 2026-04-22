@@ -71,3 +71,36 @@ body {
     color: green;
     min-height: 1rem;
   }
+
+body.dark-mode .settings-page {
+  background-color: #121212;
+}
+
+body.dark-mode .settings-container {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .settings-container h1,
+body.dark-mode .settings-group h2 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .settings-option span {
+  color: #cccccc;
+}
+
+body.dark-mode select {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode label[for="languageSelect"] {
+  color: #cccccc;
+}
+
+body.dark-mode .settings-message {
+  color: #aaaaaa;
+}

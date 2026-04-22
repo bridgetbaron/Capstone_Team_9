@@ -909,3 +909,78 @@ body.dark a {
 body.dark a:hover {
   color: #ff5a52;
 }
+
+/* real dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .nav {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .nav a {
+  color: #cccccc;
+}
+
+body.dark-mode .search-sidebar {
+  background-color: #1a1a1a;
+  border-right: 1px solid #333;
+}
+
+body.dark-mode .sidebar-section-title,
+body.dark-mode .filter-group summary {
+  color: #e0e0e0;
+}
+
+body.dark-mode .filter-options label,
+body.dark-mode .filter-options span {
+  color: #cccccc;
+}
+
+body.dark-mode .result-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  color: #e0e0e0;
+}
+
+body.dark-mode .result-card h3,
+body.dark-mode .result-price,
+body.dark-mode .result-desc,
+body.dark-mode .results-text {
+  color: #e0e0e0;
+}
+
+body.dark-mode .skeleton-card {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .mobile-panel {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .mobile-panel label {
+  color: #cccccc;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .header-btn {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav a {
+  color: #cccccc;
+}

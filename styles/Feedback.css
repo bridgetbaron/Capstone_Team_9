@@ -463,6 +463,67 @@ body {
   object-fit: contain;
 }
 
+/* dark mode changes */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .header {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .nav {
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #333;
+}
+
+body.dark-mode .feedbackContainer {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+body.dark-mode .textBox,
+body.dark-mode .textBoxEmail {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .dropBtn {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #444;
+}
+
+body.dark-mode .selection {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+}
+
+body.dark-mode .selection a {
+  color: #e0e0e0;
+}
+
+body.dark-mode .selection a:hover {
+  background-color: #333;
+}
+
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #e0e0e0;
+}
+
+body.dark-mode .header-btn {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav a {
+  color: #cccccc;
+}
+
 /* making it fully resizable — fluid breakpoints */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {

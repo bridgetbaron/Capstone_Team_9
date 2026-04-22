@@ -109,6 +109,8 @@
   transition: opacity 0.3s ease;
 }
 
+
+
 /* stacks on small screens */
 @media (max-width: 650px) {
   .product-page {
