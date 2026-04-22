@@ -7,18 +7,17 @@
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/index.css" />
   </head>
-  </head>
   <body>
     <header class="header">
       <div class="header-left">
         <div
           class="logo"
-          onclick="window.location.href='index.html'"
-          style="cursor: pointer;"
+          onclick="window.location.href = 'index.html'"
+          style="cursor: pointer"
         >
           Lenovo
         </div>
-        <button class="back-btn" onclick="window.location.href='index.html'">
+        <button class="back-btn" onclick="window.location.href = 'index.html'">
           <img src="images/arrow.png" alt="Back" class="header-icon" />
         </button>
 
@@ -47,16 +46,17 @@
 
       <!-- this is the right side of the header that holds buttons for user actions -->
       <div class="header-right">
-        <button 
-          class="header-btn" 
-          onclick="window.location.href = 'pages/signIn.html'">
-          <img src="images/user.png" 
-          alt="Sign-in" 
-          class="header-icon" 
-          />
+        <button
+          class="header-btn"
+          onclick="window.location.href = 'pages/signIn.html'"
+        >
+          <img src="images/user.png" alt="Sign-in" class="header-icon" />
           Sign-in / Create Account
         </button>
-        <button class="header-btn" onclick="window.location.href = 'pages/cart.html'">
+        <button
+          class="header-btn"
+          onclick="window.location.href = 'pages/cart.html'"
+        >
           <img
             src="images/shopping-cart.png"
             alt="My Cart"
@@ -64,7 +64,10 @@
           />
           My Cart
         </button>
-         <button class="header-btn" onclick="window.location.href='pages/settings.html'">
+        <button
+          class="header-btn"
+          onclick="window.location.href = 'pages/settings.html'"
+        >
           <img src="images/setting.png" alt="Settings" class="header-icon" />
           Settings
         </button>
@@ -196,11 +199,7 @@
           <!-- these are the two lenovo banners... one vertical for desktop and one horizontal for mobile -->
         </div>
         <div class="lenovo-banner">
-          <img
-            class="banner-vertical"
-            src="images/lenovo-banner.png"
-            alt=""
-          />
+          <img class="banner-vertical" src="images/lenovo-banner.png" alt="" />
           <img
             class="banner-horizontal"
             src="images/lenovo-banner-horizontal.png"
@@ -223,7 +222,7 @@
         <div><h3>Customer Support</h3></div>
         <div><h3>Products and Services</h3></div>
       </div>
-      <a href="./pages/feedBack.html">Give Feedback</a>
+      <a href="pages/feedBack.html" target="_blank">Give Feedback</a>
     </footer>
     <script src="scripts/mainScript.js"></script>
   </body>
