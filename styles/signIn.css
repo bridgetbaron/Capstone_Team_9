@@ -43,6 +43,21 @@
     background: #c81d15;
   }
 
+  .error-message {
+  color: red;
+  font-size: 0.8rem;
+  display: none;
+  text-align: left;
+}
+
+.error-message.visible {
+  display: block;
+}
+
+.invalid {
+  border: 1px solid red !important;
+}
+
 body.dark-mode .signin-page {
   background-color: #121212;
 }
