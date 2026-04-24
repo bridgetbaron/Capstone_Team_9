@@ -140,7 +140,7 @@ function renderCart() {
       // deletes the cart completely
       localStorage.removeItem("cart"); 
       //going to new page
-      window.location.href = "orderConfirm.html";
+      window.location.href = "orderconfirm.html";
     }, 1200);
   });
 }
