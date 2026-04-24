@@ -524,6 +524,15 @@ body.dark-mode .nav a {
   color: #cccccc;
 }
 
+.theme-toggle {
+  background: #f0f0f0;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
 /* making it fully resizable — fluid breakpoints */
 @media (max-width: 900px) {
   .header-right .header-btn:not(:last-child) {
